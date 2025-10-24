@@ -1,0 +1,1446 @@
+{
+  "status": "complete",
+  "error": "",
+  "questions": [
+    {
+      "question": "An administrator wants to configure dead peer detection (DPD) on IPsec VPN for detecting dead tunnels. The requirement is that FortiGate sends DPD probes only when there is no inbound traffic.<br/>Which DPD mode on FortiGate meets this requirement?",
+      "answers": [
+        "A. Enabled",
+        "B. On Idle",
+        "C. Disabled",
+        "D. On Demand"
+      ],
+      "comments": [
+        {
+          "content": "The DPD mode on FortiGate that meets the requirement of sending DPD probes only when there is no inbound traffic is On Idle.\n\nThe correct answer is B. On Idle.\n\nFortiGate DPD Modes Explained\nOn Idle → This mode sends DPD probes when no traffic (inbound or outbound) is detected on the tunnel for a configured period. This directly addresses the requirement of detecting a dead tunnel when no inbound traffic is present.\n\nEnabled → This mode sends DPD probes periodically, regardless of traffic activity.\n\nDisabled → DPD is completely turned off.\n\nOn Demand → This mode sends a DPD probe only when the FortiGate needs to send traffic but the Phase 2 tunnel is not yet up. This is usually to initiate the connection.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Hi, has someone already sit this exam? If yes tell me how it went. Thanks.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Dead Peer Detection (DPD) in FortiGate has several modes, and the requirement is to send DPD probes only when there is no inbound traffic.\n\n    A. Enabled: Sends DPD probes at regular intervals, regardless of traffic. (Does not meet the requirement.)\n\n    B. On Idle: Sends DPD probes only when no traffic is detected for a certain time. (Fits the requirement perfectly.)\n\n    C. Disabled: No DPD probes are sent. (Does not meet the requirement.)\n\n    D. On Demand: Sends DPD probes only when needed (but not strictly tied to inbound traffic absence). (Less precise than \"On Idle.\")\n\nThus, \"On Idle\" (B) is the correct mode for sending DPD probes only when there is no inbound traffic.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "FortiGate solo envía sondas DPD cuando no hay tráfico entrante.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "On Demand : \"FortiGate sends DPD probes if there is only outbound traffic through the tunnel, but no inbound.\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "About DPD on IPsec VPN :\n\nDisable: Disable Dead Peer Detection.\nOn-idle: Trigger Dead Peer Detection when no IPsec traffic is received.\nOn-demand: Trigger Dead Peer Detection when no IPsec traffic is received AND FortiGate has been sending IPsec traffic. On-demand is the default setting.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "B is Correct!\n\nStudy Guide Page 380 - Phase 1—Network—Dead Peer Detection (DPD)\nThree modes:\n• On Demand: DPD probes are sent when there is no inbound traffic\n* • On Idle: DPD probes are sent when there is no traffic *\n• Disabled: only reply to DPD probes—don’t send probes",
+          "selected_answer": "B",
+          "replies": [
+            "Your definition of \"On Demand\"\n• On Demand: DPD probes are sent when there is no inbound traffic\n\nThe question\nThe requirement is that FortiGate sends DPD probes only when there is no inbound traffic.\n\nOption D\nOn Demand\n\nHow did you arrive at B?"
+          ]
+        },
+        {
+          "content": "D is Correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "StudyGuide:\nOnDeman: probes are sent when there is no INBOUND Traffic",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "1",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/305512-exam-fcp_fgt_ad-76-topic-1-question-1-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit, which shows an SD-WAN zone configuration on the FortiGate GUI.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image6.png\" title=\"image6\"/><br/>Based on the exhibit, which statement is true?",
+      "answers": [
+        "A. The Underlay zone is the zone by default.",
+        "B. The Underlay zone contains no member.",
+        "C. port2 and port3 are not assigned to a zone.",
+        "D. The virtual-wan-link and overlay zones can be deleted."
+      ],
+      "comments": [
+        {
+          "content": "Only correct answer is B; Underlay is not a default zone. It is user defined and not active.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Answer is B. In red it has no members.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "12",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/306453-exam-fcp_fgt_ad-76-topic-1-question-12-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which three statements explain a flow-based antivirus profile? (Choose three.)",
+      "answers": [
+        "A. FortiGate buffers the whole file but transmits to the client at the same time.",
+        "B. Flow-based inspection uses a hybrid of the scanning modes available in proxy-based inspection.",
+        "C. If a virus is detected, the last packet is delivered to the client.",
+        "D. Flow-based inspection optimizes performance compared to proxy-based inspection.",
+        "E. The IPS engine handles the process as a standalone."
+      ],
+      "comments": [
+        {
+          "content": "A is correct\n\nThe IPS Engine buffers the packets and sends them to the client at the same time\nWhen the last packet arrives, the IPS engine buffers it, but do not send it to the client\nUpon arrival of the last packet, it reassembles the data and send it to the Antivirus Engine for scanning\nIf the Antivirus Engines reports back that the data is clean, the IPS Engine sends the last packet to client\nIf Antivirus Engine said virus exists, the IPS engine sends reset packet to the client instead of the last packet \n\n\n\n\nE is wrong\n\nThe IPS Engine does not handle the process all by itself stand alone\nIt sends the assembled data to the Antivirus Engine for scanning",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "Corrects answers are B, D , E",
+          "selected_answer": "BDE",
+          "replies": []
+        },
+        {
+          "content": "B is correct : Flow-based mode combines some of the detection techniques of proxy-based mode, but operates at the flow level rather than the full session level.\n\nD is correct : Flow-based mode is more efficient because it analyzes packets “on the fly” without having to buffer the entire file, unlike proxy-based\n\nE is correct : In flow-based mode, it is the FortiGate IPS engine that also manages the antivirus functions, so the processing is done in this engine, without the proxy.\n\nA is incorrect : This is the behavior of proxy-based mode, not flow-based.",
+          "selected_answer": "BDE",
+          "replies": []
+        }
+      ],
+      "question_number": "13",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308507-exam-fcp_fgt_ad-76-topic-1-question-13-discussion/",
+      "most_voted": "BDE",
+      "error": null
+    },
+    {
+      "question": "Which two statements describe characteristics of automation stitches? (Choose two.)",
+      "answers": [
+        "A. Actions involve only devices included in the Security Fabric.",
+        "B. An automation stitch can have multiple triggers.",
+        "C. Multiple actions can run in parallel.",
+        "D. Triggers can involve external connectors."
+      ],
+      "comments": [
+        {
+          "content": "consist of one trigger and multiple actions\nno need of security fabric (  in case it exist only created  on the root)\ncan run in parallel",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Actions can be configured to run in parallel\n\nTriggers can involve external elements like webhooks",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "An automation stitch can have only one trigger and one or more actions. A trigger can have many events.",
+          "selected_answer": "B",
+          "replies": [
+            "The question ask for 2 answers"
+          ]
+        },
+        {
+          "content": "B and C: You can configure multiple triggers to initiate the same automation stitch in FortiGate. FortiGate automation stitches allow multiple actions ( to be executed simultaneously when the stitch is triggered.",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "15",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307175-exam-fcp_fgt_ad-76-topic-1-question-15-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Which three statements about SD-WAN performance SLAs are true? (Choose three.)",
+      "answers": [
+        "A. They rely on session loss and jitter.",
+        "B. They can be measured actively or passively.",
+        "C. They are applied in a SD-WAN rule lowest cost strategy.",
+        "D. They monitor the state of the FortiGate device.",
+        "E. All the SLA targets can be configured."
+      ],
+      "comments": [
+        {
+          "content": "it is not session loss it is called packet loss",
+          "selected_answer": "BCE",
+          "replies": []
+        },
+        {
+          "content": "According to the study guide online: \"the performance SLA uses SLA targets with some SD-WAN rule strategies, like Lowest Cost (SLA)\" and in addition \"FortiGate performance SLAs monitor the state of each member - whether it is alive or dead - and measures the member packet los, latency, and jitter\". so it is packet loss not session loss.",
+          "selected_answer": "BCE",
+          "replies": []
+        },
+        {
+          "content": "ABE ARE THE CORRECT ASNWERS",
+          "selected_answer": "ABE",
+          "replies": []
+        }
+      ],
+      "question_number": "16",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311538-exam-fcp_fgt_ad-76-topic-1-question-16-discussion/",
+      "most_voted": "BCE",
+      "error": null
+    },
+    {
+      "question": "Which two statements are true about an HA cluster? (Choose two.)",
+      "answers": [
+        "A. An HA cluster cannot have both in-band and out-of-band management interfaces at the same time.",
+        "B. Link failover triggers a failover if the administrator sets the interface down on the primary device.",
+        "C. When sniffing the heartbeat interface, the administrator must see the IP address 169.254.0.2.",
+        "D. HA incremental synchronization includes FIB entries and IPsec SAs."
+      ],
+      "comments": [
+        {
+          "content": "if there is a problem in ha  link you  would not see the ip of the secondary...",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "\"Incremental synchronization also synchronizes other dynamic configuration information such as the DHCP server address lease database, routing table updates, IPsec SAs, MAC address tables, and so on.\"\n\nhttps://community.fortinet.com/t5/FortiGate/Technical-Tip-Types-of-HA-Sync/ta-p/197135\n\n\nThe training guide also confirms this\n\n\"HA propagates more than just configuration details. Some runtime data, such as DHCP leases and FIB entries, are also synchronized.\"",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "HA incremental sync include only the configuration change, so the answer C it's not totaly good. And we can configure the management interface in-band and Out of band.\nSo the correct answer is B and C",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "17",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308688-exam-fcp_fgt_ad-76-topic-1-question-17-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "A network administrator enabled antivirus and selected an SSL inspection profile on a firewall policy.<br/>When downloading an EICAR test file through HTTP, FortiGate detects the virus and blocks the file. When downloading the same file through HTTPS, FortiGate does not detect the virus and does not block the file, allowing it to be downloaded.<br/>The administrator confirms that the traffic matches the configured firewall policy.<br/>What are two reasons for the failed virus detection by FortiGate? (Choose two.)",
+      "answers": [
+        "A. The selected SSL inspection profile has certificate inspection enabled.",
+        "B. The website is exempted from SSL inspection.",
+        "C. The El CAR test file exceeds the protocol options oversize limit.",
+        "D. The browser does not trust the FortiGate self-signed CA certificate."
+      ],
+      "comments": [
+        {
+          "content": "A and B are corerct",
+          "selected_answer": "AB",
+          "replies": []
+        },
+        {
+          "content": "A and B are correct, the encrypted traffic will not be inspected in HTTPS without deep inspection , the website could be place in a whitelist to be exempted.",
+          "selected_answer": "AB",
+          "replies": []
+        }
+      ],
+      "question_number": "18",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/306096-exam-fcp_fgt_ad-76-topic-1-question-18-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "You have configured the below commands on a FortiGate.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image8.png\" title=\"image8\"/><br/>What would be the impact of this configuration on FortiGate?",
+      "answers": [
+        "A. FortiGate will enable strict RPF on ail its interfaces and port1 will be enable for asymmetric routing.",
+        "B. FortiGate will enable strict RPF on all its interfaces and port1 will be exempted from RPF checks.",
+        "C. Port1 will be enabled with flexible RPF, and all other interfaces will be enabled for strict RPF",
+        "D. The global configuration will take precedence and FortiGate will enable strict RPF on all interfaces."
+      ],
+      "comments": [
+        {
+          "content": "First command enables RPF globally and second command makes port 1 exempt from the RPF checks.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "19",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308653-exam-fcp_fgt_ad-76-topic-1-question-19-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which two statements about equal-cost multi-path (ECMP) configuration on FortiGate are true? (Choose two.)",
+      "answers": [
+        "A. If SD-WAN is disabled, you can configure the parameter v4-ecmp-mode to volume-based.",
+        "B. If SD-WAN is enabled, you can configure routes with unequal distance and priority values to be part of ECMP.",
+        "C. If SD-WAN is disabled, you configure the load balancing algorithm in config system settings.",
+        "D. If SD-WAN is enabled, you control the load balancing algorithm with the parameter load-balance-mode."
+      ],
+      "comments": [
+        {
+          "content": "C and D are correct",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Correct answer: CD\nIf SD-WAN is enabled, the above option is not available and ECMP is configured under the SD-WAN settings\n\nhttps://docs.fortinet.com/document/fortigate/7.6.3/administration-guide/25967/equal-cost-multi-path",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Volume-Based not support with ECMP\nhttps://docs.fortinet.com/document/fortigate/7.6.3/administration-guide/25967/equal-cost-multi-path",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "if SDWAN is disable, the configuration of ECMP is on config system settings and volume option is not availablet, if SDWAN is enable, ECMP is on config system sd-wan -> load-balance-mode and is it possibile to configure the volume option",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "2",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307276-exam-fcp_fgt_ad-76-topic-1-question-2-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image9.png\" title=\"image9\"/><br/>What would be the impact of these settings on the Server certificate SNI check configuration on FortiGate?",
+      "answers": [
+        "A. FortiGate will accept and use the CN in the server certificate for URL filtering if the SNI does not match the CN or SAN fields.",
+        "B. FortiGate will accept the connection with a warning if the SNI does not match the CN or SAN fields.",
+        "C. FortiGate will close the connection if the SNI does not match the CN or SAN fields.",
+        "D. FortiGate will close the connection if the SNI does not match the CN and SAN fields"
+      ],
+      "comments": [
+        {
+          "content": "study guide p.264",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "SNI-server-cert-check \nEnable: Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. If mismatched, use the CN in the server certificate to do URL filtering.\nStrict: Check the SNI in the client hello message with the CN or SAN fields in the returned server certificate. If mismatched, close the connection.\nDisable: Do not check the SNI in the client hello message with the CN or SAN fields in the returned server certificate.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "option C and D are the same",
+          "selected_answer": "C",
+          "replies": [
+            "C. FortiGate will close the connection if the SNI does not match the CN or SAN fields.\nD. FortiGate will close the connection if the SNI does not match the CN and SAN fields \n\nare not the same. Option C CN or SAN Option D CN and SAN\n\nThere is a logical and | or"
+          ]
+        }
+      ],
+      "question_number": "20",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/306774-exam-fcp_fgt_ad-76-topic-1-question-20-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "A new administrator is configuring FSSO authentication on FortiGate using DC Agent Mode.<br/>Which step is NOT part of the expected process?",
+      "answers": [
+        "A. The DC agent sends login event data directly to FortiGate.",
+        "B. The user logs into the windows domain.",
+        "C. The collector agent forwards login event data to FortiGate.",
+        "D. FortiGate determines user identity based on the IP address in the FSSO list."
+      ],
+      "comments": [
+        {
+          "content": "The DC agent do not send logs directly to fortigate, it's the collector who sent logs.",
+          "selected_answer": "A",
+          "replies": [
+            "So why do you chose \"A\" as answer? It should be \"C\"",
+            "Answer is \"A\". My apologies!"
+          ]
+        },
+        {
+          "content": "Correct answer is A, we should to read propertly the question !",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Sorry I was wrong The answer is \"A\". I did not read the question properly. Q: Which step is NOT part of the expected process? Answer is: A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The answer is \"C\" 100%. In Fortinet's Fortinet Single Sign-On (FSSO) system, when using DC Agent mode, the process involves two main agents: the DC Agent and the Collector Agent. The DC Agent, installed on Domain Controllers, monitors user logon events and sends this data to the Collector Agent. The Collector Agent then receives this information and forwards it to the FortiGate firewall, which uses it to identify users based on their IP addresses.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "21",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307138-exam-fcp_fgt_ad-76-topic-1-question-21-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "A network administrator is reviewing firewall policies in both Interface Pair View and By Sequence View. The policies appear in a different order in each view.<br/>Why is the policy order different in these two views?",
+      "answers": [
+        "A. Policies in Interface Pair View are prioritized by security levels, while By Sequence View strictly follows the administrator’s manual ordering.",
+        "B. By Sequence View groups policies based on rule priority, while Interface Pair View always follows the order of traffic logs.",
+        "C. The firewall dynamically reorders policies in Interface Pair View based on recent traffic patterns, but By Sequence View remains static.",
+        "D. Interface Pair View sorts policies based on matching interfaces, while By Sequence View shows the actual processing order of rules."
+      ],
+      "comments": [
+        {
+          "content": "D Correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "22",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311539-exam-fcp_fgt_ad-76-topic-1-question-22-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "An administrator notices that some users are unable to establish SSL VPN connections, while others can connect without any issues.<br/>What should the administrator check first?",
+      "answers": [
+        "A. Ensure that the affected users are using the correct port number.",
+        "B. Ensure that user traffic is hitting the firewall policy.",
+        "C. Ensure that forced tunneling is enabled to reroute all traffic through the SSL VPN",
+        "D. Ensure that the HTTPS service is enabled on SSL VPN tunnel interface"
+      ],
+      "comments": [
+        {
+          "content": "b is not because there is no user traffic if they are not connecting before",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Question is a bit vague, and the options are too, but I will feel comfortable with option A\n\n-Option A is very specific to the question \"Ensure that the affected users\"\n-The Fortinet Institute training lists option A as best practice/troubleshooting hints\n-Option B sounds generic - \"Ensure that user traffic\" - and sounds more like something you would do if all users are affected, not some users like the question indicates",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "I believe this is A",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "23",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/309780-exam-fcp_fgt_ad-76-topic-1-question-23-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image10.png\" title=\"image10\"/><br/>An administrator has created a new firewall address to use as the destination for a static route.<br/>Why is the administrator not able to select the new address in the Destination field of the new static route?",
+      "answers": [
+        "A. In the new static route, the administrator must select Named Address.",
+        "B. In the new firewall address, the FQDN address must first beresolved.",
+        "C. In the new static route, the administrator must first set the interface to port2.",
+        "D. In the new firewall address, Routing configuration must be enabled."
+      ],
+      "comments": [
+        {
+          "content": "D  must exist before A",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is D\n\nYes you need to select the named Address option in the static route configuration, but the object name in the exhibit will not be available in the drop down until the Routing configuration is toggled on in the exhibit configuration",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "24",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311540-exam-fcp_fgt_ad-76-topic-1-question-24-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "FortiGate is operating in NAT mode and has two physical interfaces connected to the LAN and DMZ networks respectively.<br/>Which two statements about the requirements of connected physical interfaces on FortiGate are true? (Choose two.)",
+      "answers": [
+        "A. Both interfaces must have the interface role assigned.",
+        "B. Both interfaces must have directly connected routes on the routing table.",
+        "C. Both interfaces must have DHCP enabled and interfaces set to LAN and DMZ roles assigned.",
+        "D. Both interfaces must have IP addresses assigned."
+      ],
+      "comments": [
+        {
+          "content": "the role is not a must,  a route must exist if directly  connected",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "A is wrong: Interface roles (LAN, WAN, DMZ) are not functional requirements.\n\nThey are logical or administrative labels used only for organization and visibility in the GUI (for example, to group interfaces in the dashboard or policy view).\n\nIf no role is assigned, the interface still works the same way.\nTherefore, it is not a requirement, although it is considered a good practice to configure it.",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "BD is the correct answer.\nYou can assign an \"Undefined\" role or no role at all, and the interface will function.",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "AD correct",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "25",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311541-exam-fcp_fgt_ad-76-topic-1-question-25-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "When configuring a FortiGate in a multi-WAN setup, why would an administrator enable session preservation on an interface?",
+      "answers": [
+        "A. To allow the FortiGate to dynamically change interfaces for all active sessions when a WAN link fails",
+        "B. To make sure all sessions without source NAT enabled always use the primary WAN link",
+        "C. To improve security by forcing users to authenticate again when the WAN link changes",
+        "D. To ensure that existing SSL VPN connections remain on the same interface even if route changes occur"
+      ],
+      "comments": [
+        {
+          "content": "D correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "26",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311542-exam-fcp_fgt_ad-76-topic-1-question-26-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "You are analyzing connectivity problems caused by intermediate devices blocking traffic in SSL VPN environment.<br/>In which two ways can you effectively resolve the problem? (Choose two.)",
+      "answers": [
+        "A. You can turn off IKE fragmentation to fix large certificate negotiation problems.",
+        "B. You should use IPsec to solve issues with fragment drops and large certificate exchanges.",
+        "C. You can use SSL VPN tunnel mode to prevent problems with blocked ESP and UDP ports (500 or 4500).",
+        "D. You can configure a hub-and-spoke topology with SSL VPN tunnels to bypass blocked UDP ports."
+      ],
+      "comments": [
+        {
+          "content": "Question is misleading, C & D are listed in the Training material\n\nThe training is basically trying to point out the advantage of FortiGate's SSL VPN over IPSec VPN in situation where issues are caused by an intermediate device \n\nC - IPsec uses ESP and UDP 500 and 4500, so where these are blocked, SSL VPN tunnel mode shines because it uses HTTPS (443) and TLS by default (both TCP)\n\nD - Again where UDP ports are blocked, SSL VPN shines (Tunnel mode Hub and Spoke) because it does not use UDP\n\nA & B - IKE Fragmentation is an IPSec VPN thing, and yes if an intermediate device is dropping packets because of fragmentation, the solution is to turn it off under the IKE phase configuration - this is does not happen is SSL VPN",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Even though it says IKE fragmentation, Fortinet’s current exam guide uses it in a generic sense:\n\n“Disable IKE fragmentation” → “avoid packet fragmentation during large certificate exchanges.”\n\nSome intermediate devices break connections when packet fragmentation occurs during SSL or IKE negotiations.\nTherefore, disabling fragmentation can prevent large certificate packets from being dropped in transit.\n\n👉 In summary, even though IKE is part of IPsec, Fortinet considers that the same logic of avoiding fragmentation also applies to SSL VPN environments, which is why option A is valid in the 7.6 exam.",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "The statement makes more sense if instead of saying “SSL VPN” it said “IPsec VPN.” As stated, none of the options is optimal. If the statement said IPsec VPN, then options A and C would be correct.",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "I would say B and C , for me you can solve the issue by using IpSec",
+          "selected_answer": "BC",
+          "replies": [
+            "Yep, i think the same B solved to overpass the connectivity problem for a moment"
+          ]
+        }
+      ],
+      "question_number": "27",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307139-exam-fcp_fgt_ad-76-topic-1-question-27-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image11.png\" title=\"image11\"/><br/>FortiGate has two separate firewall policies for Sales and Engineering to access the same web server with the same security profiles.<br/>Which action must the administrator perform to consolidate the two policies into one?",
+      "answers": [
+        "A. Create an Aggregate interface that includes port1 and port2 to create a single firewall policy.",
+        "B. Select port1 and port2 subnets in a single firewall policy.",
+        "C. Replace port1 and port2 with the any interface in a single firewall policy.",
+        "D. Enable Multiple Interface Policies to select port1 and port2 in the same firewall policy."
+      ],
+      "comments": [
+        {
+          "content": "the traffic comes from 2 interfaces so in the policy you need to put booth interfaces.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "The correct answer should be \"Create an Interface Group that includes port1 and port2 to create a single firewall policy\"  The closest answer is \"D\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "You need to enable Multiple Interface Policies in order to ta add two or more ports in the same firewall policy.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "to have multiple interface on source or destination , feature must be enabled , if you dont use zones",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Question seems a bit stupid or incomplete\n\nConsolidating the two policies will require 2 things hence 2 options\n\nD & B or C & B - However, B is a common factor so I will go with B\n\nD & B\nMultiple Interface Feature will need to be enabled so that both port 1&2 can be added to the Incoming interface section of the single policy\n\nBoth ports 1&2 subnets will also need to be added to the Source network section\n\n\nC & B\nWhere multiple interface feature is not enabled, \"any\" can be specified in the Incoming interface section of the single policy\n\nThen again Both ports 1&2 subnets will also need to be added to the Source network section",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "In a single policy, you can specify multiple source addresses/subnets.\nThis allows both Sales and Engineering networks to use the same policy.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "28",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311537-exam-fcp_fgt_ad-76-topic-1-question-28-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "You have configured an application control profile, set peer-to-peer traffic to Block under the Categories tab, and applied it to the firewall policy. However, your peer-to-peer traffic on known ports is passing through the FortiGate without being blocked.<br/>What FortiGate settings should you check to resolve this issue?",
+      "answers": [
+        "A. FortiGuard category ratings",
+        "B. Application and Filter Overrides",
+        "C. Network Protocol Enforcement",
+        "D. Replacement Messages for UDP-based Applications"
+      ],
+      "comments": [
+        {
+          "content": "cannot see the word custom in question",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "I agree with C\n\nC allows you to specify a port number against well know services e.g HTTPS - \"question says the port number is known\"\nWhen the Application sensor receives traffic on that port, the protocol decoder will try to determine if the received data matches the HTTPS traffic\nIn this case it will not match because it is P2P traffic, so this will class as violation and blocked\nThe protocol decoder also try to determine what type of traffic it is, and even if it could not figure out it is P2P traffic, it still count as a violation because even though it does not know what it is, it knows for fact it is not HTTPS\n\nB cannot help\nIt allows you to select known P2P applications or use a filter to select a group of them - \"These are listed in the FW\"\nQuestion says this is a custom application on a custom port which means it is not in the list",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "B correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "29",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307141-exam-fcp_fgt_ad-76-topic-1-question-29-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "You have created a web filter profile named restrict_media-profile with a daily category usage quota.<br/>When you are adding the profile to the firewall policy, the restrict_media-profile is not listed in the available web profile drop down.<br/>What could be the reason?",
+      "answers": [
+        "A. The firewall policy is in no-inspection mode instead of deep-inspection.",
+        "B. The inspection mode in the firewall policy is not matching with web filter profile feature set.",
+        "C. The web filter profile is already referenced in another firewall policy.",
+        "D. The naming convention used in the web filter profile is restricting it in the firewall policy."
+      ],
+      "comments": [
+        {
+          "content": "B - he inspection mode in the firewall policy is not matching with web filter profile feature set.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "3",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/309510-exam-fcp_fgt_ad-76-topic-1-question-3-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "When configuring firewall policies which of the following is true regarding the policy ID?",
+      "answers": [
+        "A. It is mandatory to provide a policy ID while creating a firewall policy regardless of GUI or CLI.",
+        "B. A firewall policy ID identifies the order of policy execution in firewall policies.",
+        "C. You can create a policy in CLI with policy ID 0.",
+        "D. A policy ID cannot be edited once a policy is created."
+      ],
+      "comments": [
+        {
+          "content": "D correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "30",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311543-exam-fcp_fgt_ad-76-topic-1-question-30-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which two statements are correct when FortiGate enters conserve mode? (Choose two.)",
+      "answers": [
+        "A. FortiGate continues to run critical security actions, such as quarantine.",
+        "B. FortiGate refuses to accept configuration changes.",
+        "C. FortiGate halts complete system operation and requires a reboot to regain available resources.",
+        "D. FortiGate continues to transmit packets without IPS inspection when the fail-open global setting in IPS is enabled."
+      ],
+      "comments": [
+        {
+          "content": "when in conserve mode, stop  doing quarantines, and dont halt completely",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "B & C\n\nA - Wrong - When in conserve mode, FG skips quarantine actions to conserve resources\n\nB - Correct - FG refuses to accept configuration when in Conserve mode to prevent further resource over utilisation which may lead to the unit hanging up\n\nC - Wrong - This what happens when FG enters Extreme mode\n\nD - When IPS fail-open is enabled, FG continues to transmit packets even if those packets require inspection, but it does not perform any inspection on them, to prevent further resource over utilisation\n\t\t\nWith fail-open enabled, existing sessions continue to be inspected using their already allocated system resources (they will however be dropped if they require more system resource), but new sessions are allowed without inspecting them - Availability over Security\n\nWith fail-open disabled, same as above for existing sessions, but new sessions are dropped - Security over Availability",
+          "selected_answer": "BD",
+          "replies": [
+            "B & D - typo"
+          ]
+        },
+        {
+          "content": "AD correct",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "31",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307143-exam-fcp_fgt_ad-76-topic-1-question-31-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "A remote user reports slow SSL VPN performance and frequent disconnections. The user is located in an area with poor internet connectivity.<br/>What setting should the administrator adjust to improve the user's experience?",
+      "answers": [
+        "A. Enable split tunneling to reduce VPN traffic.",
+        "B. Change the SSL VPN port to a non-standard port.",
+        "C. Increase the session timeout for inactive sessions.",
+        "D. Configure the DTLS timeout to accommodate high-latency connections."
+      ],
+      "comments": [
+        {
+          "content": "The trick to solve this Q is \"The user is located in an area with poor internet connectivity\"\nWe're NOT at the VPN tunnel nor the outside internet yet!!!    We have a lousy internet connection to begin with.  What comes after that will depend on the source, regadless.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "well known",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I will feel comfortable with A, but I wont be surprised if the right answer is D, because it appears the guys in charge of these questions are too lazy and when they try to make a question clever, they end up making it stupid and wrong\n\nA\nQuestion says slow performance and frequent disconnects - Implies slowness is experienced after the tunnel is up\nSplit tunnelling is disabled by default, which means all traffic are going down the tunnel\nSSL VPN tunnels only take up a percentage of the overall available bandwidth\nWhich means internet traffic is contending with precious traffic inside the tunnel\nEnabling split tunnelling will mean precious traffic can have the tunnel bandwidth to itself \n\nD doesn't really fit\nThe only DTLS timer configurable here is DTLS hello timer, which only helps during initial tunnel setup\nAlso DTLS is disabled by default and not explicitly stated in the question that it is enabled",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "D correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "32",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311544-exam-fcp_fgt_ad-76-topic-1-question-32-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "An administrator wants to analyze and manage digital certificates to prevent browser warnings when users connect to the SSL VPN portal.<br/>Which two statements describe how to correctly do this? (Choose two.)",
+      "answers": [
+        "A. The administrator can rely on the default FortiGate self-signed certificate to prevent all security warnings in the browser.",
+        "B. The administrator must disable HTTPS administrative access entirely to avoid certificate warnings.",
+        "C. The administrator can use a publicly trusted certificate from a known certificate authority (CA) to stop browser warnings.",
+        "D. The administrator can import the FortiGate self-signed certificate into each user’s browser as a trusted certificate."
+      ],
+      "comments": [
+        {
+          "content": "CD correct",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "33",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311545-exam-fcp_fgt_ad-76-topic-1-question-33-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "An administrator suspects that the Collector Agent is not forwarding login events to FortiGate.<br/>What is the most effective troubleshooting step?",
+      "answers": [
+        "A. Verify if DC agent is enabled on the FortiGate.",
+        "B. Restart the domain controller to refresh authentication services.",
+        "C. Verify if FortiGate is set to use LDAP authentication instead of FSSO.",
+        "D. Check if TCP port 8000 is open between the collector agent and FortiGate."
+      ],
+      "comments": [
+        {
+          "content": "D correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "34",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311546-exam-fcp_fgt_ad-76-topic-1-question-34-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image12.png\" title=\"image12\"/><br/>A network administrator is troubleshooting an IPsec tunnel between two FortiGate devices. The administrator has determined that phase 1 status is up, but phase 2 fails to come up.<br/>Based on the phase 2 configuration shown in the exhibit, which two configuration changes will bring phase 2 up? (Choose two.)",
+      "answers": [
+        "A. On BR1-FGT, set Seconds to 43200.",
+        "B. On HQ-NGFW, enable Diffie-Hellman Group 2.",
+        "C. On BR1-FGT, set Remote Address to10.0.11.0/255.255.255.0",
+        "D. On HQ-NGFW. set Encryption to AES256"
+      ],
+      "comments": [
+        {
+          "content": "A is not mandatory the lesser wins,  B is wrong",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "I have tested this scenario myself on two Fortigate firewalls. The answer is C,D.",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "@ 833685d\n\ncheck the IP address\n\nThe remote subnet selectors don’t match. Set BR1-FGT’s Remote Address to 10.0.11.0/255.255.255.0 (C).\n\nThe phase-2 proposal algorithms don’t match. Change HQ-NGFW Encryption from AES128 to AES256 to match BR1-FGT (D).",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "On HQ-NGFW. set Encryption to AES256",
+          "selected_answer": "AD",
+          "replies": [
+            "A.C. Encryption Won't matter if it can't reach the remote address",
+            "Key lifetime mismatch wouldn’t prevent the tunnel from coming up, and enabling DH Group 2 isn’t the issue shown"
+          ]
+        }
+      ],
+      "question_number": "35",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307145-exam-fcp_fgt_ad-76-topic-1-question-35-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image13.png\" title=\"image13\"/><br/>An administrator has observed the performance status outputs on an HA cluster for 55 seconds.<br/>Which FortiGate is the primary?",
+      "answers": [
+        "A. HQ-NGFW-2 with the parameter memory-failover-threshold setting",
+        "B. HQ-NGFW-2 with the parameter priority setting",
+        "C. HQ-NGFW-1 with the parameter memory-failover-flip-timeout setting",
+        "D. HQ-NGFW-1 with the parameter override setting"
+      ],
+      "comments": [
+        {
+          "content": "A is correct\n\nConfigured memory failover threshold is 70% \n\tFW-1 is running at 90%\n\nConfigured monitored period is 50 seconds\n\tQuestion says Admin has observed the output for 55 seconds\n\nWhich implies FW-1 has remained above 70% memory for over 50 seconds and the memory on FW-2 is below 70%",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "In my humble opinion it's A. The memory on FW nr.2 is lower than the 70% threshold.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "36",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311179-exam-fcp_fgt_ad-76-topic-1-question-36-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which statement correctly describes NetAPI polling mode for the FSSO collector agent?",
+      "answers": [
+        "A. The collector agent uses a Windows API to query DCs for user logins.",
+        "B. NetAPI polling can increase bandwidth usage in large networks.",
+        "C. The NetSessionEnum function is used to track user logouts.",
+        "D. The collector agent must search Windows application event logs."
+      ],
+      "comments": [
+        {
+          "content": "I agree with C - The NetSessionEnum function \"is used to track\" user logouts\n\nAlthough the NetSessionEnum function does not technically grab logout information from the DC (only login sessions), the Firewall uses it to indirectly track user logouts in the sense that when a user is no longer in the login session table of the DC, that would imply they have logged out.\n\nAlso the official study guide erroneously states NETAPI uses the function to grab both login and logout information.\n\nAnd almost all the time, these questions blindly stick to the official guide material even when they are inaccurate",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Correct answer: C. The NetSessionEnum function is used to track user logouts.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "37",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311303-exam-fcp_fgt_ad-76-topic-1-question-37-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "What are three key routing principles in SD-WAN? (Choose three.)",
+      "answers": [
+        "A. By default, SD-WAN rules are skipped if the included SD-WAN members do not have a valid route to the destination.",
+        "B. SD-WAN rules have precedence over any other type of routes.",
+        "C. Regular policy routes have precedence over SD-WAN rules.",
+        "D. By default. SD-WAN rules are skipped if only one route to the destination is available.",
+        "E. By default, SD-WAN rules are skipped if the best route to the destination is not an SD-WAN member."
+      ],
+      "comments": [
+        {
+          "content": "The B , is not correct because in FortiOS the routing decision flow does not place SD-WAN rules above all route types.",
+          "selected_answer": "ACE",
+          "replies": []
+        }
+      ],
+      "question_number": "39",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/309364-exam-fcp_fgt_ad-76-topic-1-question-39-discussion/",
+      "most_voted": "ACE",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image1.png\" title=\"image1\"/><br/>As an administrator you have created an IPS profile, but it is not performing as expected. While testing you got the output as shown in the exhibit.<br/>What could be the possible reason of the diagnose output shown in the exhibit?",
+      "answers": [
+        "A. There is a no firewall policy configured with an IPS security profile.",
+        "B. FortiGate entered into IPS fail open state.",
+        "C. Administrator entered the command diagnose test application ipsmonitor 5.",
+        "D. Administrator entered the command diagnose test application ipsmonitor 99."
+      ],
+      "comments": [
+        {
+          "content": "The exhibit shows the output of the FortiGate command `diagnose test application ipsmonitor 1`.\n\nThe output is:\n\n```\npid = 2044, engine count = 0 (+1)\n0 - pid:2074:2074 cfg:1 master:0 run:1\n```\n\nThe key piece of information here is: **`engine count = 0 (+1)`**\n\nThis output indicates that the FortiGate is not currently running any **IPS engine worker processes**. It shows a count of `0` engines, with an intent to start `(+1)` engine for the test.\n\nIn a normal operational state, a FortiGate will start a number of IPS engines based on the number of available CPU cores (if IPS is enabled in a policy). If the IPS engine count drops to zero, it often suggests that the FortiGate has stopped the IPS inspection process for an emergency reason, which is usually a state known as **IPS fail-open**.\n\nThe correct reason for this output is:\n\n**B. FortiGate entered into IPS fail open state.**",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "A. There is a no firewall policy configured with an IPS security profile.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "4",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/309511-exam-fcp_fgt_ad-76-topic-1-question-4-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image14.png\" title=\"image14\"/><br/>The exhibits show a diagram of a FortiGate device connected to the network, as well as the IP pool configuration and firewall policy objects.<br/>The WAN (port2) interface has the IP address 100.65.0.101/24.<br/>The LAN (port4) interface has the IP address 10.0.11.254/24.<br/>Which IP address will be used to source NAT (SNAT) the traffic, if the user on<br/>HQ-PC-1 (10.0.11.50) pings the IP address of BR-FGT (100.65.1.111)",
+      "answers": [
+        "A. 100.65.0.101",
+        "B. 100.65.0.49",
+        "C. 100.65.0.99",
+        "D. 100.65.0.149"
+      ],
+      "comments": [
+        {
+          "content": "The correct answer is C because PING traffic is using IP Pool SNAT-Remote1. the external IP Range of SNAP-Remote1 is .99-.99. Therefore it will be translated to an IP in that range.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "sorry,   is C  .99",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "it's about PING, so snat .149 is used",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "40",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/312170-exam-fcp_fgt_ad-76-topic-1-question-40-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image16.png\" title=\"image16\"/><br/>The exhibits show the system performance output and default configuration of high memory usage thresholds on a FortiGate device.<br/>Based on the system performance output, what are the two possible outcomes? (Choose two.)",
+      "answers": [
+        "A. FortiGate has entered conserve mode.",
+        "B. Administrators can access FortiGate only through the console port.",
+        "C. Administrators can change the configuration.",
+        "D. FortiGate drops new sessions."
+      ],
+      "comments": [
+        {
+          "content": "C is never true in conserve\nD is rigth because it on extreme condition above 89",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "I dont believe it is D because I dont think new sessions are dropped unless you configure fail-close on IPS.",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "It has entered conserve mode and drops new sessions.",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "42",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/309515-exam-fcp_fgt_ad-76-topic-1-question-42-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image17.png\" title=\"image17\"/><br/>Based on the current HA status, an administrator updates the override and priority parameters on HQ-NGFW-1 and HQ-NGFW-2 as shown in the exhibit.<br/>What would be the expected outcome in the HA cluster?",
+      "answers": [
+        "A. HQ-NGFW-1 will synchronize the override disable setting with HQ-NGFW-2.",
+        "B. HQ-NGFW-2 will take over as the primary because it has the override enable setting and higher priority than HQ-NGFW-1.",
+        "C. HQ-NGFW-1 will remain the primary because HQ-NGFW-2 has lower priority.",
+        "D. The HA cluster will become out of sync because the override setting must match on all HA members."
+      ],
+      "comments": [
+        {
+          "content": "FW-2 will take over as Primary because override is enabled on it\n\nFWs in HA do not synchronize override settings, so it cannot cause out of synch issue\n\nYes, Fortinet recommends the FG units in HA clusters must have the same override status; enabled or disabled\n\nAnd yes this causes issue where FW-2 keeps becoming primary (even when not desired) as long as it has all monitored interfaces up \n\nThis is because FW-2 will use the MPUS order while FW-1 still uses the MUPS order\n\nSo yes, the configuration will cause issue where FW-2 will always become primary, but it will not cause any out of synch issues, hence B seems the most logical answer",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "I think the good answer is D. \nBecause it's not recommanded by Forti to have a different override config between the member.\nIn the doc HA primary unit selection criteria of the FortiGate 7.6.3, they say it can lead to conflicts and unpredictable primary unit elections. \nOn this exemple, without know the Sys Uptime, we can't say who become the primary.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "43",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308751-exam-fcp_fgt_ad-76-topic-1-question-43-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image19.png\" title=\"image19\"/><br/>The exhibit shows the FortiGuard Category Based Filter section of a corporate web filter profile.<br/>An administrator must block access to download.com, which belongs to the Freeware and Software Downloads category. The administrator must also allow other websites in the same category.<br/>What are two solutions for satisfying the requirement? (Choose two.)",
+      "answers": [
+        "A. Configure a static URL filter entry for download.com with Type and Action set to Wildcard and Block, respectively.",
+        "B. Configure a web override rating for download.com and select Malicious Websites as the subcategory.",
+        "C. Configure a separate firewall policy with action Deny and an FQDN address object for*.download.com as destination address.",
+        "D. Set the Freeware and Software Downloads category Action to Warning."
+      ],
+      "comments": [
+        {
+          "content": "The answer is AB 100%. I have tested the scenarios myself on my Fortigate. Options C and D won't work.",
+          "selected_answer": "AB",
+          "replies": []
+        }
+      ],
+      "question_number": "45",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/311473-exam-fcp_fgt_ad-76-topic-1-question-45-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which three strategies are valid SD-WAN rule strategies for member selection? (Choose three.)",
+      "answers": [
+        "A. Lowest Cost (SLA) without load balancing",
+        "B. Manual with load balancing",
+        "C. Lowest Quality (SLA) with load balancing",
+        "D. Lowest Cost (SLA) with load balancing",
+        "E. Best Quality with load balancing"
+      ],
+      "comments": [
+        {
+          "content": "A. Lowest Cost (SLA) without load balancing: This option is invalid because SD-WAN rules typically require load balancing to distribute traffic efficiently.",
+          "selected_answer": "BDE",
+          "replies": []
+        },
+        {
+          "content": "ABE, When you select Best Quality the \"Load Balancing\" toggle disappears from the UI. When you select Lowest Cost (SLA) you can choose to enable or disable load balancing.",
+          "selected_answer": "ABD",
+          "replies": []
+        }
+      ],
+      "question_number": "46",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313314-exam-fcp_fgt_ad-76-topic-1-question-46-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit, which contains a RADIUS server configuration.<br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image20.png\"/><br/><br/>An administrator added a configuration for a new RADIUS server. While configuring, the administrator enabled Include in every user group.<br/><br/>What is the impact of enabling Include in every user group in a RADIUS configuration?",
+      "answers": [
+        "A. This option places the RADIUS server, and all users who can authenticate against that server, into every FortiGate user group.",
+        "B. This option places the RADIUS server, and all users who can authenticate against that server, into every RADIUS group.",
+        "C. This option places all users into every RADIUS user group, including groups that are used for the LDAP server on FortiGate.",
+        "D. This option places all FortiGate users and groups required to authenticate into the RADIUS server, which, in this case, is FortiAuthenticator."
+      ],
+      "comments": [
+        {
+          "content": "A. It makes the RADIUS server and all its users appear in every user group created on the device. This can be useful in specific scenarios, such as when only administrators authenticate against the server, but it can also lead to unintended access for all users and should be used with caution.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "48",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/314151-exam-fcp_fgt_ad-76-topic-1-question-48-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image2.png\" title=\"image2\"/><br/>The predefined deep-inspection and custom-deep-inspection profiles exclude some web categories from SSL inspection, as shown in the exhibit.<br/>For which two reasons are these web categories exempted? (Choose two.)",
+      "answers": [
+        "A. The FortiGate temporary certificate denies the browser’s access to websites that use HTTP Strict Transport Security.",
+        "B. These websites are in an allowlist of reputable domain names maintained by FortiGuard.",
+        "C. The resources utilization is optimized because these websites are in the trusted domain list on FortiGate.",
+        "D. The legal regulation aims to prioritize user privacy and protect sensitive information for these websites."
+      ],
+      "comments": [
+        {
+          "content": "The question asks 2 reasons why the \"Web Categories\" show in the exhibit are exempt. The Fortinet Institute training slide lists 2 reasons (Problems with Traffic and Legal Issues) and the notes in the training use HSTS as example of \"Problems with traffic\"\n\nThere are 3 ways to exempt from SSL Inspection - Reputable websites, Web categories and Addresses\n\nReasons option B is wrong\nThe question asks \"why do we need to exempt\" not \"how do we exempt\"\nThe question is directed at the \"Web category\" section not the \"Reputable website\" section\nThe reputable website option is not even toggled on in the exhibit",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "observacion",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "FortiGate's temporary SSL certificate may cause access denial to sites using HTTP Strict Transport Security (HSTS), so such sites are exempted from deep SSL inspection.\nLegal regulations require exemption of certain categories to protect user privacy and sensitive information, so these web categories are excluded from SSL inspection.",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "FortiGuard has a list of trusted domains which are exempt from SSL inspection.",
+          "selected_answer": "BD",
+          "replies": [
+            "Reputable websites is not enabled for this SSL inspection exempt. \nTherefore C, D are valid options."
+          ]
+        }
+      ],
+      "question_number": "5",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308699-exam-fcp_fgt_ad-76-topic-1-question-5-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "When FortiGate performs SSL/SSH full inspection, you can decide how it should react when it detects an invalid certificate.<br/><br/>Which three actions are valid actions that FortiGate can perform when it detects an invalid certificate? (Choose three.)",
+      "answers": [
+        "A. Allow",
+        "B. Trust & Allow",
+        "C. Allow & Warning",
+        "D. Block",
+        "E. Block & Warning"
+      ],
+      "comments": [
+        {
+          "content": "Answer is ABD, you check thison your Fortigate in the SSH/SSL inspection section.",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "When a certificate fails for any of the reasons above, you can configure any of the following actions:\n• Keep untrusted & Allow: FortiGate allows the website and lets the browser decide the action to take.\nFortiGate takes the certificate as untrusted.\n• Block: FortiGate blocks the content of the site.\n• Trust & Allow: FortiGate allows the website and takes the certificate as trusted.",
+          "selected_answer": "ABD",
+          "replies": []
+        }
+      ],
+      "question_number": "51",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313320-exam-fcp_fgt_ad-76-topic-1-question-51-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image27.png\"/><br/><br/>Why did the FortiGate device drop the packet?",
+      "answers": [
+        "A. It matched the default implicit firewall policy.",
+        "B. It matched an explicitly configured firewall policy with the action DENY.",
+        "C. It cannot reach the next-hop IP.",
+        "D. It failed the RPF check."
+      ],
+      "comments": [
+        {
+          "content": "Answer is A.\nIn FortiGate, policy ID 0 is the implicit deny policy, a hidden, automatically added rule at the end of the security policy list that blocks any traffic not explicitly permitted by preceding user-configured policies.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "54",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313317-exam-fcp_fgt_ad-76-topic-1-question-54-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit, which shows a routing table.<br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image28.png\"/><br/><br/>An administrator wants to create a new static route so the traffic to the subnet 172.20.1.0/24 is routed through port2 only.<br/><br/>What are the two criteria that the administrator can use to achieve this objective? (Choose two.)",
+      "answers": [
+        "A. The new static route must have the distance set to 9.",
+        "B. The existing static route through port3 must have the distance set to 11.",
+        "C. The new static route must have the priority set to 3.",
+        "D. The new static route must have the metric set to 1."
+      ],
+      "comments": [
+        {
+          "content": "it shoud be AD, current port is port2, so new route should be lower on at least have same distance, but with lower value in priority.",
+          "selected_answer": "AD",
+          "replies": [
+            "sorry i mean current port is on port3, new route on port2 should be chosen"
+          ]
+        }
+      ],
+      "question_number": "55",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313318-exam-fcp_fgt_ad-76-topic-1-question-55-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image3.png\" title=\"image3\"/><br/>The NOC team connects to the FortiGate GUI with the NOC_Access admin profile. They request that their GUI sessions do not disconnect too early during inactivity.<br/>What must the administrator configure to answer this specific request from the NOC team?",
+      "answers": [
+        "A. Move NOC_Access to the top of the list to ensure all profile settings take effect.",
+        "B. Increase the offline value of the Override Idle Timeout parameter in the NOC_Access admin profile.",
+        "C. Ensure that all NOC_Access users are assigned the super_admin role to guarantee access",
+        "D. Increase the admintimeout value under config system accprofile NOC_Access."
+      ],
+      "comments": [
+        {
+          "content": "D is incorrect because it grants super admin privilege to NOC user access",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct\nEspecific for GUI configuration, not CLI.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B for GUI is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The question clearly says GUI and shows the Profiles in the GUI; hence the answer is B. Although D is correct for CLI.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "For Me, the answer B and D are correct are correct.\nThe two action lead to the same result. \nB = GUI\nD = CLI",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "6",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/308024-exam-fcp_fgt_ad-76-topic-1-question-6-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "An administrator wants to form an HA cluster using the FGCP protocol.<br/><br/>Which two requirements must the administrator ensure both members fulfill? (Choose two.)",
+      "answers": [
+        "A. They must have the same HA group ID.",
+        "B. They must have the heartbeat interfaces in the same subnet.",
+        "C. They must have the same number of configured VDOMs.",
+        "D. They must have the same hard drive configuration."
+      ],
+      "comments": [
+        {
+          "content": "To me AD is the correct answer.\n\nRequirements to form an HA cluster:\n\nThe same model. (When using  FortiGate VMs as cluster members, all VMs must be running on the same platform. For example, a VM running on VMware cannot form a cluster with a VM running on KVM.\n\nThe same hardware configuration.\n\nThe same hardware generation. See example: HA unsupported between different FortiGate 90G and 91G series hardware generations.\n\nThe configured heartbeat ports must be connected (recommended) or to the same broadcast domain (layer 2 in the OSI model).\nHA group-id and password must match on each device.\nIf in multi-vdom operation mode, both devices must have the required VDOM license for additional VDOMs. See Technical Tip: Maximum VDOM mismatch causes HA split-brain when additional VDOMs are configured.",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "62",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/314138-exam-fcp_fgt_ad-76-topic-1-question-62-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "FortiGate is integrated with FortiAnalyzer and FortiManager.<br/><br/>When creating a firewall policy, which attribute must an administrator include to enhance functionality and enable log recording on FortiAnalyzer and FortiManager?",
+      "answers": [
+        "A. Policy ID",
+        "B. Log ID",
+        "C. Universally Unique Identifier",
+        "D. Sequence ID"
+      ],
+      "comments": [
+        {
+          "content": "when creating fw policies is required the UUID",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Ruled out the other options because they don't meet the primary requirement. That leaves D.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "63",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/314153-exam-fcp_fgt_ad-76-topic-1-question-63-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibit.<br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image4.png\" title=\"image4\"/><br/>Based on this partial configuration, what are the two possible outcomes when FortiGate enters conserve mode? (Choose two.)",
+      "answers": [
+        "A. Administrators cannot change the configuration.",
+        "B. FortiGate skips quarantine actions.",
+        "C. Administrators must restart FortiGate to allow new session.",
+        "D. FortiGate drops new sessions requiring inspection."
+      ],
+      "comments": [
+        {
+          "content": "A & B are correct\n\nWhen FortiGate enters conserve mode\n\nA - System configuration cannot be changed because of the IPS Global configuration \"fail-open enabled\"\n\nB - FortiGate skips quarantine actions - again because of the IPS Global configuration \"fail-open enabled\"\n\nC & D are wrong\n\nC - This is a misdirection because FortiGate already Allows new sessions but does not perform any inspection on them when in Conserve mode with these 2 settings (failopen enabled & av-failopen onshot) - performance over security, FG will only start to drop new session and require a restart when it enters Extreme mode\n \nD - Again with the 2 settings, FG does not drop new sessions requiring inspection, it allows them without inspecting them",
+          "selected_answer": "AB",
+          "replies": []
+        },
+        {
+          "content": "A and B are corrects.",
+          "selected_answer": "AB",
+          "replies": []
+        },
+        {
+          "content": "The question is based on the exhibit, that's why the good answer is BD. If the question was \"What will happend to the FW in conserve mode then the answer is A\"",
+          "selected_answer": "BD",
+          "replies": [
+            "The question does say \"when FortiGate enters conserve mode\"\nI believe when \"FortiGate enters Conserve mode\", it also means \"FortiGate is now in Conserve mode\"",
+            "You are right...the correct answer is then AB."
+          ]
+        },
+        {
+          "content": "If I have to choose two answers, I suggest A and D.",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "av-failopen one-shot: This setting means that when the system enters conserve mode (due to high resource usage), the antivirus (AV) engine will skip inspection for new sessions (fail-open behavior) but will drop existing sessions that were being inspected. This can lead to dropping new sessions requiring inspection (D) if the system is overwhelmed.\n\n    ips global fail-open enable: This setting allows the IPS engine to bypass inspection (fail-open) when resources are low, which implies that quarantine actions (typically part of IPS) may be skipped. Thus, FortiGate skips quarantine actions (B).",
+          "selected_answer": "BD",
+          "replies": []
+        }
+      ],
+      "question_number": "7",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307174-exam-fcp_fgt_ad-76-topic-1-question-7-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "An administrator configures FortiGuard servers as DNS servers on FortiGate using default settings.<br/><br/>What is true about the DNS connection to a FortiGuard server?",
+      "answers": [
+        "A. It uses DNS over TLS.",
+        "B. It uses DNS over HTTPS.",
+        "C. It uses UDP 8888.",
+        "D. It uses UDP 53."
+      ],
+      "comments": [
+        {
+          "content": "When you choose  \"Use Fortiguard Servers\" as DNS servers the only DNS protocol available is DNS over TLS (tcp-853). See it for yourself in your Fortigate.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "70",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313307-exam-fcp_fgt_ad-76-topic-1-question-70-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image40.png\"/><br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image41.png\"/><br/><br/>An administrator configured both members of an HA cluster at the same time. After one week of monitoring, the administrator wants to verify the HA failover performance.<br/><br/>How can the administrator force a failover?",
+      "answers": [
+        "A. The administrator must reset the HA uptime on HQ-NGFW-1.",
+        "B. The administrator must set the parameter override to enable on HQ-NGFW-2.",
+        "C. The administrator must increase the HA priority on HQ-NGFW-2.",
+        "D. The administrator must set the monitored port to down on HQ-NGFW-1."
+      ],
+      "comments": [
+        {
+          "content": "Since both members are configured at the same time, we can establish that NGFW1 is Master with a superior priority (200 > 100)\n\nWith Override disable, we can reset the Uptime to NGFW1 so that NGFW2 has a longer Uptime. So, A is a correct answer.\n\nD can be also correct but it supposed to put down a production port, which is a hard way instead of resetting the uptime.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "72",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/314146-exam-fcp_fgt_ad-76-topic-1-question-72-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Refer to the exhibits.<br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image45.png\"/><br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image46.png\"/><br/><br/><img src=\"https://img.examtopics.com/fcp-fgt-ad-7-6/image47.png\"/><br/><br/>A web filter profile configuration and firewall policy configuration are shown.<br/>You are trying to access www.facebook.com, but you are redirected to a FortiGuard web filtering block page.<br/><br/>Based on the exhibits, what is the possible cause of the issue?",
+      "answers": [
+        "A. The web filter profile feature set is configured incorrectly.",
+        "B. The web rating override configuration is incorrect.",
+        "C. The firewall policy inspection mode is incorrect.",
+        "D. For www.facebook.com, the URL filter action is incorrect."
+      ],
+      "comments": [
+        {
+          "content": "The Web filter is configured with Proxy-based mode.\nThe firewall is configured with Flow-based.\n-> The Web filter used by the firewall rule cannot be the Web filter profile shown on the exhibit.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "76",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/314154-exam-fcp_fgt_ad-76-topic-1-question-76-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which two statements about the Security Fabric rating are true? (Choose two.)",
+      "answers": [
+        "A. A license is required to obtain an executive summary in the Security Rating section.",
+        "B. The root FortiGate provides executive summaries of all the FortiGate devices in the Security Fabric.",
+        "C. The Security Posture category provides PCI compliance results.",
+        "D. Security Rating Insights are available only in the Security Rating page."
+      ],
+      "comments": [
+        {
+          "content": "Correct Answers: B and C\n\nB. Root FortiGate provides executive summaries \n\nThe root FortiGate collects data from all connected devices and generates a centralized security overview.\n\nC. Security Posture provides PCI compliance results \n\nThe Security Posture category evaluates configuration against best practices and standards, including PCI DSS.",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "77",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/313313-exam-fcp_fgt_ad-76-topic-1-question-77-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "What is the primary FortiGate election process when the HA override setting is enabled?",
+      "answers": [
+        "A. Connected monitored ports > Priority > HA uptime > FortiGate serial number",
+        "B. Connected monitored ports > Priority > System uptime > FortiGate serial number",
+        "C. Connected monitored ports > HA uptime > Priority > FortiGate serial number",
+        "D. Connected monitored ports > System uptime > Priority > FortiGate serial number"
+      ],
+      "comments": [
+        {
+          "content": "when the HA override setting is enabled on a FortiGate cluster, the primary unit election process changes significantly. the goal of this setting is to ensure that a specific pre-determined FortiGate unit becomes the primary, even if another unit has been online for longer. essentially enabling HA override forces the cluster to prioritize the device priority setting above all other tie-breakers except the number of connected monitored interfaces. this is to ensure the unit with the highest priority is always the primary, which is useful for situations like firmware upgrades where you want a specific unit to take over",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Primary unit selection criteria when override is enabled (MPUS):\nThe device that has a higher number of operationally UP Monitored interfaces (M).\n The device that has the highest Priority (P).\nA device that has the highest HA Uptime, not the unit uptime (U)\nThe device that has the highest Serial Number (S).\n\nhttps://community.fortinet.com/t5/FortiGate/Technical-Tip-FortiGate-HA-Primary-unit-selection-process-when/ta-p/249745",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Override Enabled: MPUS (highest Monitored ports, Priority, ha Uptime, Serial nr)\nOverride Disabled: MUPS (highest Monitored ports, ha Uptime, Priority, Serial nr)\nhttps://community.fortinet.com/t5/FortiGate/Technical-Tip-FortiGate-HA-Primary-unit-selection-process-when/ta-p/249745",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "When HA override is enabled, the FortiGate HA election process follows this order:\n\n    Connected monitored ports – The device with the most monitored interfaces up becomes primary.\n\n    Priority – If monitored ports are equal, the higher priority (lower numerical value) wins.\n\n    System uptime – If priority is equal, the unit with the longer uptime becomes primary.\n\n    FortiGate serial number – Used as a tiebreaker if all else is equal.\n\nWhy the other options are incorrect:\n\n    A & C incorrectly include \"HA uptime\" (not a factor in the election process).\n\n    D reverses Priority and System uptime, which is incorrect.\n\nCorrect Answer: B",
+          "selected_answer": "B",
+          "replies": [
+            "CORRECTION****\n\nTHE ANSWER IS A: FROM THE PDF OF FGT 7.6\n\nIf the HA override setting is enabled, the priority is considered before the HA uptime"
+          ]
+        },
+        {
+          "content": "correct answer B",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "A is correct; check the guide on pg 495 of FCP 7.6, it says: 'If the HA override setting is enabled, the priority is considered before the HA uptime'",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Ha uptime",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Wrong, correct answer B , Fortigate use System Uptime, not HA uptime when override is enabled.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "8",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/307271-exam-fcp_fgt_ad-76-topic-1-question-8-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "An administrator wanted to configure an IPS sensor to block traffic that triggers a signature set number of times during a specific time period.<br/>How can the administrator achieve the objective?",
+      "answers": [
+        "A. Use IPS group signatures, set rate-mode 60.",
+        "B. Use IPS packet logging option with periodical filter option.",
+        "C. Use IPS filter, rate-mode periodical option.",
+        "D. Use IPS filter, rate-mode periodical option."
+      ],
+      "comments": [
+        {
+          "content": "C or D\nOne of the options should be \"Use IPS signature, rate-mode periodical\"\nIPS filters do not have the rate-based setting option only IPS signatures do",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "why are both C and D the same?",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "9",
+      "link": "https://www.examtopics.com/discussions/fortinet/view/306773-exam-fcp_fgt_ad-76-topic-1-question-9-discussion/",
+      "most_voted": "C",
+      "error": null
+    }
+  ]
+}
