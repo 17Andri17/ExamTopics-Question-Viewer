@@ -33,7 +33,7 @@ def save_json(file, json_path):
         json.dump(file, f, ensure_ascii=False, indent=2)
 
 def get_exam_category(exam_code):
-    response = requests.get(f"https://www.examtopics.com/search/?query={exam_code}", allow_redirects=True)
+    response = requests.get(f"https://www.examtopics.com/search/?query={exam_code}", headers=HEADERS, allow_redirects=True)
     final_url = response.url
     if "/exams/" in final_url:
         parts = final_url.strip("/").split("/")
@@ -240,7 +240,7 @@ def scrape_questions(question_links, json_path, progress, rapid_scraping=False):
             break
         questions.append(question_object)
         if not rapid_scraping:
-            time.sleep(5)
+            time.sleep(15)
     questions.sort(key=lambda x: x["question_number"])
     status = "complete" if len(questions) == questions_num else "in progress"
     questions_obj = {"status": status, "error": error_string, "questions": questions}
