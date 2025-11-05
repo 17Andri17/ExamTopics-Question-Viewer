@@ -65,6 +65,7 @@ def get_question_links(exam_code, progress, json_path):
         raise ValueError(f"Exam code {exam_code} not found.")
 
     url = f"{PREFIX}{category}/"
+
     # Get the first page to find number of pages
     response = requests.get(url, headers=HEADERS)
     soup = BeautifulSoup(response.content, "html.parser")
@@ -76,6 +77,7 @@ def get_question_links(exam_code, progress, json_path):
     strong_tags = page_indicator.find_all("strong")
     num_pages = int(strong_tags[1].text)
 
+    # Load progress if exists
     links_json = load_json(json_path)
     if links_json:
         question_links = links_json.get("links", [])
@@ -89,24 +91,48 @@ def get_question_links(exam_code, progress, json_path):
         page_num = 1
         status = "in progress"
 
-    # Loop through all pages
+    # Loop through remaining pages
     for i in range(page_num, num_pages + 1):
-        progress.progress((i) / num_pages, text=f"Extracting question links - page {i} of {num_pages}...")
+        progress.progress(i / num_pages, text=f"Extracting question links - page {i} of {num_pages}...")
         page_url = url + f"{i}/"
 
-        page_response = requests.get(page_url, headers=HEADERS)
+        try:
+            page_response = requests.get(page_url, headers=HEADERS)
+            page_response.raise_for_status()
+        except requests.RequestException as e:
+            print(f"Error fetching page {i}: {e}")
+            break  # stop on network error to avoid corrupting progress
+
         soup = BeautifulSoup(page_response.content, "html.parser")
         titles = soup.find_all("div", class_="dicussion-title-container")
+
         for title in titles:
             if title.text:
                 title_text = title.text.strip()
                 if f"Exam {exam_code}" in title_text:
                     a_tag = title.find("a")
                     if a_tag and "href" in a_tag.attrs:
-                        question_links.append(a_tag["href"])
+                        href = a_tag["href"]
+                        if href not in question_links:
+                            question_links.append(href)
+
+        # Save progress after each page
+        temp_obj = {
+            "page_num": i + 1,  # next page to start from
+            "status": "in progress",
+            "links": question_links,
+        }
+        save_json(temp_obj, json_path)
+
+    # Sort and mark as complete
     sorted_links = sorted(question_links, key=lambda link: int(re.search(r'question-(\d+)', link).group(1)))
-    question_links_obj = {"page_num": i, "status": "complete", "links": sorted_links}
-    save_json(question_links_obj, json_path)
+    final_obj = {
+        "page_num": num_pages + 1,
+        "status": "complete",
+        "links": sorted_links,
+    }
+    save_json(final_obj, json_path)
+    progress.progress(1, text="All links extracted and saved.")
     return sorted_links
 
 def scrape_page(link):
