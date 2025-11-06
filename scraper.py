@@ -57,6 +57,10 @@ def get_exam_category(exam_code):
     
     return None
 
+import re
+import requests
+from bs4 import BeautifulSoup
+
 def get_question_links(exam_code, progress, json_path):
     progress.progress(0, text=f"Starting link extraction...")
     category = get_exam_category(exam_code)
@@ -124,8 +128,21 @@ def get_question_links(exam_code, progress, json_path):
         }
         save_json(temp_obj, json_path)
 
-    # Sort and mark as complete
-    sorted_links = sorted(question_links, key=lambda link: int(re.search(r'question-(\d+)', link).group(1)))
+    # Separate links: those with question numbers and those without
+    numbered_links = []
+    non_numbered_links = []
+
+    for link in question_links:
+        match = re.search(r'question-(\d+)', link)
+        if match:
+            numbered_links.append((int(match.group(1)), link))
+        else:
+            non_numbered_links.append(link)
+
+    # Sort only numbered links
+    numbered_links.sort(key=lambda x: x[0])
+    sorted_links = [link for _, link in numbered_links] + non_numbered_links
+
     final_obj = {
         "page_num": num_pages + 1,
         "status": "complete",
@@ -154,7 +171,21 @@ def scrape_page(link):
         }
 
     question_number_match = re.search(r"question-(\d+)", link)
-    question_number = question_number_match.group(1) if question_number_match else "unknown"
+    if question_number_match:
+        question_number = question_number_match.group(1)
+    else:
+        # Try to find it inside the page
+        question_number = "unknown"
+        try:
+            header = soup.find("div", class_="question-discussion-header")
+            if header:
+                # Look for text like "Question #: 1"
+                header_text = header.get_text(strip=True)
+                number_in_text = re.search(r"Question\s*#:\s*(\d+)", header_text)
+                if number_in_text:
+                    question_number = number_in_text.group(1)
+        except Exception as e:
+            print(f"⚠️ Could not extract question number from page: {e}")
 
     # Extract question
     question = ""
@@ -245,33 +276,94 @@ def scrape_page(link):
 
         
 def scrape_questions(question_links, json_path, progress, rapid_scraping=False):
+    # Load saved progress
     questions_obj = load_json(json_path)
     if questions_obj:
         questions = questions_obj.get("questions", [])
+        status = questions_obj.get("status", "in progress")
+        error_string = questions_obj.get("error", "")
     else:
         questions = []
+        status = "in progress"
+        error_string = ""
+
     prefix = "https://www.examtopics.com"
     questions_num = len(question_links)
-    error_string = ""
-    for i, link in enumerate(question_links):
-        question_number_match = re.search(r"question-(\d+)", link)
-        question_number = question_number_match.group(1) if question_number_match else "unknown"
-        if question_number in [q["question_number"] for q in questions]:
-            progress.progress((i+1)/(questions_num), text=f"{i+1}/{questions_num} - Skipping {prefix+link}")
-            continue
-        progress.progress((i+1)/(questions_num), text=f"{i+1}/{questions_num} - Scraping {prefix+link}")
-        question_object = scrape_page(prefix+link)
-        if question_object["error"]:
-            error_string = (f"Error: {question_object['error']}")
+
+    # Track already-scraped links (safe even if no question number)
+    scraped_links = {q.get("link") for q in questions if q.get("link")}
+
+    # Determine where to resume
+    start_index = 0
+    for idx, link in enumerate(question_links):
+        full_link = prefix + link
+        if full_link not in scraped_links:
+            start_index = idx
             break
+    else:
+        # All links done
+        progress.progress(1, text="All questions already scraped.")
+        return questions_obj
+
+    # Loop through remaining links
+    for i in range(start_index, questions_num):
+        link = question_links[i]
+        full_link = prefix + link
+
+        # Skip already-scraped links (extra safety)
+        if full_link in scraped_links:
+            progress.progress((i + 1) / questions_num, text=f"{i + 1}/{questions_num} - Skipping {full_link}")
+            continue
+
+        progress.progress((i + 1) / questions_num, text=f"{i + 1}/{questions_num} - Scraping {full_link}")
+
+        # Scrape the page
+        question_object = scrape_page(full_link)
+
+        # Handle errors gracefully
+        if question_object.get("error"):
+            error_string = f"Error: {question_object['error']}"
+            save_json({
+                "status": "in progress",
+                "error": error_string,
+                "questions": questions
+            }, json_path)
+            break
+
+        # Ensure the link and question_number are stored for future resumes
+        question_object["link"] = full_link
+
         questions.append(question_object)
+        scraped_links.add(full_link)
+
+        # Save after each question ✅
+        save_json({
+            "status": "in progress",
+            "error": error_string,
+            "questions": questions
+        }, json_path)
+
         if not rapid_scraping:
-            time.sleep(15)
-    questions.sort(key=lambda x: x["question_number"])
-    status = "complete" if len(questions) == questions_num else "in progress"
-    questions_obj = {"status": status, "error": error_string, "questions": questions}
-    save_json(questions_obj, json_path)
-    return questions_obj
+            time.sleep(12)
+
+    # Sort only questions with valid numeric numbers; keep others’ order
+    numbered = [q for q in questions if str(q.get("question_number", "")).isdigit()]
+    non_numbered = [q for q in questions if not str(q.get("question_number", "")).isdigit()]
+
+    numbered.sort(key=lambda x: int(x["question_number"]))
+    questions_sorted = numbered + non_numbered
+
+    status = "complete" if len(questions_sorted) == questions_num and not error_string else "in progress"
+
+    final_obj = {
+        "status": status,
+        "error": error_string,
+        "questions": questions_sorted
+    }
+    save_json(final_obj, json_path)
+
+    progress.progress(1, text="Scraping complete." if status == "complete" else "Progress saved.")
+    return final_obj
     
 
 def load_json_from_github(exam_code):
