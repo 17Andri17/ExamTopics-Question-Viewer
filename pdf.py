@@ -21,7 +21,7 @@ HEADERS = {
 
 def fetch_image_from_url(url):
     try:
-        response = requests.get(url, headers=headers, stream=True, timeout=5)
+        response = requests.get(url, headers=HEADERS, stream=True, timeout=5)
         if response.status_code == 200:
             return ImageReader(BytesIO(response.content))
     except Exception as e:
