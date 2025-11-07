@@ -7,9 +7,21 @@ import requests
 from io import BytesIO
 from bs4 import BeautifulSoup
 
+HEADERS = {
+            "User-Agent": (
+                "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                "AppleWebKit/537.36 (KHTML, like Gecko) "
+                "Chrome/122.0.0.0 Safari/537.36"
+            ),
+            "Accept-Language": "en-US,en;q=0.9",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
+            "Referer": "https://google.com",
+            "Connection": "keep-alive",
+        }
+
 def fetch_image_from_url(url):
     try:
-        response = requests.get(url, stream=True, timeout=5)
+        response = requests.get(url, headers=headers, stream=True, timeout=5)
         if response.status_code == 200:
             return ImageReader(BytesIO(response.content))
     except Exception as e:
