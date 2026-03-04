@@ -1,0 +1,3560 @@
+{
+  "status": "complete",
+  "error": "",
+  "questions": [
+    {
+      "question": "When creating an alert management rule, where would you specify a workflow to resolve a given condition?",
+      "answers": [
+        "A. From the Remediation tab",
+        "B. From the Actions tab",
+        "C. From the Launcher tab",
+        "D. In the Related Links section"
+      ],
+      "comments": [
+        {
+          "content": "B is correct, there is no Remediation Tab",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "There is no Remediations Tab",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The correct one is B",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct answer is B",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. From the Actions tab",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "There are 3 tabs to configure a rule \"Alert Info\", \"Alert filter\" and \"Actions\" under the tab Actions you can find a Section \"remediation Subflows\", ...\nhttps://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/create-alert-management-rule.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "remendation is a session. not a tab",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "1",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/89832-exam-cis-em-topic-1-question-1-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What types of system can a MID Server install on? (Choose two.)",
+      "answers": [
+        "A. OpenVMS System",
+        "B. Microsoft Windows Server",
+        "C. Linux System",
+        "D. Microsoft Windows Desktop",
+        "E. Any system inside the customer firewall",
+        "F. Mac OS X System"
+      ],
+      "comments": [
+        {
+          "content": "Linux or Windows",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/de-DE/bundle/tokyo-servicenow-platform/page/product/mid-server/reference/r_MIDServerSystemRequirements.html",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "2",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/96775-exam-cis-em-topic-1-question-2-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "What would be the primary use case for creating Javascripts in Event Management?",
+      "answers": [
+        "A. To create a customized pull connector to retrieve events on behalf of an event source",
+        "B. To automatically populate the Configuration Management Database (CMDB)",
+        "C. To parse a nodename out of your raw event data in an event rule",
+        "D. To run as part of a remediation workflow for IT alerts that fail to execute"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMCreateCustomConnectorDefinition.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "c is correct",
+          "selected_answer": "",
+          "replies": [
+            "C is INCORRECT, to parse a nodename it should be using the regular expression"
+          ]
+        }
+      ],
+      "question_number": "3",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134381-exam-cis-em-topic-1-question-3-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What would you use to define the monitoring sources allowed to communicate with the ServiceNow instance for Operational Intelligence?",
+      "answers": [
+        "A. Metric Registration",
+        "B. Metric Config Rules",
+        "C. Metric Type Actions",
+        "D. Metric to CI"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/configure-metric-monitors.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/configure-metric-monitors.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Agree on C\n\n\"Navigate to All > Event Management > Anomaly Detection > Metric Types.\nThe Monitoring System Metric Types displays the metric types that are being collected per data source, per CI type.\"",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/configure-metric-monitors.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "4",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/96778-exam-cis-em-topic-1-question-4-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "The value of the Alert Priority score is a composite of what?",
+      "answers": [
+        "A. The value of the alert’s category and its relative weight",
+        "B. The value of the alert’s category and its Priority Group",
+        "C. The value of the alert’s Severity and its Priority Group",
+        "D. The value of the alert’s Severity and its relative weight"
+      ],
+      "comments": [
+        {
+          "content": "A\n\"The value of an alert priority score is the composite of the value of the category and its relative weight.\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A\n\"The value of an alert priority score is the composite of the value of the category and its relative weight.\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/alert-priority.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "5",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/96779-exam-cis-em-topic-1-question-5-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which attribute is responsible for de-duplication?",
+      "answers": [
+        "A. Metric_name",
+        "B. Message_key",
+        "C. Short_description",
+        "D. Additional_info"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "6",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97157-exam-cis-em-topic-1-question-6-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "How would you interpret the following data in the Operational Intelligence Insights Explorer?<br/><img src=\"https://img.examtopics.com/cis-em/image4.png\"/>",
+      "answers": [
+        "A. win-ces882ierw is one of your hottest Configuration Items (CIs) that is currently experiencing a high probability of anomalies and should be checked immediately",
+        "B. win-ces882ierw is one of your hottest Configuration Items (CIs), but is currently experiencing a low probability of anomalies",
+        "C. win-ces882ierw is one of your customized list of monitored Configuration Items (CIs) that is currently experiencing a high probability of anomalies and should be checked immediately",
+        "D. win-ces882ierw is one of your customized list of monitored Configuration Items (CIs), but is currently experiencing a low probability of anomalies"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/view-metrics-explorer.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The highlighted icon is \"hottest\", not \"custom\"",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The first icon refers to hottest",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. win-ces882ierw is one of your hottest Configuration Items (CIs), but is currently experiencing a low probability of anomalies",
+          "selected_answer": "",
+          "replies": [
+            "I agree, hottest is highlighted, not custom/pinned"
+          ]
+        },
+        {
+          "content": "B \nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/event-management/task/view-metrics-explorer.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "7",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/104548-exam-cis-em-topic-1-question-7-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What is the default collection/polling interval applied to all event connectors?",
+      "answers": [
+        "A. Every 120 seconds",
+        "B. Every 5 seconds",
+        "C. Every 40 seconds",
+        "D. Every 60 seconds",
+        "E. Every 10 seconds"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "120 Seconds",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. Every 120 seconds",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/rome-servicenow-platform/page/use/collaboration/task/t_ConfigureThePollingInterval.html",
+          "selected_answer": "E",
+          "replies": [
+            "This is for the ServiceNow's Connect but not for ServiceNow's Event Management pulling events from event monitoring source"
+          ]
+        }
+      ],
+      "question_number": "8",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97158-exam-cis-em-topic-1-question-8-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Where can you look to determine what event rule created an alert? (Choose two.)",
+      "answers": [
+        "A. Alert Activity",
+        "B. Event Additional Information",
+        "C. Event Processing Notes",
+        "D. Alert Message Key",
+        "E. Alert Source"
+      ],
+      "comments": [
+        {
+          "content": "Alert Source is a single text field that only uses to indicate which monitoring source it comes from, e.g. SolarWinds/Zabbix, etc. Different Event Rules can applies even they are the same Alert Source, since the question is asking \"WHICH Event Rules\", you have to either look into the Event record's Event Processing Notes or Alert record's Activity stream (go to a demo instance and you will find it for sure)",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "The \"Alert Source\" field often contains information about the source of the alert, including the name or identifier of the event rule that generated the alert. This information can be useful in identifying which event rule triggered the alert.\n\nSo, the correct choices are C. Event Processing Notes and E. Alert Source. I appreciate your understanding and patience.",
+          "selected_answer": "",
+          "replies": [
+            "Alert Source is a single text field that only uses to indicate which monitoring source it comes from, e.g. SolarWinds/Zabbix, etc. Different Event Rules can applies even they are the same Alert Source, since the question is asking \"WHICH Event Rules\", you have to either look into the Event record's Event Processing Notes or Alert record's Activity stream (go to a demo instance and you will find it for sure)"
+          ]
+        },
+        {
+          "content": "Actually this question should have just one correct answer that is C. I am not sure about the A",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Answer A,C is absolutely correct.  Alert source in no way identifies what alert rule was used...other sites with this same practice question have it WRONG.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A and E is correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "9",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/108125-exam-cis-em-topic-1-question-9-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "What feature would you use to trigger a workflow or automatically generate tasks via templates?",
+      "answers": [
+        "A. Event rules",
+        "B. Task rules",
+        "C. Alert management rules",
+        "D. Alert correlation rules"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/concept/c_EMAlertManagement.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/task/create-alert-management-rule.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/create-alert-management-rule.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "10",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97159-exam-cis-em-topic-1-question-10-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "What are the valid states an alert can be in during its lifecycle?",
+      "answers": [
+        "A. Open, Reopen, Flapping, Closed",
+        "B. New, Updating, Waiting, Complete",
+        "C. Open, Updating, Swinging, Closed",
+        "D. Open, Warning, Flapping, Clear"
+      ],
+      "comments": [
+        {
+          "content": "A more appropriate place to reference:\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMViewAlert.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A\nSame source as peter below",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0756521",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "11",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97160-exam-cis-em-topic-1-question-11-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What Event Management module allows for configuration of automatic task creation?",
+      "answers": [
+        "A. Alert management rules",
+        "B. Task rules",
+        "C. Event rules",
+        "D. Alert correlation rules"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMAlertManagement.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A\nYou can configure alert management rules to:\nAutomatically generate and link incidents, tasks, or knowledge articles to alerts.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/create-alert-management-rule.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "12",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97161-exam-cis-em-topic-1-question-12-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "You have a system configured with a MID Web Server using Basic authentication to enable Operational Management Intelligence (OI) to push raw metric data to the MID Server. No data is getting through to the MID Server.<br/>What is the most likely cause of the issue?",
+      "answers": [
+        "A. The MID Web Server needs to be Restarted",
+        "B. The MID Web Server needs to be Started",
+        "C. An invalid secret key is being passed in the header information of the URL for the REST request",
+        "D. An invalid password is set in the MID Web Server Context"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "13",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97252-exam-cis-em-topic-1-question-13-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "In the event table, which field maps the external attributes from the target system?",
+      "answers": [
+        "A. Resource",
+        "B. Description",
+        "C. Source",
+        "D. Additional Information"
+      ],
+      "comments": [
+        {
+          "content": "Since it is asking \"attributes\", those are passed to the Additional Information field.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Most definitely D - I see the moderator has approved posts.. definitely need to change the correct answer though.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "The correct one is D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "The correct one is D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Definitely D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. Additional Information",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Source contains just source name (ex. \"SolarWinds\"). Additional Information contains JSON string that gives more information about the event.\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/event-management/concept/c_EMIntegrateRequirementEvent.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "its C, Source",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Additional Information contains all Information in JSON",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "14",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97253-exam-cis-em-topic-1-question-14-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "By default, the Alert Console displays what type of alerts?",
+      "answers": [
+        "A. All Primary, Open alerts and anomaly alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode",
+        "B. All Primary and Secondary Open alerts and anomaly alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode",
+        "C. All Primary alerts with a Severity of Critical, Major, Minor, Warning that are not in Maintenance mode",
+        "D. All Primary, Open alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode",
+        "E. All Primary and Secondary Open alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode"
+      ],
+      "comments": [
+        {
+          "content": "Same as other, opening the Alert Console will show the alert with following filter:\n1. Role in group != Secondary (i.e. only Primary Alert)\n2. State != Closed \n3. Severity != OK\n4. Maintenance = false",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Time to fix what it states is the correct answer, I truly hope individuals are reading these sections, D is the correct answer as noted below.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. All Primary, Open alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D, no secondary, maintenance or closed alerts are shown",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. All Primary, Open alerts with a Severity of Critical, Major, Minor, and Warning that are not in Maintenance mode",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://<servicenow-instance>/nav_to.do?uri=%2F$sa_alerts_console_view",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "15",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97254-exam-cis-em-topic-1-question-15-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which are recommended best practices for Event Management? (Choose three.)",
+      "answers": [
+        "A. Filter out events on ServiceNow Instance for easier consolidation and aggregation.",
+        "B. Promote all events to alerts during initial implementation until you fully understand which should be ignored.",
+        "C. Filter out events at source rather than in the ServiceNow instance.",
+        "D. Base-line “normal-state” events to filter out background noise.",
+        "E. Ignore all non-critical events during initial implementation to streamline processing; add alerts over time as time and resources allow."
+      ],
+      "comments": [
+        {
+          "content": "CDE are correct",
+          "selected_answer": "CDE",
+          "replies": []
+        },
+        {
+          "content": "CDE are correct",
+          "selected_answer": "CDE",
+          "replies": []
+        },
+        {
+          "content": "The recommended best practices for Event Management are:\n\nC. Filter out events at the source rather than in the ServiceNow instance.\n\nFiltering events at the source reduces unnecessary noise and improves efficiency in the processing of events.\nD. Base-line \"normal-state\" events to filter out background noise.\n\nEstablishing a baseline for normal events helps filter out background noise, making it easier to identify and prioritize abnormal or critical events.\nE. Ignore all non-critical events during the initial implementation to streamline processing; add alerts over time as time and resources allow.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "CDE are correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "CDE",
+          "replies": []
+        }
+      ],
+      "question_number": "16",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97255-exam-cis-em-topic-1-question-16-discussion/",
+      "most_voted": "CDE",
+      "error": null
+    },
+    {
+      "question": "For an incoming event with a matching message key, what allows an existing alert to be automatically closed?",
+      "answers": [
+        "A. In the event rule, set the Severity to 0",
+        "B. In the alert rule, set the Severity to 0",
+        "C. In the alert rule, set the Severity to -1",
+        "D. In the event rule, set the Severity to -1"
+      ],
+      "comments": [
+        {
+          "content": "A. Setting severity to 0 is equals to Clear event",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "In short, 0 will clear the alert.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/community/itom-forum/incomming-events-are-missing-value-in-severity-field-how-do-i/m-p/968110",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "17",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97256-exam-cis-em-topic-1-question-17-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "A support agent resolves an incident associated with an alert, but the alert does automatically close even though the evt_mgmt.incident_closes_alert property is set appropriately to close the alert.<br/>What is the most likely cause of this issue?",
+      "answers": [
+        "A. The support agent does not have the evt_mgmt_user role.",
+        "B. The support agent only has the evt_mgmt_admin role.",
+        "C. The support agent has the evt_mgmt_operator role, but not the evt_mgmt_user role.",
+        "D. The support agent has the evt_mgmt_user role, but not the evt_mgmt_operator role."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMResolveCloseIncidentAlert.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A\nRole required: evt_mgmt_admin, evt_mgmt_operator, or evt_mgmt_user",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Role required: evt_mgmt_admin, evt_mgmt_operator, OR evt_mgmt_user",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "the evt_mgmt_user is enough to close alert through incident",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Answer is 'B'. Having only evt_mgmt_admin role causes this problem. Agent should also have either evt_mgmt_user or evt_mgmt_operator role as mentioned in document -  \nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/event-management/task/t_EMResolveCloseIncidentAlert.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "It's D. You need operator to take actions on alerts.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Question is worded erroneously, should be \"A support agent resolves an incident associated with an alert, but the alert does NOT automatically close even though the evt_mgmt.incident_closes_alert property is set appropriately to close the alert.\"\n\nBased on that question, correct answer is A (only evt_mgmt_user is needed).",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Changing to A after reading this: https://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/event-management/task/t_EMResolveCloseIncidentAlert.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. The support agent has the evt_mgmt_user role, but not the evt_mgmt_operator role.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_InstalledWithEventManagement.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "18",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97257-exam-cis-em-topic-1-question-18-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What are the two most accurate statements regarding the ServiceNow CMDB (configuration management database) and CIs (configuration items)?",
+      "answers": [
+        "A. The CMDB is a series of tables that contain only key hardware components located in critical paths within your platform that must be managed.",
+        "B. The CMDB is a dynamic list that tracks both the CIs within your platform and the relationship between those items.",
+        "C. All CIs stored in the CMDB must have an assigned IP address within your infrastructure.",
+        "D. A CI is any component within your infrastructure that needs to be managed in order to deliver Services."
+      ],
+      "comments": [
+        {
+          "content": "B and D",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "Only B is correct, questions asks to define CMDB and CI. Choice D only defines CI.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B and D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "19",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97258-exam-cis-em-topic-1-question-19-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What would you use as a central location to explore the CMDB class hierarchy, CI table definitions, and CIs?",
+      "answers": [
+        "A. CI Remediations",
+        "B. CI Relation Types",
+        "C. CI Identifiers",
+        "D. Process to CI Type Mapping",
+        "E. CI Class Manager"
+      ],
+      "comments": [
+        {
+          "content": "E. CI Class Manager",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "CI Class Manager",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "20",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97259-exam-cis-em-topic-1-question-20-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "A four node cluster makes up the components (CIs) of a Business Service. The impact influence for the cluster is set to 60%.<br/>How many members of the cluster must be in a Critical state in order for the Business Service to display as Critical in the Impact Tree?",
+      "answers": [
+        "A. 1",
+        "B. 2",
+        "C. 3",
+        "D. 4"
+      ],
+      "comments": [
+        {
+          "content": "Has to be C. each node has 25% influence. so to go over 60%, it has to be 3 which would make it 3*25 = 75 which is more than 60.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "you need 3 nodes to exceed the threashold",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "In 4 Node cluster, 2 only makes 50%, so correct answer should be C which is above 60% (I.e 75%)",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "2 are 50%, 3 are 75% and more than 60%",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is C",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "It's C - it's a four node which means each has 25% influence. In order to hit 60% you need to have three nodes (75%). Two nodes are only 50%.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Should be c?",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is C, it has to exceed impact influence, B only equals the impact influence",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureImpactRule.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "21",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97260-exam-cis-em-topic-1-question-21-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which the following alert promotion rule defined in your ServiceNow instance, which of the anomalies below would be automatically promoted into IT alerts on the Alert Console?<br/><img src=\"https://img.examtopics.com/cis-em/image10.png\"/>",
+      "answers": [
+        "A.",
+        "B.",
+        "C. Both anomaly A and anomaly B",
+        "D. Neither anomaly A or anomaly B"
+      ],
+      "comments": [
+        {
+          "content": "B. Only the \"anomaly_score\" for this is larger than the Minimal Score 9.5 in the defined Alert Promotion Rule",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Definitely B, look at the anomaly score in the image vs what's configured above.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "22",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97261-exam-cis-em-topic-1-question-22-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "By default, Event Management tries to bind an alert to CI (configuration item), by matching the node name in the event to which three items in the CMDB (configuration management database)?",
+      "answers": [
+        "A. CI name, Fully qualified domain name, IP or MAC address",
+        "B. CI name, Webserver name, IP or MAC address",
+        "C. CI name, Fully qualified domain name, SSH public host keys",
+        "D. System class name, Fully qualified domain name, IP or MAC address"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMBindDevice.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMBindHost.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "23",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97262-exam-cis-em-topic-1-question-23-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "The MID Server requires an outbound connection on which port?",
+      "answers": [
+        "A. 445",
+        "B. 161",
+        "C. 443",
+        "D. 143"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "24",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97264-exam-cis-em-topic-1-question-24-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "If more than one event rule applies to a particular event or metric, which of the event rules will run based upon the Order of execution number?",
+      "answers": [
+        "A. Only the event rule with the highest Order of execution number will run.",
+        "B. Only the event rule with the lowest Order of execution number will run.",
+        "C. All event rules will run, from the lowest to the highest Order of execution numbers.",
+        "D. All event rules will run, from the highest to the lowest Order of execution numbers."
+      ],
+      "comments": [
+        {
+          "content": "The question itself says 'If more than one event rule applies to a particular event or metric' that means we are considering more than one event rule here and the order of execution is from low to high in that case.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://nowlearning.servicenow.com/lxp/en/pages/learning-course?id=learning_course&course_id=0eb4f18bdb804d109e32db85ca9619bd",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "In Utah we need to mark the \"\"Apply additional matching rules\" checkbox to execute additional rules based on order",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Since Tokyo release the correct answer is C",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "It's a crappy question, either B or C \"could\" be correct...it all depends on how the \"Apply additional matching rules\" field on those event rules is set.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I know the blueprint answer. but the video (time stamp 59 seconds) in the link below states, \"only the event rule with the lowest order will run.\"\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/event-management/concept/create-event-rules.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C. All event rules will run, from the lowest to the highest Order of execution numbers.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/content/dam/servicenow/other-documents/training/cis-event-management-blueprint.pdf",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "25",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97266-exam-cis-em-topic-1-question-25-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "When creating event rules, is it best practice to create:",
+      "answers": [
+        "A. Two rules for every event",
+        "B. As many rules as possible",
+        "C. As few rules as possible",
+        "D. One rule for every event"
+      ],
+      "comments": [
+        {
+          "content": "less complexity and maintenance",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Determine if for events without a matching rule you really need to handle this with a rule or not.",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "It is good practice to cover more events with less rules.",
+          "selected_answer": "C",
+          "replies": [
+            "do you have any documentation for this answer"
+          ]
+        }
+      ],
+      "question_number": "26",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/99133-exam-cis-em-topic-1-question-26-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "During processing of the event and if the event Severity is blank, the state of the event is set to:",
+      "answers": [
+        "A. Ready",
+        "B. Ignored",
+        "C. Error",
+        "D. Processing"
+      ],
+      "comments": [
+        {
+          "content": "C\nSee \"em_event.state\" in\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMIntegrateRequirementEvent.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C\n\"Error: Failure occurred while processing the event. For example, the event collection method or event Severity is blank\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMIntegrateRequirementEvent.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "27",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97267-exam-cis-em-topic-1-question-27-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "What two key steps must be performed after creating a new connector instance? (Choose two.)",
+      "answers": [
+        "A. Assign a MID Server to the connector",
+        "B. Enter credentials for the connector",
+        "C. Debug the connector",
+        "D. Test the connector",
+        "E. Activate the connector"
+      ],
+      "comments": [
+        {
+          "content": "D and E.\nFirst click the Test Connector, once it is succeeded then click the Activate checkbox and update.",
+          "selected_answer": "DE",
+          "replies": []
+        },
+        {
+          "content": "D and E.\n\nClick Test connector to verify that the MID Server can communicate with the external server host.\n\nAfter a successful test, select the Active check box and then click Updat",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "DE",
+          "replies": []
+        }
+      ],
+      "question_number": "28",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97268-exam-cis-em-topic-1-question-28-discussion/",
+      "most_voted": "DE",
+      "error": null
+    },
+    {
+      "question": "A customer informs you that they already have monitoring and event management tools.<br/>Which of the following describes the extra value that ServiceNow Event Management provides? (Choose four.)",
+      "answers": [
+        "A. ServiceNow Event Management Alerts, Incidents, Problems, and changes are automatically correlated with CIs and Business Services that can be visualized in Business Service maps.",
+        "B. ServiceNow Event Management manages relationships between alerts and related incidents to maintain an end-to-end event management lifecycle.",
+        "C. ServiceNow Event Management provides a business-centric platform and single system of record for service monitoring and remediation results, to better control and manage performance and availability.",
+        "D. ServiceNow Event Management provides state-of-the-art performance monitoring capabilities across a wide array of different types of infrastructures.",
+        "E. ServiceNow Event Management utilizes the power of MID Servers provide important functions in your ITOM Health deployment. What does MID stand for? A. Management, Instrumentation. and Discovery B. Messaging. Integration, and Data C. Monitoring. Insight. and Domain D. Maintenance, Information, and Distribution with leading monitoring systems to automatically create actionable alerts."
+      ],
+      "comments": [
+        {
+          "content": "Can you fix the last answer. Appears it should be a question",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "29",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97269-exam-cis-em-topic-1-question-29-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "You have an event with a Source of ‘Trap from Enterprise 111’, but the alert created for this event shows a Source of ‘Oracle EM’. If you want to change what this is set to, where in the event rule would you do this?",
+      "answers": [
+        "A. Transform and Compose Alert Output lab",
+        "B. Event rule info tab",
+        "C. CI Binding tab",
+        "D. Event Filter tab"
+      ],
+      "comments": [
+        {
+          "content": "A.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMComposeOuput.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The correct one is A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "you can overide the source values in Transform and Compose",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. Transform and Compose Alert Output lab",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is A because in transform and compose alert output tab we select what data to populate in new alert record.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Mapping for alert fields is in  Transform and Compose Alert Output lab.\nIn event rule info tab is a source field to match the event by, changing the value there would achieve nothing, because that needs to stay unchanged.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "30",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/88323-exam-cis-em-topic-1-question-30-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Copies of checks that have been included in Agent Client Collector policies are known as what?",
+      "answers": [
+        "A. Check definitions",
+        "B. Check models",
+        "C. Check clones",
+        "D. Check mirrors",
+        "E. Check instances"
+      ],
+      "comments": [
+        {
+          "content": "E is the correct answer",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "Instances, as referenced elsewhere.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-it-operations-management/page/product/agent-client-collector/task/create-edit-policies.html",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "E, CORRECT , EVENT MANAGEMENT GUIDE BOOK PAGE 338",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "E Correct",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "E \nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/agent-client-collector/task/create-edit-policies.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "E is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "E. Check instances",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Correct answer is check instance",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/agent-client-collector/task/acc-api-check-def.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "31",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97271-exam-cis-em-topic-1-question-31-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "How often do baseline event connectors retrieve events?",
+      "answers": [
+        "A. Every 30 seconds",
+        "B. Every 2 minutes",
+        "C. Every 10 minutes",
+        "D. Every 1 minute",
+        "E. Every 5 minutes"
+      ],
+      "comments": [
+        {
+          "content": "B. Every 2 minutes\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. Every 2 minutes",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "32",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97272-exam-cis-em-topic-1-question-32-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which attribute correlates multiple events to one alert?",
+      "answers": [
+        "A. Additional_info",
+        "B. Message_key",
+        "C. Metric_name",
+        "D. Short_description"
+      ],
+      "comments": [
+        {
+          "content": "B\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "33",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97273-exam-cis-em-topic-1-question-33-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What attribute is used to consolidate events into a single alert?",
+      "answers": [
+        "A. Event Rules",
+        "B. Message Key",
+        "C. Alert Priority",
+        "D. Severity"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "34",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97274-exam-cis-em-topic-1-question-34-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which attribute within an event needs to be exactly the same to allow for deduplication?",
+      "answers": [
+        "A. Metric Name",
+        "B. Message Key",
+        "C. Type & Node",
+        "D. Description",
+        "E. Correlation ID"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "35",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97275-exam-cis-em-topic-1-question-35-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "In default configuration using baseline connectors, how often is event data collected from event sources?",
+      "answers": [
+        "A. Once every minute",
+        "B. Every 2 minutes",
+        "C. Twice every minute",
+        "D. Every 5 minutes"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "36",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97277-exam-cis-em-topic-1-question-36-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What applications are included in the ITOM Health product?",
+      "answers": [
+        "A. Event Management and Operational Intelligence",
+        "B. ITOM Visibility",
+        "C. Discovery and Service Mapping",
+        "D. Cloud Management"
+      ],
+      "comments": [
+        {
+          "content": "A is correct answer",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "37",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97279-exam-cis-em-topic-1-question-37-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What is one of the main benefits of using Event Management and Operational Intelligence?",
+      "answers": [
+        "A. To improve service availability by helping IT staff pinpoint service issue causes and evaluate the impact of planned changes.",
+        "B. To increase service agility and produce fast, predictable results by automating manual, routine, error-prone tasks.",
+        "C. To rapidly configure and launch secure, agentless discovery of hardware and software resources and their relationships.",
+        "D. To proactively warn against possible service outages using a range of advanced predictive machine learning methods."
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "38",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97280-exam-cis-em-topic-1-question-38-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "MID Servers provide important functions in your ITOM Health deployment.<br/>What does MID stand for?",
+      "answers": [
+        "A. Management, Instrumentation, and Discovery",
+        "B. Messaging, Integration, and Data",
+        "C. Monitoring, Insight, and Domain",
+        "D. Maintenance, Information, and Distribution"
+      ],
+      "comments": [
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "39",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97281-exam-cis-em-topic-1-question-39-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Out-of-the-box, how often do the events get processed in ServiceNow?",
+      "answers": [
+        "A. Every 5 seconds",
+        "B. Every minute via a scheduled job",
+        "C. As soon as the event record is inserted via a business rule",
+        "D. Depends on connectors used"
+      ],
+      "comments": [
+        {
+          "content": "A is correct, see Event Management - Process Events scheduled job:\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_InstalledWithEventManagement.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "This is a good link\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/event-management/reference/r_InstalledWithEventManagement.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/tokyo-it-asset-management/page/product/event-management/reference/r_ScheduledJobsInstalledWithEM.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "40",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97282-exam-cis-em-topic-1-question-40-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "HOTSPOT -<br/>In what sequence are events processed?<br/><img src=\"https://img.examtopics.com/cis-em/image18.png\"/>",
+      "answers": [],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMWhatCanItMonitor.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Source > Filter > Threshold > Severity > Message Key",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMWhatCanItMonitor.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "41",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97283-exam-cis-em-topic-1-question-41-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which is not a valid method for accessing alert intelligence?",
+      "answers": [
+        "A. In the right-click menu of an alert list, select Open in Workspace",
+        "B. By appending/workspace to your instance URL",
+        "C. The application navigator Alerts Console menu item",
+        "D. The application navigator Alert Intelligence menu item",
+        "E. Within an open alert record, click the Open in Workspace button",
+        "F. Select the Lists tab in operator workspace"
+      ],
+      "comments": [
+        {
+          "content": "Agree with B - however, question is outdated.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is the correct answer as it asks which one is INCORRECT.\nAppending \"/workspace\" in the instance won't redirect to Service Operations Workspace.\n\nHowever, this question is a bit outdated given the Alert Console is replaced by Service Operations Workspace starting from Rome.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://<servicenow-instance>/nav_to.do?uri=%2F$sa_alerts_console_view",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "42",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97284-exam-cis-em-topic-1-question-42-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "To determine the top incidents for the CI associated with an alert, where is the best place to look?",
+      "answers": [
+        "A. Alert Insights",
+        "B. Incident List View",
+        "C. CMDB Health Dashboard",
+        "D. Event Management Overview page"
+      ],
+      "comments": [
+        {
+          "content": "A is the best answer overall, same as others, now it is inside Service Operations Workspace",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Now in Operators Workspace\nhttps://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/view-alert-insights-workspace.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "43",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97285-exam-cis-em-topic-1-question-43-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Agent Client Collector is built on what framework that enables you to adopt and extend monitoring checks from the community?",
+      "answers": [
+        "A. Icinga",
+        "B. Sensu",
+        "C. SolarWinds",
+        "D. Nagios",
+        "E. Zabbix"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/docs/bundle/vancouver-it-operations-management/page/product/agent-client-collector/concept/acc-monitoring-overview.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct answer.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/agent-client-collector/concept/acc-monitoring-overview.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/agent-client-collector/concept/acc-monitoring-overview.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "44",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97286-exam-cis-em-topic-1-question-44-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Based on the information shown, which of the following three alerts should be processed first?",
+      "answers": [
+        "A. The Alert Priority score 3106020.001 was calculated according to the following factors, ordered by their respective priority (2018-06-01 19:34:01 GMT) Category (Score, Weight)1. Business services – (3.0, 1000000)2. Severity – (1.0, 100000)3. CI type – (60.0, 100)4. Role – (2.0, 10)5. Secondary – (0)6. State – (1.0, 0.001)",
+        "B. The Alert Priority score 4406020.001 was calculated according to the following factors, ordered by their respective priority (2018-05-31 20:04:47 GMT) Category (Score, Weight)1. Business services – (4.0, 1000000.0)2. Severity – (4.0, 100000.0)3. CI type – (60.0, 100.0)4. Role – (2.0, 10.0)5. Secondary – (0)6. State – (1.0, 0.001)",
+        "C. The Alert Priority score 3306020.001 was calculated according to the following factors, ordered by their respective priority (2018-05-31 19:56:54 GMT) Category (Score, Weight)1. Business services – (3.0, 1000000.0)2. Severity – (3.0, 100000.0)3. CI type – (60.0, 100.0)4. Role – (2.0, 10.0)5. Secondary – (0)6. State – (1.0, 0.001)",
+        "D. They should be processed in the order in which they were received."
+      ],
+      "comments": [
+        {
+          "content": "Higher the Alert Priority Score should process first",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "45",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97287-exam-cis-em-topic-1-question-45-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Applying recommended Event Management best practice guidelines, which of the following events should generate an alert?",
+      "answers": [
+        "A. Every event should generate an alert so you have the opportunity to resolve them all.",
+        "B. Only events that necessitate action should generate an alert.",
+        "C. Only the most critical events on every CI in the CMDB should generate an alert.",
+        "D. Every event on every critical CI in the CMDB should generate an alert."
+      ],
+      "comments": [
+        {
+          "content": "its B answer",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "46",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97288-exam-cis-em-topic-1-question-46-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "What makes all ServiceNow metrics, tasks, services, configuration items, assets, people, locations, and information a single system of record for IT and business processes?",
+      "answers": [
+        "A. ServiceNow is installed within your datacenter providing you complete control",
+        "B. All applications are built on the Oracle database standard, providing uniformity across products",
+        "C. All applications that are built by ServiceNow utilize the same data model and code base",
+        "D. ServiceNow runs on supported Windows servers and is managed through Windows Update",
+        "E. A single table houses all data elements within ServiceNow",
+        "F. ServiceNow utilizes the AWS MariaDB cloud database structure, providing a single system of record"
+      ],
+      "comments": [
+        {
+          "content": "C is the correct answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C. ServiceNow is not built on the \"Oracle database standard\" (It does use CSDM, but that is not owned or made by Oracle)",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C. All applications that are built by ServiceNow utilize the same data model and code base",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Correct answer \"All applications that are built by ServiceNow utilize the same data model and code base\" . Oracle is not even used by default by servicenow.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "47",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/88324-exam-cis-em-topic-1-question-47-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "You have a very large networking environment and have noticed that your event notifications are either not being triggered or are delayed.<br/>What are best options to try to resolve this issue? (Choose two.)",
+      "answers": [
+        "A. Ensure all Event Management – process events jobs are set to a Ready state",
+        "B. Verify that the Bucket field in the event table is set to zero (0)",
+        "C. Add additional event processor jobs",
+        "D. Ensure multi-node event processing is disabled"
+      ],
+      "comments": [
+        {
+          "content": "A, C\nSee Latency issues for receiving events:\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_EMBestPractice.html\n\nSee Configure for large-scale environments:\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_EMBestPractice.html",
+          "selected_answer": "AC",
+          "replies": []
+        }
+      ],
+      "question_number": "48",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/139897-exam-cis-em-topic-1-question-48-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "What event value will auto close an alert?",
+      "answers": [
+        "A. Severity of -1/OK",
+        "B. Type of Clear",
+        "C. Resolution State of Closing",
+        "D. Resolution State of Clear",
+        "E. Severity of 0/Clear"
+      ],
+      "comments": [
+        {
+          "content": "Based on the question, E seems more correct",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "Both c & E are correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C and E are correct. Severity of \"Clear\" closes existing Alerts.\nhttps://docs.servicenow.com/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMManageEvent.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0748692",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "49",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97289-exam-cis-em-topic-1-question-49-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Given the following Impact settings and Alerts in a three node cluster that makes up the components of a Business Service, what is the overall service health of this Business Service?<br/><img src=\"https://img.examtopics.com/cis-em/image21.png\"/>",
+      "answers": [
+        "A. Critical",
+        "B. Error",
+        "C. Major",
+        "D. Minor",
+        "E. Warning",
+        "F. Clear"
+      ],
+      "comments": [
+        {
+          "content": "F is correct answer.\nTreat the Impact = 70 as the threshold, with 3 node in cluster each have impact 33.3%, 2 in yellow (minor) means 66.6% which does not reach the threshold so it is still Clear (the proper terminology should be OK, not Clear)",
+          "selected_answer": "F",
+          "replies": []
+        },
+        {
+          "content": "Would love to see some input on this question.  To me it seems Minor, since two of the three CIs have active alerts (if all 3 it would be Major).  Clear definitely doesn't make sense.",
+          "selected_answer": "",
+          "replies": [
+            "Actually, Clear is correct, since 2=~66.4 which is less than 70"
+          ]
+        }
+      ],
+      "question_number": "50",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/109859-exam-cis-em-topic-1-question-50-discussion/",
+      "most_voted": "F",
+      "error": null
+    },
+    {
+      "question": "What does Operational Intelligence proactively identify before they cause service outages?",
+      "answers": [
+        "A. Missing CMDB data",
+        "B. Defects",
+        "C. Alert correlations",
+        "D. Orphaned CIs",
+        "E. Anomalies"
+      ],
+      "comments": [
+        {
+          "content": "E is correct answer.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/operational-intelligence-overview.html",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/community/itom-articles/on-demand-webinar-prevent-service-outages-with-operational/ta-p/2320008",
+          "selected_answer": "E",
+          "replies": []
+        }
+      ],
+      "question_number": "51",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97290-exam-cis-em-topic-1-question-51-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "What is the function of the External Communication Channel (ECC) Queue? (Choose three.)",
+      "answers": [
+        "A. It is a connection point between a ServiceNow instance and the MID Server.",
+        "B. It contains probe records to be executed on the customer’s network.",
+        "C. It holds jobs that the MID Server needs to perform.",
+        "D. It is a connection point between a hardware CI on a customer’s network and the MID Server.",
+        "E. It contains records of CIs that the ServiceNow admin has submitted for entry into the CMDB."
+      ],
+      "comments": [
+        {
+          "content": "ABC is correct",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "ABC is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Is the intent to fix these? The correct answer is ABC, it states ABE, which had me thinking I was wrong but the discussion kept me sane.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "A,B,C definitely",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-servicenow-platform/page/product/mid-server/concept/ecc-queue-mid-server.html",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "A, B, C",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "A and B and C",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "this is correct",
+          "selected_answer": "ABC",
+          "replies": []
+        }
+      ],
+      "question_number": "52",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97291-exam-cis-em-topic-1-question-52-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "The correct regex to capture the name of the server in “the server webserver3.domain.com is down” would be:",
+      "answers": [
+        "A. .*(\\w+\\.\\w+\\.\\w+).*",
+        "B. The server (.*)\\s.*",
+        "C. .*\\s(\\w+\\.\\w+\\.\\w+).*",
+        "D. the server (.*).*"
+      ],
+      "comments": [
+        {
+          "content": "C is correct answer. Once can test this on below website \nhttps://regex101.com/",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "I just took the exam. In the exam, the question is actually: \"the correct regex expression to capture the server's (webserver3) in ... []. \nC is not actually an alternative, but A, C and D are.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C. .*\\s(\\w+\\.\\w+\\.\\w+).*",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "test in : https://regex101.com/\nAnswer is C .*\\s(\\w+\\.\\w+\\.\\w+).*",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "53",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97292-exam-cis-em-topic-1-question-53-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "What is the recommended approach to normalizing data from a source system to the default values in Event Management?",
+      "answers": [
+        "A. Event field mapping",
+        "B. Transform maps",
+        "C. Alert management rules",
+        "D. Business rules"
+      ],
+      "comments": [
+        {
+          "content": "A is the correct answer",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. Event field mapping",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A. Event field mapping",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "54",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97293-exam-cis-em-topic-1-question-54-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "You have an event that needs to be bound to a non-host CI.<br/>Which attribute needs to be removed from the Transform and Compose tab?",
+      "answers": [
+        "A. Source Instance",
+        "B. Metric Name",
+        "C. Node",
+        "D. Resource"
+      ],
+      "comments": [
+        {
+          "content": "C is correct answer. \"Clear the Node field\":\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMBindServiceCI.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "55",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97294-exam-cis-em-topic-1-question-55-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "When are anomaly alerts generated by Operational Intelligence displayed in alert intelligence?",
+      "answers": [
+        "A. When the statistical model threshold is breached",
+        "B. When they are promoted to IT alerts",
+        "C. When it is manually promoted in insights explorer",
+        "D. When the anomaly score is greater than 100"
+      ],
+      "comments": [
+        {
+          "content": "A is the only one that makes sense",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. When the statistical model threshold is breached\nAll other options makes no sense, as you can read in the documentation:\n\"Data that is outside the control bounds is considered a statistical outlier. These outliers are used to compute an anomaly score, which is a value between 0–10 that indicates the degree to which the metric appears unlikely. When an anomaly score is above a threshold, an anomaly alert is generated. Anomaly alerts are reported separately from regular IT alerts.\"",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. When the statistical model threshold is breached\nAll other options makes no sense, as you can read in the documentation:\n\"Data that is outside the control bounds is considered a statistical outlier. These outliers are used to compute an anomaly score, which is a value between 0–10 that indicates the degree to which the metric appears unlikely. When an anomaly score is above a threshold, an anomaly alert is generated. Anomaly alerts are reported separately from regular IT alerts.\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/operational-intelligence-overview.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "56",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/139900-exam-cis-em-topic-1-question-56-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What are the possible actions available in alert management? (Choose three.)",
+      "answers": [
+        "A. Execute remediation subflows",
+        "B. Execute remediation workflows",
+        "C. Launch applications",
+        "D. Evaluate business rule",
+        "E. Create a service catalog request"
+      ],
+      "comments": [
+        {
+          "content": "ABC are correct.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/create-alert-management-rule.html",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "ABC",
+          "replies": []
+        }
+      ],
+      "question_number": "57",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97295-exam-cis-em-topic-1-question-57-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "What ServiceNow feature would you configure to process incoming email to create events?",
+      "answers": [
+        "A. Transforms",
+        "B. Inbound actions",
+        "C. Event processing jobs",
+        "D. Event Filter",
+        "E. Event field mapping"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMConfigureEmailConnector.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "58",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97296-exam-cis-em-topic-1-question-58-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Within a PowerShell script, which two URI’s could you use to log events directly to the ServiceNow event table? (Choose two.)",
+      "answers": [
+        "A. https://[Your_ServiceNow_instance_URL]/rest_api/now/my_tables/em_event",
+        "B. https://[Your_ServiceNow_instance_URL]/api/global/em/jsonv2",
+        "C. https://[Your_ServiceNow_instance_URL]/api/now/table/em_event",
+        "D. https://[Your_ServiceNow_instance_URL]/api/table/em_event",
+        "E. https://[Your_ServiceNow_instance_URL]/rest_api/now/table/em_event"
+      ],
+      "comments": [
+        {
+          "content": "B and C\nhttps://docs.servicenow.com/bundle/washingtondc-api-reference/page/integrate/inbound-rest/concept/c_TableAPI.html\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/send-events-via-web-service.html",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "B and C",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/tokyo-application-development/page/integrate/inbound-rest/concept/c_TableAPI.html#table-POST\nhttps://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/send-events-via-web-service.html",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "59",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97297-exam-cis-em-topic-1-question-59-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "If more than one alert management rule applies to a particular alert, which of the rules will run based upon the Order of execution field?",
+      "answers": [
+        "A. Only the alert management rule with the highest Order of execution number will run.",
+        "B. Only the alert management rule with the lowest Order of execution number will run.",
+        "C. All alert management rules will run, from the lowest to the highest Order of execution numbers.",
+        "D. All alert management rules will run, from the highest to the lowest Order of execution numbers."
+      ],
+      "comments": [
+        {
+          "content": "This questions is outdated, given Alert Management Rule has a field \"Multiple alert rules\", which define whether to execute other matching Alert Management Rule.\nIf happen to have this question, well the best is C, as default value of above field during Alert Management Rule creation is set to \"Search for additional rules\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C. All alert management rules will run, from the lowest to the highest Order of execution numbers.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "60",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97298-exam-cis-em-topic-1-question-60-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Alerts are processed using which of the following? (Choose three.)",
+      "answers": [
+        "A. Alert management rules",
+        "B. Event action rules",
+        "C. Event rules",
+        "D. Scheduled jobs",
+        "E. Java and Groovy scripts"
+      ],
+      "comments": [
+        {
+          "content": "ACD are correct",
+          "selected_answer": "ACD",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "ACD",
+          "replies": []
+        }
+      ],
+      "question_number": "61",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97299-exam-cis-em-topic-1-question-61-discussion/",
+      "most_voted": "ACD",
+      "error": null
+    },
+    {
+      "question": "The individual commands that the Agent Client Collector executes on the host are known as what? (Choose three.)",
+      "answers": [
+        "A. Events",
+        "B. Checks",
+        "C. Parameters",
+        "D. Policies",
+        "E. Metrics",
+        "F. Scripts"
+      ],
+      "comments": [
+        {
+          "content": "ABE are correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/agent-client-collector/concept/checks-policies.html",
+          "selected_answer": "ABE",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/agent-client-collector/concept/checks-policies.html",
+          "selected_answer": "ABE",
+          "replies": []
+        }
+      ],
+      "question_number": "62",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122361-exam-cis-em-topic-1-question-62-discussion/",
+      "most_voted": "ABE",
+      "error": null
+    },
+    {
+      "question": "What is Event Management licensing based on?",
+      "answers": [
+        "A. The number of unique nodes that can send events to the instance",
+        "B. The number of connectors and listeners it will collect data from",
+        "C. The number of connectors it will collect data from",
+        "D. The number of CIs in the CMDB that it will be monitoring"
+      ],
+      "comments": [
+        {
+          "content": "A is much more correct then D",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Your node count is based on the amount of infrastructure (servers for example) that will be sending events.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Answer is D\nThe Event Management - Node Count Store job calculates the number of unique nodes that send event information, either directly or through third-parties, to Event Management and are eligible for licensing in the last year. The information from this job is stored in the License Usage [em_unique_nodes] table for visibility by all users. CIs bound to alerts are counted towards licensing; if there are no CIs that are bound to alerts, the event node field is used. Node is a reference to a server, not the instances of the software on it. Your node count is based on the amount of infrastructure (servers for example) that will be sending events.\n\nhttps://www.servicenow.com/docs/bundle/xanadu-it-operations-management/page/product/event-management/task/license-usage.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is wrong. The unique number of nodes counts into the license of event management.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "D is wrong. Only the CIs bound to alerts in the last year are calculated for licensing. It does NOT count the # of CIs being monitored in the CMDB. \n\"The Event Management - Node Count job calculates the number of unique nodes that send event information, either directly or through third-parties, to Event Management and are eligible for licensing in the last year\"",
+          "selected_answer": "A",
+          "replies": [
+            "Correct, now in xanadu release it is a new job in an own license application build by ServiceNow"
+          ]
+        },
+        {
+          "content": "D is correct\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/task/license-usage.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/event-management/task/license-usage.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "63",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122362-exam-cis-em-topic-1-question-63-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What missing attribute would cause an event to have a state of Error?",
+      "answers": [
+        "A. Metric Name",
+        "B. Source",
+        "C. Classification",
+        "D. Node",
+        "E. Severity"
+      ],
+      "comments": [
+        {
+          "content": "nothing else",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "E is correct.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "E",
+          "replies": []
+        }
+      ],
+      "question_number": "64",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97300-exam-cis-em-topic-1-question-64-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "Modified Agent Client Collector policies do not take effect until what action is taken?",
+      "answers": [
+        "A. The check is tested on an existing agent/host",
+        "B. The policy is republished",
+        "C. Agents re-run the discovery policy",
+        "D. MID server synchronization is initiated",
+        "E. Agents are restarted"
+      ],
+      "comments": [
+        {
+          "content": "B is the correct answer\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/agent-client-collector/task/create-edit-policies.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "You have to republish any policy you change, or it will not change the table on the instance and take effect. Restarting agents will only read the old unmodified table.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. The policy is republished",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/agent-client-collector/task/create-edit-policies.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "65",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97301-exam-cis-em-topic-1-question-65-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What does the Asynchronous Messaging Bus (AMB) channel do on the MID Server?",
+      "answers": [
+        "A. Opens an inbound connection to the MID Server",
+        "B. Allows Web Server transactions to be passed to ServiceNow",
+        "C. Sends heartbeat information to the ServiceNow instance to ensure MID is communicating",
+        "D. Continually queries the External Communication Channel (ECC) queue via a persistent query"
+      ],
+      "comments": [
+        {
+          "content": "D is correct answer\nhttps://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/success/quick-answer/mid-server-basics.pdf",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/tokyo-release-notes/page/product/mid-server/concept/ecc-queue-mid-server.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "66",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97302-exam-cis-em-topic-1-question-66-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Within the ServiceNow IT Operations Management solution set, which statement most accurately describes what Event Management is?",
+      "answers": [
+        "A. The process responsible for defining, analyzing, planning, measuring, and improving all aspects of the availability of IT services",
+        "B. The process responsible for ensuring the capacity of IT Services and IT infrastructure is able to deliver agreed upon service level targets in a cost-effective manner",
+        "C. The process responsible for monitoring all abnormal occurrences throughout the IT infrastructure, allowing for normal operations, and detecting and escalating exception conditions",
+        "D. The process responsible for recovery action and planning through machine learning"
+      ],
+      "comments": [
+        {
+          "content": "C is the best answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "I would choose C as well",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C. The process responsible for monitoring all abnormal occurrences throughout the IT infrastructure, allowing for normal operations, and detecting and escalating exception conditions",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C. The process responsible for monitoring all abnormal occurrences throughout the IT infrastructure, allowing for normal operations, and detecting and escalating exception conditions",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "i think c",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "67",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97303-exam-cis-em-topic-1-question-67-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "When creating a task from an alert what Event Management Module would be used?",
+      "answers": [
+        "A. Event Rules",
+        "B. Alert Correlation Rules",
+        "C. Task Management",
+        "D. Alert Management"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "68",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97304-exam-cis-em-topic-1-question-68-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What is the preferred method of parsing in the Transform/Compose step of an event rule?",
+      "answers": [
+        "A. Python",
+        "B. Regex",
+        "C. sed/awk",
+        "D. JavaScript"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "69",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97305-exam-cis-em-topic-1-question-69-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What are the server requirements to allow Operational Intelligence to successfully collect operational metric data via a push?",
+      "answers": [
+        "A. This requires a minimum of three MID Servers - two for Event Management and one additional MID Server dedicated for use by Operational Intelligence (OI).",
+        "B. This requires a MID Web Server in addition to the MID Server.",
+        "C. Nothing additional is required; this is handled by the MID Server.",
+        "D. This requires a minimum of two MID Servers - one for Event Management and one additional MID Server dedicated for use by Operational Intelligence (OI)."
+      ],
+      "comments": [
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0853084",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. This requires a MID Web Server in addition to the MID Server.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/mid-web-server.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "70",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97306-exam-cis-em-topic-1-question-70-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What would be an appropriate use case for having to write JavaScript in Event Management?",
+      "answers": [
+        "A. To change the value of the message key",
+        "B. To create a custom action within a subflow",
+        "C. To parse a node name out of your raw event data in an event rule",
+        "D. To automatically create an incident"
+      ],
+      "comments": [
+        {
+          "content": "B is correct.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "71",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97307-exam-cis-em-topic-1-question-71-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "A dynamic grouping of CIs based upon common criteria (filtered CI classes) that can be visualized in operator workspace is called?",
+      "answers": [
+        "A. A business service",
+        "B. A technical service",
+        "C. An application service",
+        "D. A manual service",
+        "E. A scoped service"
+      ],
+      "comments": [
+        {
+          "content": "You can see service maps like this on the Operator Workspace\ndashboard. Later in this tutorial, you will learn about the dashboard and\nwhat an application service looks like when an alert is associated with a\nCI.\nTypes of application services\nEvent Management classifies application services into the following\ntypes:\nTechnical services\nA technical service is a dynamic grouping of CIs based on some\ncommon criteria. For example, a technical service could be comprised\nof all web servers or all Oracle databases for a specific location, like\nNorth America.\nApplication services\nAn application service can consist of discovered services, manual\nservices, or both. A discovered service is an application service\nthat the Service Mapping application finds (if your organization uses\nService Mapping). A manual service is an application service that your\nadministrator configures by selecting and adding each CI and specifying\nthe relationships between CIs.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct.\nIn the training material:\nTechnical services are published to service owners and typically underpin one or more business or application services. Dynamic CI Groups are technical services populated with a relationship to a CMDB group. It is a dynamic grouping of CIs based on common criteria like all Oracle databases in North America.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "In older releases it was called \"Technical service\", but nowdays it is called Dynamic CI Group",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/tokyo-it-operations-management/page/product/health-log-analytics-admin/concept/hla-accl-dynamic-ci-group.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "72",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97308-exam-cis-em-topic-1-question-72-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "During CI binding, CI matching is done using which two fields? (Choose two.)",
+      "answers": [
+        "A. Message Key",
+        "B. Additional Information",
+        "C. Source",
+        "D. Node"
+      ],
+      "comments": [
+        {
+          "content": "BD is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_EMHowAlertsBindCI.html",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_EMHowAlertsBindCI.html",
+          "selected_answer": "BD",
+          "replies": []
+        }
+      ],
+      "question_number": "73",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97309-exam-cis-em-topic-1-question-73-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "What three areas of data quality does the CMDB Health Dashboard focus on? (Choose three.)",
+      "answers": [
+        "A. Correctness",
+        "B. Completeness",
+        "C. Configuration",
+        "D. Conciseness",
+        "E. Conformity",
+        "F. Compliance"
+      ],
+      "comments": [
+        {
+          "content": "ABF\nhttps://docs.servicenow.com/bundle/washingtondc-servicenow-platform/page/product/configuration-management/reference/r_CMDBHealthMetrics.html",
+          "selected_answer": "ABF",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "ABF",
+          "replies": []
+        }
+      ],
+      "question_number": "74",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97310-exam-cis-em-topic-1-question-74-discussion/",
+      "most_voted": "ABF",
+      "error": null
+    },
+    {
+      "question": "When sending data from the monitoring source to the additional_info field, what format is supported?",
+      "answers": [
+        "A. XML",
+        "B. JSON",
+        "C. YAML",
+        "D. Comma separated"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "75",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97311-exam-cis-em-topic-1-question-75-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which step in the event rule configuration process enables you to ignore events and prevent alert generation?",
+      "answers": [
+        "A. Transform and compose alert output",
+        "B. Event filter",
+        "C. Event options",
+        "D. Threshold"
+      ],
+      "comments": [
+        {
+          "content": "B is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMCreateFilter.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. Event filter",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. Event filter",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Event Filter is correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "76",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97312-exam-cis-em-topic-1-question-76-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What is an alert called that moves from an open to a closed state multiple times within a designated time-frame?",
+      "answers": [
+        "A. Fluctuating",
+        "B. Swinging",
+        "C. Flipping",
+        "D. Flapping"
+      ],
+      "comments": [
+        {
+          "content": "D is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMConfigAlertStateFlapDetect.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "77",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97313-exam-cis-em-topic-1-question-77-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "How would you ensure the quality of data in your Configuration Management Database (CMDB) over time?",
+      "answers": [
+        "A. Manually inventorying configuration items in the CMDB and eliminating duplicate configuration items (CIs)",
+        "B. Only use the ServiceNow Discovery application to populate your CMDB",
+        "C. Using only scripts to automatically monitor for and remediate duplicate configuration items (CIs)",
+        "D. Having well-defined Identification, Reconciliation, and Relationship rules"
+      ],
+      "comments": [
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D. Having well-defined Identification, Reconciliation, and Relationship rules",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "78",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97314-exam-cis-em-topic-1-question-78-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which is an invalid state for an alert?",
+      "answers": [
+        "A. Flapping",
+        "B. Closed",
+        "C. Reopen",
+        "D. Processed"
+      ],
+      "comments": [
+        {
+          "content": "Processed is not even a state...",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0756521",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "79",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97315-exam-cis-em-topic-1-question-79-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "A support agent resolves an incident associated with an alert. What is the best method to close the alert?",
+      "answers": [
+        "A. Set the evt_mgmt.incident_closes_alert",
+        "B. Set the evt_mgmt.alert_closes_incident",
+        "C. Switch over to the alert form and close the alert manually",
+        "D. Create a business rule on the alert table to match the associated Incident with its respective alert",
+        "E. Create a business rule on the incident table"
+      ],
+      "comments": [
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0756521",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "80",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97316-exam-cis-em-topic-1-question-80-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Impacted services for alerts are calculated using data from which table?",
+      "answers": [
+        "A. cmdb_ci_hardware",
+        "B. em_impacted_svc",
+        "C. cmdb_ci_rei",
+        "D. svc_ci_assoc"
+      ],
+      "comments": [
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "81",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97317-exam-cis-em-topic-1-question-81-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "A monitoring tool notification of a notable occurrence is known as what?",
+      "answers": [
+        "A. An alert",
+        "B. An event",
+        "C. A metric",
+        "D. An alarm"
+      ],
+      "comments": [
+        {
+          "content": "Same as others, it should be B only. \nReason is in the question stated: \"A monitoring tool\", i.e. those occurrences from external before SN create Alert.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMManageEvent.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/task/t_EMManageEvent.html\n\nEvent Management tracks individual events to manage external systems. These events are notifications from monitoring tools indicating occurrences of interest, like log messages, warnings, or errors.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Event Management tracks individual events to manage external systems. These events are notifications from monitoring tools indicating occurrences of interest, like log messages, warnings or errors.\n\nOnly Event.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Only Event",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "82",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122538-exam-cis-em-topic-1-question-82-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "If a Message Key is not provided, which fields are concatenated to make our own?",
+      "answers": [
+        "A. Source, DNS, Node, Additional info, Metric Name",
+        "B. Source, Type, Node, Resource, Metric Name",
+        "C. Source, Type, DNS, Additional info, Metric Name",
+        "D. Source, Source Instance, Node, Type, Resource"
+      ],
+      "comments": [
+        {
+          "content": "B is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "83",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97318-exam-cis-em-topic-1-question-83-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "A load balanced web application has a cluster of 5 Apache nodes. When considering impact calculation with application cluster member rule influence set to 45, how many impacted nodes within that cluster would cause the overall application service to have a degradation of service?",
+      "answers": [
+        "A. 5",
+        "B. 1",
+        "C. 2",
+        "D. 3",
+        "E. 4"
+      ],
+      "comments": [
+        {
+          "content": "D is the correct one\nIf there is 5 nodes, 100% / 5 = 20%, this is the influence of each node.\nWhen setting the influence to 45, it requires 3 node to exceed 45 (i.e. 20 x 3 = 60) in order to show impact",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Considering 5 nodes in cluster each has 20% influence. 100 / 5 = 20.\nSo to exceed 45, it needs 3 nodes impacted. 20+20+20 = 60 > 45.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "84",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117264-exam-cis-em-topic-1-question-84-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "A Service is not viewable in Operator Workspace. What could be the issue?",
+      "answers": [
+        "A. The service is a manual service",
+        "B. The service is not set to operational",
+        "C. The service was created through Service Mapping",
+        "D. The service is a technical service"
+      ],
+      "comments": [
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "85",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/141076-exam-cis-em-topic-1-question-85-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What ServiceNow feature is an aid to rapid implementation of your Event Management and Operational Intelligence features?",
+      "answers": [
+        "A. Deployment wizard",
+        "B. Step-by-step guide",
+        "C. Checklist application",
+        "D. Guided setup"
+      ],
+      "comments": [
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D. Guided setup",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. Guided setup",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMConfiguration.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "86",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97319-exam-cis-em-topic-1-question-86-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The ServiceNow standard and shared set of service-related definitions that enable and support true service level reporting is known as what?",
+      "answers": [
+        "A. Service level data model",
+        "B. Business service data model",
+        "C. Application service data model",
+        "D. Common service data model"
+      ],
+      "comments": [
+        {
+          "content": "D is the correct answer.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D. Common service data model",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "csdm-------------",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "87",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97320-exam-cis-em-topic-1-question-87-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "A monitoring tool notification of a notable occurrence is known as what?",
+      "answers": [
+        "A. An alarm",
+        "B. An alert",
+        "C. An incident",
+        "D. A notice",
+        "E. An event",
+        "F. A metric"
+      ],
+      "comments": [
+        {
+          "content": "E should be the correct one\nRepeated questions in previous page.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMManageEvent.html",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/task/t_EMManageEvent.html\n\nThese events are notifications from monitoring tools indicating occurrences of interest, like log messages, warnings, or errors.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "An Event",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "E. An event",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "An Event",
+          "selected_answer": "E",
+          "replies": []
+        }
+      ],
+      "question_number": "88",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97321-exam-cis-em-topic-1-question-88-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "Which is the best option to reduce latency issues when receiving events?",
+      "answers": [
+        "A. Verify bucket field in em_event table > 0",
+        "B. Verify event_processor_job_count = 2",
+        "C. Verify event_processor_job_count = 0",
+        "D. Verify event_processor_enable_multi_node = 2"
+      ],
+      "comments": [
+        {
+          "content": "A is the correct one.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_EMBestPractice.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Verify that the Bucket field in the event [em_event] table is set to a value that is greater than zero (0).",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Event processing: Best practices\n1. For large network environment\n- Enable multi-node processing (event_processor_enable_multi_node is Yes)\n- Increase the number of scheduled jobs processing events to 4 (event_processor_job_count)\n\n2. Latency issues when receiving events\n- Verify that the bucket field in the event (em_event) table is set to a value greater than zero (0)",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct!",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. Verify bucket field in em_event table > 0",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A. Verify bucket field in em_event table > 0",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_EMBestPractice.html",
+          "selected_answer": "B",
+          "replies": [
+            "A under topic \"Latency issues for receiving events\""
+          ]
+        }
+      ],
+      "question_number": "89",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97322-exam-cis-em-topic-1-question-89-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "The default polling time to collect events from an event source is:",
+      "answers": [
+        "A. 5 seconds",
+        "B. 30 seconds",
+        "C. 60 seconds",
+        "D. 120 seconds"
+      ],
+      "comments": [
+        {
+          "content": "D is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMConfigureConnectorInstance.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "90",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97323-exam-cis-em-topic-1-question-90-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which two methods can be used to improve the processing of events in large network environments? (Choose two.)",
+      "answers": [
+        "A. Enable multi-node processing",
+        "B. Increase the source polling interval",
+        "C. Ensure the bucket value in the event table is greater than 0",
+        "D. Increase the number of scheduled jobs processing events"
+      ],
+      "comments": [
+        {
+          "content": "Event processing: Best practices\n1. For large network environment\n- Enable multi-node processing (event_processor_enable_multi_node is Yes)\n- Increase the number of scheduled jobs processing events to 4 (event_processor_job_count)\n\n2. Latency issues when receiving events\n- Verify that the bucket field in the event (em_event) table is set to a value greater than zero (0)",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_EMBestPractice.html",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "91",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97324-exam-cis-em-topic-1-question-91-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "The Event Management operator workspace can display all of the following except?",
+      "answers": [
+        "A. Alert groups",
+        "B. Manual application services",
+        "C. Discovered application services from Service Mapping",
+        "D. Correlation groups",
+        "E. Technical services"
+      ],
+      "comments": [
+        {
+          "content": "D is the correct one",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "On the Operator Workspace, you can view alerts by application services (Discovered or Manual application service),\ntechnical service, and alert group. For services, you can also open a\nservice map to view relationships between CIs in the service.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Correlation group is no service.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "92",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122537-exam-cis-em-topic-1-question-92-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Within an event rule, how would you parse a nodename out of your raw event data?",
+      "answers": [
+        "A. JavaScript",
+        "B. Groovy script",
+        "C. PowerShell script",
+        "D. Regex statement"
+      ],
+      "comments": [
+        {
+          "content": "D is the correct one.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D - Regex statement.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "93",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97325-exam-cis-em-topic-1-question-93-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "If events are not matching to alerts as you would like, what field should be changed?",
+      "answers": [
+        "A. Resource",
+        "B. Message Key",
+        "C. Node",
+        "D. Metric Name"
+      ],
+      "comments": [
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B. Message Key",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C. Node ---> correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "94",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97326-exam-cis-em-topic-1-question-94-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "If the Message Key is not populated, the default value is created from which fields?",
+      "answers": [
+        "A. Source, type. node, resource, and metric name",
+        "B. Source, source instance, node, and resource",
+        "C. Source, type. node, and metric name",
+        "D. Source, source instance, node, and type",
+        "E. Source, type. node, resource, and time of event"
+      ],
+      "comments": [
+        {
+          "content": "A is the correct one. Repeated question in previous page.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. Source, type. node, resource, and metric name",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventIdentifier.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "95",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97327-exam-cis-em-topic-1-question-95-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Processing on an event will create a state of error if what value is not set?",
+      "answers": [
+        "A. Node",
+        "B. Source",
+        "C. Severity",
+        "D. Message Key",
+        "E. Resource"
+      ],
+      "comments": [
+        {
+          "content": "C is correct\nRepeated question from previous page",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is Correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C. Severity",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "96",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97328-exam-cis-em-topic-1-question-96-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "When performing CI Binding, what fields does Event Management match to the Node?",
+      "answers": [
+        "A. CI Name, DNS, IP, MAC Address",
+        "B. System class name, FQDN, IP or MAC address",
+        "C. CI name, FQDN, SSH public host keys",
+        "D. CI Name, FQDN, IP, MAC Address"
+      ],
+      "comments": [
+        {
+          "content": "D is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMBindApplication.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D. CI Name, FQDN, IP, MAC Address",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "97",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97329-exam-cis-em-topic-1-question-97-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Applying recommended Event Management best practice guidelines, which of the following alerts should be processed first?<br/><img src=\"https://img.examtopics.com/cis-em/image31.png\"/>",
+      "answers": [
+        "A. Alert00l0042",
+        "B. Alert0010003",
+        "C. Alert00l0075",
+        "D. Alert00l0074"
+      ],
+      "comments": [
+        {
+          "content": "Alert0010042 Critical (the oldest and highest severity)",
+          "selected_answer": "",
+          "replies": [
+            "Not right, should look into the Priority Score calculated. It includes the logic you mentioned, i.e. Service Importance, Severity, CI types, etc."
+          ]
+        },
+        {
+          "content": "correct",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "98",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97330-exam-cis-em-topic-1-question-98-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What is the minimum role needed to view alerts?",
+      "answers": [
+        "A. alert_operator",
+        "B. evt_mgmt_user",
+        "C. evt_mgmt_operator",
+        "D. alert_user"
+      ],
+      "comments": [
+        {
+          "content": "B is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMViewAlert.html\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/reference/r_InstalledWithEventManagement.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "evt_mgmt_user",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_InstalledWithEventManagement.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "99",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97331-exam-cis-em-topic-1-question-99-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "By default, when are idle alerts are closed?",
+      "answers": [
+        "A. After 7 days",
+        "B. After 14 days",
+        "C. After 30 days",
+        "D. Never"
+      ],
+      "comments": [
+        {
+          "content": "A. After 7 days",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/community/itom-forum/event-management-question-about-auto-close-interval-property/m-p/965151",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "100",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97332-exam-cis-em-topic-1-question-100-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What is used to correctly bind an alert to an application?",
+      "answers": [
+        "A. Correlation rules",
+        "B. Workflows",
+        "C. Classifiers",
+        "D. CI identification rules"
+      ],
+      "comments": [
+        {
+          "content": "Correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D. CI identification rules",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/reference/r_EMHowAlertsBindCI.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "101",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97333-exam-cis-em-topic-1-question-101-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "If you wanted to create a quick response alert rule to open an Ask Jeeves search on the description of the alert, where would it configured?",
+      "answers": [
+        "A. Launch Applications",
+        "B. Remediation Workflows",
+        "C. Remediation SubFlows",
+        "D. Operator Workspace"
+      ],
+      "comments": [
+        {
+          "content": "Should be A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A:\n\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/event-management/task/apply-quick-response-in-alert.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A. Launch Applications",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "102",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97334-exam-cis-em-topic-1-question-102-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Where would you find the Priority Breakdown for an Alert?",
+      "answers": [
+        "A. Under the More Information section",
+        "B. Under the Activities section",
+        "C. Under the History section",
+        "D. Under the CI Problems section"
+      ],
+      "comments": [
+        {
+          "content": "A is correct.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMViewAlert.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "103",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97335-exam-cis-em-topic-1-question-103-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Where does an operator give feedback on an automated alert grouping?",
+      "answers": [
+        "A. Feedback attribute on the virtual alert record",
+        "B. Feedback attribute on the child alert record",
+        "C. Feedback attribute on the event record",
+        "D. Feedback attribute on the alert record",
+        "E. Dropdown box on the alert group record"
+      ],
+      "comments": [
+        {
+          "content": "This Feedback field appears in alert forms only if the alert being modified is a parent alert. Your response provides feedback about the accuracy and usefulness of the group. Possible values are:\n- None\n- No Feedback\n- Yes",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Feel like the exam would pick E over D",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMViewAlert.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/rome-it-operations-management/page/product/event-management/task/edit-alert-group-feedback.html",
+          "selected_answer": "E",
+          "replies": []
+        }
+      ],
+      "question_number": "104",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97336-exam-cis-em-topic-1-question-104-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "In your environment, no alert CMDB, automated, or text based grouping is occurring. What is most likely the problem?",
+      "answers": [
+        "A. No correlation rules have been defined",
+        "B. No event management rules have been defined",
+        "C. Application services are not operational",
+        "D. No CMDB is configured",
+        "E. The alert correlation property that enables grouping is set to false"
+      ],
+      "comments": [
+        {
+          "content": "To enable creating automated alert groups, set the Enable alert aggregation for Automated, CMDB and Text based groups (sa_analytics.aggregation_enabled)\n\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/event-management/concept/c_SACorrelatedAlertGroups.html",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "The sa_analytics.aggregation_enabled parameter. Enable creating automated alert group by setting the Enable alert aggregation for Automated, CMDB and Text based groups property to true.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "E. https://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/event-management/concept/c_SACorrelatedAlertGroups.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/concept/c_EMEventCorrelationRules.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "105",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97337-exam-cis-em-topic-1-question-105-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "The additional information field is a JSON string that gives more information about an event. An example of a supported JSON string is:",
+      "answers": [
+        "A. {\"CPU\":100}",
+        "B. {\"CPU\":100,’Status\":3}",
+        "C. {\"CPU\":\"100\",\"Status\":3}",
+        "D. {\"CPU\":\"100\"}"
+      ],
+      "comments": [
+        {
+          "content": "D is more proper.\nAlthough A, C, D are all valid JSON, but we should always refer to the existing way ServiceNow supported. In the Now Learning it is stated:\n- Supported JSON format \"{\"MEMORY\";\"70\"}\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A, C, and D are all valid JSON (A is also valid because integers do not necessarily have to be in quotes).\n\nHowever, note that at this time, ServiceNow only accepts up to ES5 JSON (not ES6 yet), and while there are still three correct answers, C is the most correct, because most examples on the SN doc sites display concatenated k/v pairs more often than not. Examples here:\n\nhttps://docs.servicenow.com/bundle/utah-integrate-applications/page/administer/import-sets/reference/json-data-source-examples.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C and D are both correct?",
+          "selected_answer": "",
+          "replies": [
+            "i guess the \"\" makes D even more correct. But integers do not have to be in quotes, i believe."
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/event-management/task/send-events-via-web-service.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "106",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122530-exam-cis-em-topic-1-question-106-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "In order for SNMP trap notifications to appear in ServiceNow as events, what option must be enabled in the required MID server?",
+      "answers": [
+        "A. MID SNMP trap listener",
+        "B. SNMP event manager module for MID",
+        "C. Event collector MID server extension",
+        "D. SNMP agent for MID"
+      ],
+      "comments": [
+        {
+          "content": "A is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/event-management/task/t_EMSNMPTrapEvent.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/event-management/task/t_EMSNMPTrapEvent.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "107",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97338-exam-cis-em-topic-1-question-107-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What event will cause Agent Client Collector self-monitoring to pause data collection?",
+      "answers": [
+        "A. Communication with the MID server is lost",
+        "B. The amount of host memory being used by the agent exceeds a threshold",
+        "C. Communication with the ServiceNow instance is lost",
+        "D. The amount of host disk space used by the agent exceeds a threshold",
+        "E. The amount of host CPU being utilized by the agent exceeds a threshold"
+      ],
+      "comments": [
+        {
+          "content": "E is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/agent-client-collector/reference/acc-set-silent-reference.html",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "E",
+          "replies": []
+        }
+      ],
+      "question_number": "108",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97339-exam-cis-em-topic-1-question-108-discussion/",
+      "most_voted": "E",
+      "error": null
+    },
+    {
+      "question": "Agent Client Collector can perform application service monitoring by configuring what option?",
+      "answers": [
+        "A. An alert management rule",
+        "B. A proxy agent",
+        "C. A distributed cluster",
+        "D. An event rule",
+        "E. A REST API"
+      ],
+      "comments": [
+        {
+          "content": "B is correct\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/agent-client-collector/concept/proxy-agent.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/tokyo-it-operations-management/page/product/agent-client-collector/task/create-edit-policies.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "109",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/97340-exam-cis-em-topic-1-question-109-discussion/",
+      "most_voted": "B",
+      "error": null
+    }
+  ]
+}
