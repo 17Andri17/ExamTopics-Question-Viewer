@@ -6,6 +6,7 @@ from reportlab.lib import colors
 import requests
 from io import BytesIO
 from bs4 import BeautifulSoup
+from utils import order_questions, get_topics, get_topic
 
 HEADERS = {
             "User-Agent": (
@@ -76,7 +77,8 @@ def generate_pdf(questions, progress):
     c = canvas.Canvas(buffer, pagesize=letter)
     width, height = letter
     y = height - 40  # start from top
-    questions = sorted(questions, key=lambda q: int(q.get("question_number", 0)))
+    questions = order_questions(questions)
+    multi_topic = len(get_topics(questions)) > 1
     for idx, q in enumerate(questions):
         progress.progress((idx + 1) / total, text=f"Generating question {idx + 1} of {total}...")
         question_number = q.get("question_number", "N/A")
@@ -87,9 +89,13 @@ def generate_pdf(questions, progress):
         answers = q.get("answers", [])
         most_voted = q.get("most_voted") or []
 
-        # Question number
+        # Question number (prefixed with topic for multi-topic exams)
         c.setFont("Helvetica-Bold", 12)
-        c.drawString(40, y, f"Question {question_number}")
+        if multi_topic:
+            header = f"Topic {q.get('topic') or get_topic(q)} · Question {question_number}"
+        else:
+            header = f"Question {question_number}"
+        c.drawString(40, y, header)
         y -= 20
 
         # Question text (wrap long lines to fit within page width)

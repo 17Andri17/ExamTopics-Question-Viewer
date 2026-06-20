@@ -7,6 +7,7 @@ import streamlit.components.v1 as components
 from scraper import get_question_links, scrape_questions, load_json_from_github
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
+from utils import annotate_topics, order_questions, get_topics
 
 if os.environ.get("HOSTNAME"):
     IS_DEPLOYED = os.environ["HOSTNAME"] == "streamlit"
@@ -118,13 +119,15 @@ if exam_code:
         with st.spinner("Fetching questions..."):
             progress = st.progress(0, text="Starting questions extraction...")
             questions, err = get_exam_questions(exam_code, progress, rapid_scraping=st.session_state["rapid_scraping"])
+            questions = order_questions(annotate_topics(questions))
             st.session_state.error = err
             st.session_state.questions = questions
             st.session_state.loaded_exam_code = exam_code
             st.session_state.just_loaded = True
             if len(questions) > 0:
-                selected_question = questions[0]
-                st.session_state.question = selected_question
+                st.session_state.current_topic = questions[0]["topic"]
+                st.session_state.question_index = 0
+                st.session_state.question = questions[0]
             if len(questions) == 0:
                 st.warning("No questions found.")
             st.rerun()
@@ -154,70 +157,77 @@ if exam_code:
             st.success(f"Loaded {len(st.session_state.questions)} questions.")
         st.session_state.just_loaded = False
 
-    if st.session_state.get("question"):
-        selected_question = st.session_state.get("question")
+    topics = get_topics(questions)
+    multi_topic = len(topics) > 1
+
+    if multi_topic:
+        col_search, col_topic, col_prev, col_rand, col_next = st.columns((3, 2, 1, 1, 1))
     else:
-        selected_question = None
+        col_search, col_prev, col_rand, col_next = st.columns((5, 1, 1, 1))
 
-    col1, col2, col3, col4 = st.columns((4,1,1,1))
-    with col1:
-        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search question number", label_visibility="collapsed")
-    with col2:
-        previous_button = st.button("Previous Question", use_container_width=True)
-    with col3:
-            random_button = st.button("Random Question", use_container_width=True)
-    with col4:
-        next_button = st.button("Next Question", use_container_width=True)
-        
+    with col_search:
+        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by question number", label_visibility="collapsed")
 
-    if random_button and questions:
-        selected_question = random.choice(questions)
+    current_topic = st.session_state.get("current_topic", topics[0] if topics else "1")
+    if current_topic not in topics:
+        current_topic = topics[0] if topics else "1"
+
+    if multi_topic:
+        with col_topic:
+            selected_topic = st.selectbox(
+                "Topic",
+                topics,
+                index=topics.index(current_topic),
+                format_func=lambda t: f"Topic {t}",
+                label_visibility="collapsed",
+                key="topic_select",
+            )
+        if selected_topic != current_topic:
+            current_topic = selected_topic
+            st.session_state.question_index = 0
+    st.session_state.current_topic = current_topic
+
+    topic_questions = [q for q in questions if q.get("topic") == current_topic]
+
+    with col_prev:
+        previous_button = st.button("Previous", use_container_width=True)
+    with col_rand:
+        random_button = st.button("Random", use_container_width=True)
+    with col_next:
+        next_button = st.button("Next", use_container_width=True)
+
+    index = st.session_state.get("question_index", 0)
+    index = max(0, min(index, len(topic_questions) - 1)) if topic_questions else 0
+
+    if random_button and topic_questions:
+        index = random.randrange(len(topic_questions))
         st.session_state.highlight = False
-    elif next_button:
-        matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) + 1)]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            st.session_state.highlight = False
-        else:
-            question_number = int(selected_question["question_number"])
-            while question_number <= max(int(q["question_number"]) for q in questions):
-                print(question_number)
-                question_number += 1
-                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
-                if matching_questions:
-                    selected_question = matching_questions[0]
-                    break
-            st.session_state.highlight = False
-    elif previous_button:
-        matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) - 1)]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            st.session_state.highlight = False
-        else:
-            question_number = int(selected_question["question_number"])
-            while question_number > 0 and question_number - 1 >= 0:
-                question_number -= 1
-                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
-                if matching_questions:
-                    selected_question = matching_questions[0]
-                    break
-            st.session_state.highlight = False
+    elif next_button and topic_questions:
+        index = min(index + 1, len(topic_questions) - 1)
+        st.session_state.highlight = False
+    elif previous_button and topic_questions:
+        index = max(index - 1, 0)
+        st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
-        matching_questions = [q for q in questions if q.get("question_number") == st.session_state.get("input")]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            question_number_input = "test"
+        target = st.session_state.get("input", "").strip()
+        match_index = next((i for i, q in enumerate(topic_questions) if str(q.get("question_number")) == target), None)
+        if match_index is not None:
+            index = match_index
             st.session_state.highlight = False
-            st.session_state.input = ""
         else:
-            st.warning("No question found with that number.")
+            scope = f" in Topic {current_topic}" if multi_topic else ""
+            st.warning(f"No question found with that number{scope}.")
+        st.session_state.input = ""
+
+    st.session_state.question_index = index
+    selected_question = topic_questions[index] if topic_questions else None
 
     if not st.session_state.get("highlight"):
         st.session_state.highlight = False
-    
+
     if selected_question:
         st.session_state.question = selected_question
-        render_question_header(selected_question)
+        render_question_header(selected_question, show_topic=multi_topic)
 
         render_question_body(selected_question, "https://www.examtopics.com")
 

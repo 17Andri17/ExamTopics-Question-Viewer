@@ -9,11 +9,14 @@ def fix_image_paths(html_text, prefix):
             img["src"] = prefix + src
     return str(soup)
 
-def render_question_header(question):
+def render_question_header(question, show_topic=False):
+    title = f"Question {question['question_number']}"
+    if show_topic:
+        title = f"Topic {question.get('topic', '1')} · {title}"
     st.markdown(
         f"""
         <h2 style="display: flex; align-items: center; gap: 20px;">
-            Question {question['question_number']}
+            {title}
             <a href="{question['link']}" target="_blank" class="exam-link" style="
                 color: #1f77b4;
                 text-decoration: none;
