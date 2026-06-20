@@ -7,7 +7,7 @@ import streamlit.components.v1 as components
 from scraper import get_question_links, scrape_questions, load_json_from_github
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
-from utils import annotate_topics, order_questions, get_topics
+from utils import annotate_topics, order_questions, get_topics, search_questions, plain_text
 
 if os.environ.get("HOSTNAME"):
     IS_DEPLOYED = os.environ["HOSTNAME"] == "streamlit"
@@ -161,13 +161,26 @@ if exam_code:
     topics = get_topics(questions)
     multi_topic = len(topics) > 1
 
+    # Apply a pending jump from a text-search result. This must run before the
+    # topic selectbox is created so we can point it at the target topic.
+    pending = st.session_state.pop("pending_jump", None)
+    if pending:
+        target_topic, target_link = pending
+        if multi_topic:
+            st.session_state.topic_select = target_topic
+        st.session_state.active_topic = target_topic
+        target_questions = [q for q in questions if q.get("topic") == target_topic]
+        st.session_state.question_index = next(
+            (i for i, q in enumerate(target_questions) if q.get("link") == target_link), 0
+        )
+
     if multi_topic:
         col_search, col_topic, col_prev, col_rand, col_next = st.columns((3, 2, 1, 1, 1))
     else:
         col_search, col_prev, col_rand, col_next = st.columns((5, 1, 1, 1))
 
     with col_search:
-        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by question number", label_visibility="collapsed")
+        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by question number or text", label_visibility="collapsed")
 
     if multi_topic:
         with col_topic:
@@ -208,21 +221,50 @@ if exam_code:
         index = max(index - 1, 0)
         st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
-        target = st.session_state.get("input", "").strip()
-        match_index = next((i for i, q in enumerate(topic_questions) if str(q.get("question_number")) == target), None)
-        if match_index is not None:
-            index = match_index
-            st.session_state.highlight = False
-        else:
-            scope = f" in Topic {current_topic}" if multi_topic else ""
-            st.warning(f"No question found with that number{scope}.")
+        query = st.session_state.get("input", "").strip()
         st.session_state.input = ""
+        if query.isdigit():
+            match_index = next((i for i, q in enumerate(topic_questions) if str(q.get("question_number")) == query), None)
+            if match_index is not None:
+                index = match_index
+                st.session_state.highlight = False
+                st.session_state.text_query = ""
+            else:
+                scope = f" in Topic {current_topic}" if multi_topic else ""
+                st.warning(f"No question found with that number{scope}.")
+        else:
+            # Non-numeric query: search question and answer text across topics.
+            st.session_state.text_query = query
 
     st.session_state.question_index = index
     selected_question = topic_questions[index] if topic_questions else None
 
     if not st.session_state.get("highlight"):
         st.session_state.highlight = False
+
+    # Text-search results (shown above the current question, across all topics).
+    text_query = st.session_state.get("text_query", "")
+    if text_query:
+        results = search_questions(questions, text_query)
+        header_col, clear_col = st.columns((6, 1))
+        with header_col:
+            st.markdown(f"**{len(results)} result(s) for “{text_query}”:**")
+        with clear_col:
+            if st.button("Clear", use_container_width=True):
+                st.session_state.text_query = ""
+                st.rerun()
+        if not results:
+            st.info("No questions matched your search.")
+        for q in results[:50]:
+            label_topic = f"Topic {q['topic']} · " if multi_topic else ""
+            snippet = plain_text(q.get("question", ""))[:120]
+            if st.button(f"{label_topic}Question {q['question_number']}: {snippet}…", key=f"result_{q['link']}", use_container_width=True):
+                st.session_state.pending_jump = (q["topic"], q["link"])
+                st.session_state.text_query = ""
+                st.rerun()
+        if len(results) > 50:
+            st.caption(f"Showing the first 50 of {len(results)} results.")
+        st.markdown("---")
 
     if selected_question:
         st.session_state.question = selected_question

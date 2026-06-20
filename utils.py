@@ -49,3 +49,30 @@ def get_topics(questions):
     """Return the sorted list of distinct topics present in the questions."""
     topics = {q.get("topic") or get_topic(q) for q in questions}
     return sorted(topics, key=_as_int)
+
+
+_TAG_RE = re.compile(r"<[^>]+>")
+_WS_RE = re.compile(r"\s+")
+
+
+def plain_text(html):
+    """Strip HTML tags and collapse whitespace for display/searching."""
+    return _WS_RE.sub(" ", _TAG_RE.sub(" ", html or "")).strip()
+
+
+def search_questions(questions, query):
+    """Return questions whose question text or answers contain ``query``.
+
+    Matching is case-insensitive and ignores HTML markup. Results keep the
+    order of ``questions`` (already sorted by topic then number).
+    """
+    needle = (query or "").strip().lower()
+    if not needle:
+        return []
+    matches = []
+    for q in questions:
+        haystack = plain_text(q.get("question", ""))
+        haystack += " " + " ".join(q.get("answers", []) or [])
+        if needle in haystack.lower():
+            matches.append(q)
+    return matches
