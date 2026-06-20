@@ -125,9 +125,10 @@ if exam_code:
             st.session_state.loaded_exam_code = exam_code
             st.session_state.just_loaded = True
             if len(questions) > 0:
-                st.session_state.current_topic = questions[0]["topic"]
+                st.session_state.active_topic = questions[0]["topic"]
                 st.session_state.question_index = 0
                 st.session_state.question = questions[0]
+                st.session_state.pop("topic_select", None)
             if len(questions) == 0:
                 st.warning("No questions found.")
             st.rerun()
@@ -168,24 +169,22 @@ if exam_code:
     with col_search:
         question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by question number", label_visibility="collapsed")
 
-    current_topic = st.session_state.get("current_topic", topics[0] if topics else "1")
-    if current_topic not in topics:
-        current_topic = topics[0] if topics else "1"
-
     if multi_topic:
         with col_topic:
-            selected_topic = st.selectbox(
+            current_topic = st.selectbox(
                 "Topic",
                 topics,
-                index=topics.index(current_topic),
                 format_func=lambda t: f"Topic {t}",
                 label_visibility="collapsed",
                 key="topic_select",
             )
-        if selected_topic != current_topic:
-            current_topic = selected_topic
-            st.session_state.question_index = 0
-    st.session_state.current_topic = current_topic
+    else:
+        current_topic = topics[0] if topics else "1"
+
+    # Reset to the first question whenever the active topic changes.
+    if st.session_state.get("active_topic") != current_topic:
+        st.session_state.active_topic = current_topic
+        st.session_state.question_index = 0
 
     topic_questions = [q for q in questions if q.get("topic") == current_topic]
 
