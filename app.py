@@ -1,48 +1,54 @@
 import streamlit as st
 import os
-import json
 import random
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
-from scraper import get_question_links, scrape_questions, load_json_from_github
+from scraper import get_question_links, scrape_questions, load_json
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
 from utils import annotate_topics, order_questions, get_topics, search_questions, plain_text
+from versions import (
+    version_path, links_path, local_versions, next_version,
+    version_label, stamp_version, github_versions, load_from_github,
+)
 
 if os.environ.get("HOSTNAME"):
     IS_DEPLOYED = os.environ["HOSTNAME"] == "streamlit"
 else:
     IS_DEPLOYED = False
 
-def get_exam_questions(exam_code, progress, rapid_scraping=False):
+def get_exam_questions(exam_code, version, progress, rapid_scraping=False):
     if IS_DEPLOYED:
-        questions, err = load_json_from_github(exam_code)
+        questions, err = load_from_github(exam_code, version)
         if questions:
-            progress.progress(100, text=f"Loaded from GitHub")
-            return questions, ""
-        else:
-            return [], err
-    else:
-        questions_path = f"data/{exam_code}.json"
-        links_path = f"data/{exam_code}_links.json"
-        if os.path.exists(questions_path):
-            with open(questions_path, "r", encoding="utf-8") as f:
-                questions_JSON = json.load(f)
-                if questions_JSON.get("status") == "complete":
-                    progress.progress(100, text=f"Extracted questions from file")
-                    return (questions_JSON.get("questions", []), "")
-        try:        
-            links = get_question_links(exam_code, progress, links_path)
-        except Exception as e:
-            return [], e
-        
-        if len(links) == 0:
-            return [], "No questions found. Please check the exam code and try again."
-        questions_obj = scrape_questions(links, questions_path, progress, rapid_scraping)
-        questions = questions_obj.get("questions", [])
-        if questions_obj.get("error","") != "":
-            return (questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page.")
-        return (questions, "")
+            progress.progress(100, text="Loaded from GitHub")
+        return questions, err
+
+    questions_path = version_path(exam_code, version)
+    links_file = links_path(exam_code, version)
+
+    # A finished snapshot just gets read back from disk.
+    if os.path.exists(questions_path):
+        questions_JSON = load_json(questions_path)
+        if questions_JSON.get("status") == "complete":
+            progress.progress(100, text="Extracted questions from file")
+            return questions_JSON.get("questions", []), ""
+
+    # Otherwise scrape it (initial scrape of v1, or a new/continuing version).
+    try:
+        links = get_question_links(exam_code, progress, links_file)
+    except Exception as e:
+        return [], str(e)
+
+    if len(links) == 0:
+        return [], "No questions found. Please check the exam code and try again."
+
+    questions_obj = scrape_questions(links, questions_path, progress, rapid_scraping)
+    questions = questions_obj.get("questions", [])
+    stamp_version(exam_code, version)
+    if questions_obj.get("error", "") != "":
+        return questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page."
+    return questions, ""
     
 def clear_text():
     st.session_state.input = st.session_state.question_number_input_text
@@ -115,21 +121,86 @@ if modal.is_open():
             st.session_state["highlight"] = True
 
 if exam_code:
-    if "loaded_exam_code" not in st.session_state or st.session_state.loaded_exam_code != exam_code:
+    # --- Discover the available versions for this exam ---
+    if IS_DEPLOYED:
+        if st.session_state.get("versions_exam") != exam_code:
+            st.session_state.versions_list = github_versions(exam_code) or [1]
+            st.session_state.versions_exam = exam_code
+        versions_list = st.session_state.versions_list
+    else:
+        versions_list = local_versions(exam_code) or [1]
+
+    # A re-scrape queues a switch to a new (not-yet-existing) version.
+    pending_version = st.session_state.pop("pending_version", None)
+    if pending_version is not None:
+        if pending_version not in versions_list:
+            versions_list = sorted(set(versions_list) | {pending_version})
+        st.session_state.version_select = pending_version
+
+    latest_version = max(versions_list)
+
+    # Reset the selection to the newest version when the exam changes.
+    if st.session_state.get("version_exam") != exam_code:
+        st.session_state.version_exam = exam_code
+        st.session_state.version_select = latest_version
+
+    version_options = sorted(versions_list, reverse=True)
+    if st.session_state.get("version_select") not in version_options:
+        st.session_state.version_select = latest_version
+
+    # --- Version selector + re-scrape control ---
+    ver_col, rescrape_col = st.columns((4, 1))
+    with ver_col:
+        if len(version_options) > 1:
+            selected_version = st.selectbox(
+                "Version",
+                version_options,
+                format_func=lambda v: version_label(exam_code, v, latest_version),
+                label_visibility="collapsed",
+                key="version_select",
+            )
+        else:
+            selected_version = latest_version
+    with rescrape_col:
+        rescrape_help = (
+            "Fetch this exam again to pick up new questions and answers. "
+            "The result is saved as a new version; older versions are kept."
+            if not IS_DEPLOYED else
+            "Re-scraping is only available when running the app locally."
+        )
+        rescrape_clicked = st.button("🔄 Re-scrape", use_container_width=True, disabled=IS_DEPLOYED, help=rescrape_help)
+
+    if rescrape_clicked and not IS_DEPLOYED:
+        st.session_state.pending_version = next_version(exam_code)
+        st.session_state.force_rescrape = True
+        st.rerun()
+
+    # --- Load the selected version (scraping it if it doesn't exist yet) ---
+    force_load = st.session_state.pop("force_rescrape", False)
+    need_load = (
+        force_load
+        or st.session_state.get("loaded_exam_code") != exam_code
+        or st.session_state.get("loaded_version") != selected_version
+    )
+    if need_load:
         with st.spinner("Fetching questions..."):
             progress = st.progress(0, text="Starting questions extraction...")
-            questions, err = get_exam_questions(exam_code, progress, rapid_scraping=st.session_state["rapid_scraping"])
+            questions, err = get_exam_questions(exam_code, selected_version, progress, rapid_scraping=st.session_state["rapid_scraping"])
             questions = order_questions(annotate_topics(questions))
             st.session_state.error = err
             st.session_state.questions = questions
             st.session_state.loaded_exam_code = exam_code
+            st.session_state.loaded_version = selected_version
             st.session_state.just_loaded = True
+            # Reset the view for the freshly loaded set of questions.
+            st.session_state.question_index = 0
+            st.session_state.text_query = ""
+            st.session_state.pop("active_topic", None)
+            st.session_state.pop("topic_select", None)
             if len(questions) > 0:
                 st.session_state.active_topic = questions[0]["topic"]
-                st.session_state.question_index = 0
                 st.session_state.question = questions[0]
-                st.session_state.pop("topic_select", None)
-            if len(questions) == 0:
+            else:
                 st.warning("No questions found.")
             st.rerun()
     else:
@@ -142,10 +213,11 @@ if exam_code:
         try:
             pdf_data = generate_pdf(questions, progress_pdf)
             st.success("PDF generation complete.")
+            version_suffix = f"_v{selected_version}" if selected_version > 1 else ""
             st.download_button(
                 label="Download PDF",
                 data=pdf_data,
-                file_name=f"{exam_code}_questions.pdf",
+                file_name=f"{exam_code}{version_suffix}_questions.pdf",
                 mime="application/pdf"
             )
         except Exception as e:
@@ -155,7 +227,9 @@ if exam_code:
         if st.session_state.get("error", "") != "":
             st.error(st.session_state.get("error", ""))
         else:
-            st.success(f"Loaded {len(st.session_state.questions)} questions.")
+            loaded_v = st.session_state.get("loaded_version", 1)
+            version_note = f" (version {loaded_v})" if len(version_options) > 1 or loaded_v > 1 else ""
+            st.success(f"Loaded {len(st.session_state.questions)} questions{version_note}.")
         st.session_state.just_loaded = False
 
     topics = get_topics(questions)
