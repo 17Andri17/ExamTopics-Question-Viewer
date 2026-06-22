@@ -13,7 +13,9 @@ A **Streamlit** web app that lets you view and export exam questions from [ExamT
 ✅ Scrape questions and answers by exam code <br>
 ✅ View most-voted answers with optional highlighting <br>
 ✅ Read user discussion and selected answers <br>
-✅ Navigate: next, previous, random, or search by number <br>
+✅ Browse by topic — exams that reuse question numbers across multiple topics show a topic selector so every question is reachable <br>
+✅ Navigate: next, previous, random, search by number, or search by question/answer text <br>
+✅ Re-scrape an exam to pick up new questions and answers, with full version history (older versions are kept and can be re-opened) <br>
 ✅ Export questions and answers to a formatted PDF <br>
 ✅ Caching via local JSON to avoid re-scraping <br>
 ✅ Built-in error handling for rate limits and offline fallback
@@ -41,6 +43,27 @@ pip install -r requirements.txt
 ```bash
 python -m streamlit run app.py
 ```
+
+## 🔁 Re-scraping & Versions
+
+Exam content on ExamTopics changes over time — new questions get added and
+discussions gain new most-voted answers. Use the **🔄 Re-scrape** button to run
+the whole scraping procedure again. The result is saved as a **new version**
+instead of overwriting the existing data:
+
+- Existing exams (anything scraped before this feature) are treated as
+  **Version 1** — no version suffix means version 1.
+- Each re-scrape is written to `data/{exam_code}_v{n}.json`, leaving older
+  snapshots untouched.
+- The app always opens the **newest** version by default. When more than one
+  version exists, a **version selector** appears so you can go back and view any
+  previous version (read-only).
+- If a re-scrape is interrupted (e.g. by rate-limiting), pressing **Re-scrape**
+  again resumes the unfinished version rather than starting another one.
+
+> Re-scraping runs the same rate-limited requests as the initial scrape, so it
+> can take a while for large exams. It is only available when running locally;
+> the online version is read-only.
 
 ## 📤 Exporting to PDF
 Once questions are loaded, click Export Questions to PDF. The PDF includes:

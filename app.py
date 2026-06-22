@@ -1,47 +1,54 @@
 import streamlit as st
 import os
-import json
 import random
 from streamlit_modal import Modal
 import streamlit.components.v1 as components
-from scraper import get_question_links, scrape_questions, load_json_from_github
+from scraper import get_question_links, scrape_questions, load_json
 from pdf import generate_pdf
 from ui_utils import render_question_header, render_question_body, render_answers, render_discussion, render_highlight_toggle
+from utils import annotate_topics, order_questions, get_topics, search_questions, plain_text
+from versions import (
+    version_path, links_path, local_versions, next_version,
+    version_label, stamp_version, github_versions, load_from_github,
+)
 
 if os.environ.get("HOSTNAME"):
     IS_DEPLOYED = os.environ["HOSTNAME"] == "streamlit"
 else:
     IS_DEPLOYED = False
 
-def get_exam_questions(exam_code, progress, rapid_scraping=False):
+def get_exam_questions(exam_code, version, progress, rapid_scraping=False):
     if IS_DEPLOYED:
-        questions, err = load_json_from_github(exam_code)
+        questions, err = load_from_github(exam_code, version)
         if questions:
-            progress.progress(100, text=f"Loaded from GitHub")
-            return questions, ""
-        else:
-            return [], err
-    else:
-        questions_path = f"data/{exam_code}.json"
-        links_path = f"data/{exam_code}_links.json"
-        if os.path.exists(questions_path):
-            with open(questions_path, "r", encoding="utf-8") as f:
-                questions_JSON = json.load(f)
-                if questions_JSON.get("status") == "complete":
-                    progress.progress(100, text=f"Extracted questions from file")
-                    return (questions_JSON.get("questions", []), "")
-        try:        
-            links = get_question_links(exam_code, progress, links_path)
-        except Exception as e:
-            return [], e
-        
-        if len(links) == 0:
-            return [], "No questions found. Please check the exam code and try again."
-        questions_obj = scrape_questions(links, questions_path, progress, rapid_scraping)
-        questions = questions_obj.get("questions", [])
-        if questions_obj.get("error","") != "":
-            return (questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page.")
-        return (questions, "")
+            progress.progress(100, text="Loaded from GitHub")
+        return questions, err
+
+    questions_path = version_path(exam_code, version)
+    links_file = links_path(exam_code, version)
+
+    # A finished snapshot just gets read back from disk.
+    if os.path.exists(questions_path):
+        questions_JSON = load_json(questions_path)
+        if questions_JSON.get("status") == "complete":
+            progress.progress(100, text="Extracted questions from file")
+            return questions_JSON.get("questions", []), ""
+
+    # Otherwise scrape it (initial scrape of v1, or a new/continuing version).
+    try:
+        links = get_question_links(exam_code, progress, links_file)
+    except Exception as e:
+        return [], str(e)
+
+    if len(links) == 0:
+        return [], "No questions found. Please check the exam code and try again."
+
+    questions_obj = scrape_questions(links, questions_path, progress, rapid_scraping)
+    questions = questions_obj.get("questions", [])
+    stamp_version(exam_code, version)
+    if questions_obj.get("error", "") != "":
+        return questions, f"Error occurred while scraping questions. Your connection may be slow or the website may have limited your rate. You can still see {len(questions)} questions. Try again later by refreshing the page."
+    return questions, ""
     
 def clear_text():
     st.session_state.input = st.session_state.question_number_input_text
@@ -114,18 +121,86 @@ if modal.is_open():
             st.session_state["highlight"] = True
 
 if exam_code:
-    if "loaded_exam_code" not in st.session_state or st.session_state.loaded_exam_code != exam_code:
+    # --- Discover the available versions for this exam ---
+    if IS_DEPLOYED:
+        if st.session_state.get("versions_exam") != exam_code:
+            st.session_state.versions_list = github_versions(exam_code) or [1]
+            st.session_state.versions_exam = exam_code
+        versions_list = st.session_state.versions_list
+    else:
+        versions_list = local_versions(exam_code) or [1]
+
+    # A re-scrape queues a switch to a new (not-yet-existing) version.
+    pending_version = st.session_state.pop("pending_version", None)
+    if pending_version is not None:
+        if pending_version not in versions_list:
+            versions_list = sorted(set(versions_list) | {pending_version})
+        st.session_state.version_select = pending_version
+
+    latest_version = max(versions_list)
+
+    # Reset the selection to the newest version when the exam changes.
+    if st.session_state.get("version_exam") != exam_code:
+        st.session_state.version_exam = exam_code
+        st.session_state.version_select = latest_version
+
+    version_options = sorted(versions_list, reverse=True)
+    if st.session_state.get("version_select") not in version_options:
+        st.session_state.version_select = latest_version
+
+    # --- Version selector + re-scrape control ---
+    ver_col, rescrape_col = st.columns((4, 1))
+    with ver_col:
+        if len(version_options) > 1:
+            selected_version = st.selectbox(
+                "Version",
+                version_options,
+                format_func=lambda v: version_label(exam_code, v, latest_version),
+                label_visibility="collapsed",
+                key="version_select",
+            )
+        else:
+            selected_version = latest_version
+    with rescrape_col:
+        rescrape_help = (
+            "Fetch this exam again to pick up new questions and answers. "
+            "The result is saved as a new version; older versions are kept."
+            if not IS_DEPLOYED else
+            "Re-scraping is only available when running the app locally."
+        )
+        rescrape_clicked = st.button("🔄 Re-scrape", use_container_width=True, disabled=IS_DEPLOYED, help=rescrape_help)
+
+    if rescrape_clicked and not IS_DEPLOYED:
+        st.session_state.pending_version = next_version(exam_code)
+        st.session_state.force_rescrape = True
+        st.rerun()
+
+    # --- Load the selected version (scraping it if it doesn't exist yet) ---
+    force_load = st.session_state.pop("force_rescrape", False)
+    need_load = (
+        force_load
+        or st.session_state.get("loaded_exam_code") != exam_code
+        or st.session_state.get("loaded_version") != selected_version
+    )
+    if need_load:
         with st.spinner("Fetching questions..."):
             progress = st.progress(0, text="Starting questions extraction...")
-            questions, err = get_exam_questions(exam_code, progress, rapid_scraping=st.session_state["rapid_scraping"])
+            questions, err = get_exam_questions(exam_code, selected_version, progress, rapid_scraping=st.session_state["rapid_scraping"])
+            questions = order_questions(annotate_topics(questions))
             st.session_state.error = err
             st.session_state.questions = questions
             st.session_state.loaded_exam_code = exam_code
+            st.session_state.loaded_version = selected_version
             st.session_state.just_loaded = True
+            # Reset the view for the freshly loaded set of questions.
+            st.session_state.question_index = 0
+            st.session_state.text_query = ""
+            st.session_state.pop("active_topic", None)
+            st.session_state.pop("topic_select", None)
             if len(questions) > 0:
-                selected_question = questions[0]
-                st.session_state.question = selected_question
-            if len(questions) == 0:
+                st.session_state.active_topic = questions[0]["topic"]
+                st.session_state.question = questions[0]
+            else:
                 st.warning("No questions found.")
             st.rerun()
     else:
@@ -138,10 +213,11 @@ if exam_code:
         try:
             pdf_data = generate_pdf(questions, progress_pdf)
             st.success("PDF generation complete.")
+            version_suffix = f"_v{selected_version}" if selected_version > 1 else ""
             st.download_button(
                 label="Download PDF",
                 data=pdf_data,
-                file_name=f"{exam_code}_questions.pdf",
+                file_name=f"{exam_code}{version_suffix}_questions.pdf",
                 mime="application/pdf"
             )
         except Exception as e:
@@ -151,73 +227,122 @@ if exam_code:
         if st.session_state.get("error", "") != "":
             st.error(st.session_state.get("error", ""))
         else:
-            st.success(f"Loaded {len(st.session_state.questions)} questions.")
+            loaded_v = st.session_state.get("loaded_version", 1)
+            version_note = f" (version {loaded_v})" if len(version_options) > 1 or loaded_v > 1 else ""
+            st.success(f"Loaded {len(st.session_state.questions)} questions{version_note}.")
         st.session_state.just_loaded = False
 
-    if st.session_state.get("question"):
-        selected_question = st.session_state.get("question")
+    topics = get_topics(questions)
+    multi_topic = len(topics) > 1
+
+    # Apply a pending jump from a text-search result. This must run before the
+    # topic selectbox is created so we can point it at the target topic.
+    pending = st.session_state.pop("pending_jump", None)
+    if pending:
+        target_topic, target_link = pending
+        if multi_topic:
+            st.session_state.topic_select = target_topic
+        st.session_state.active_topic = target_topic
+        target_questions = [q for q in questions if q.get("topic") == target_topic]
+        st.session_state.question_index = next(
+            (i for i, q in enumerate(target_questions) if q.get("link") == target_link), 0
+        )
+
+    if multi_topic:
+        col_search, col_topic, col_prev, col_rand, col_next = st.columns((3, 2, 1, 1, 1))
     else:
-        selected_question = None
+        col_search, col_prev, col_rand, col_next = st.columns((5, 1, 1, 1))
 
-    col1, col2, col3, col4 = st.columns((4,1,1,1))
-    with col1:
-        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search question number", label_visibility="collapsed")
-    with col2:
-        previous_button = st.button("Previous Question", use_container_width=True)
-    with col3:
-            random_button = st.button("Random Question", use_container_width=True)
-    with col4:
-        next_button = st.button("Next Question", use_container_width=True)
-        
+    with col_search:
+        question_number_input = st.text_input("Search question", key="question_number_input_text", on_change=clear_text, placeholder="Search by question number or text", label_visibility="collapsed")
 
-    if random_button and questions:
-        selected_question = random.choice(questions)
+    if multi_topic:
+        with col_topic:
+            current_topic = st.selectbox(
+                "Topic",
+                topics,
+                format_func=lambda t: f"Topic {t}",
+                label_visibility="collapsed",
+                key="topic_select",
+            )
+    else:
+        current_topic = topics[0] if topics else "1"
+
+    # Reset to the first question whenever the active topic changes.
+    if st.session_state.get("active_topic") != current_topic:
+        st.session_state.active_topic = current_topic
+        st.session_state.question_index = 0
+
+    topic_questions = [q for q in questions if q.get("topic") == current_topic]
+
+    with col_prev:
+        previous_button = st.button("Previous", use_container_width=True)
+    with col_rand:
+        random_button = st.button("Random", use_container_width=True)
+    with col_next:
+        next_button = st.button("Next", use_container_width=True)
+
+    index = st.session_state.get("question_index", 0)
+    index = max(0, min(index, len(topic_questions) - 1)) if topic_questions else 0
+
+    if random_button and topic_questions:
+        index = random.randrange(len(topic_questions))
         st.session_state.highlight = False
-    elif next_button:
-        matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) + 1)]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            st.session_state.highlight = False
-        else:
-            question_number = int(selected_question["question_number"])
-            while question_number <= max(int(q["question_number"]) for q in questions):
-                print(question_number)
-                question_number += 1
-                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
-                if matching_questions:
-                    selected_question = matching_questions[0]
-                    break
-            st.session_state.highlight = False
-    elif previous_button:
-        matching_questions = [q for q in questions if q.get("question_number") == str(int(selected_question["question_number"]) - 1)]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            st.session_state.highlight = False
-        else:
-            question_number = int(selected_question["question_number"])
-            while question_number > 0 and question_number - 1 >= 0:
-                question_number -= 1
-                matching_questions = [q for q in questions if q.get("question_number") == str(question_number)]
-                if matching_questions:
-                    selected_question = matching_questions[0]
-                    break
-            st.session_state.highlight = False
+    elif next_button and topic_questions:
+        index = min(index + 1, len(topic_questions) - 1)
+        st.session_state.highlight = False
+    elif previous_button and topic_questions:
+        index = max(index - 1, 0)
+        st.session_state.highlight = False
     elif st.session_state.get("input", "") != "":
-        matching_questions = [q for q in questions if q.get("question_number") == st.session_state.get("input")]
-        if matching_questions:
-            selected_question = matching_questions[0]
-            question_number_input = "test"
-            st.session_state.highlight = False
-            st.session_state.input = ""
+        query = st.session_state.get("input", "").strip()
+        st.session_state.input = ""
+        if query.isdigit():
+            match_index = next((i for i, q in enumerate(topic_questions) if str(q.get("question_number")) == query), None)
+            if match_index is not None:
+                index = match_index
+                st.session_state.highlight = False
+                st.session_state.text_query = ""
+            else:
+                scope = f" in Topic {current_topic}" if multi_topic else ""
+                st.warning(f"No question found with that number{scope}.")
         else:
-            st.warning("No question found with that number.")
+            # Non-numeric query: search question and answer text across topics.
+            st.session_state.text_query = query
+
+    st.session_state.question_index = index
+    selected_question = topic_questions[index] if topic_questions else None
 
     if not st.session_state.get("highlight"):
         st.session_state.highlight = False
-    
+
+    # Text-search results (shown above the current question, across all topics).
+    text_query = st.session_state.get("text_query", "")
+    if text_query:
+        results = search_questions(questions, text_query)
+        header_col, clear_col = st.columns((6, 1))
+        with header_col:
+            st.markdown(f"**{len(results)} result(s) for “{text_query}”:**")
+        with clear_col:
+            if st.button("Clear", use_container_width=True):
+                st.session_state.text_query = ""
+                st.rerun()
+        if not results:
+            st.info("No questions matched your search.")
+        for q in results[:50]:
+            label_topic = f"Topic {q['topic']} · " if multi_topic else ""
+            snippet = plain_text(q.get("question", ""))[:120]
+            if st.button(f"{label_topic}Question {q['question_number']}: {snippet}…", key=f"result_{q['link']}", use_container_width=True):
+                st.session_state.pending_jump = (q["topic"], q["link"])
+                st.session_state.text_query = ""
+                st.rerun()
+        if len(results) > 50:
+            st.caption(f"Showing the first 50 of {len(results)} results.")
+        st.markdown("---")
+
     if selected_question:
         st.session_state.question = selected_question
-        render_question_header(selected_question)
+        render_question_header(selected_question, show_topic=multi_topic)
 
         render_question_body(selected_question, "https://www.examtopics.com")
 
