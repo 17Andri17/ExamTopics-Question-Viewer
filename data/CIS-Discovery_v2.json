@@ -1,0 +1,3587 @@
+{
+  "status": "complete",
+  "error": "",
+  "questions": [
+    {
+      "question": "<img src=\"https://img.examtopics.com/cis-discovery/image1.png\"/><br/>Based on this image, which of the following statements are true? (Choose three.)",
+      "answers": [
+        "A. Attributes from two tables populate a table with the same name as a ServiceNow CMDB table.",
+        "B. This operation is more than likely a part of a step on a pattern set to Application Pattern Type.",
+        "C. If a value is unmatched, it is still merged into the Target Table.",
+        "D. For this operation to run, there must be some data in the process.executablePath variable.",
+        "E. This is a horizontal pattern of type \"infrastructure.\""
+      ],
+      "comments": [
+        {
+          "content": "A, B, D - 2 tables will merge in a cmdb table, this is part of a step configured in App Pattern and based on the condition, the variable process.executablePath should contain \"mongoose\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "ABD es la correcta",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "E seems more correct than A",
+          "selected_answer": "BDE",
+          "replies": []
+        },
+        {
+          "content": "ABD is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "ABD is correct answer",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "ABD is correct answer",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "ABD is correct considering that the table being merged to is the Web Server table",
+          "selected_answer": "ABD",
+          "replies": []
+        },
+        {
+          "content": "ABD might actually be correct considering that the table being merged to is the Web Server table",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I think ADE",
+          "selected_answer": "ADE",
+          "replies": []
+        },
+        {
+          "content": "BDE ARE CORRECT",
+          "selected_answer": "BDE",
+          "replies": []
+        }
+      ],
+      "question_number": "1",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111352-exam-cis-discovery-topic-1-question-1-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "<img src=\"https://img.examtopics.com/cis-discovery/image2.png\"/><br/>Based on the following images, which choice best describes what occurs if Discovery sets the name attribute of a discovered Windows Server CI to 'Windows1' and then Altiris discovery runs detecting 'Windows2' for the name attribute on the same CI?",
+      "answers": [
+        "A. The name of the CI stays 'Windows1'.",
+        "B. The name of the CI changes to 'Windows2'.",
+        "C. The name of the CI does not populate with either discovery.",
+        "D. The CI is not discovered because Discovery is not listed in either image."
+      ],
+      "comments": [
+        {
+          "content": "Based on the Order",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Lowest (aka highest) priority takes priority, therefore A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The answer would be \"B\" based on the higher priority being \"ServiceNow.\" Once the source from the higher priority updates the field it checks the \"cmdb_datasource_last_update\" table. If the fields been updated the lower priority source is skipped. \n\nResource: https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0756709 (Updated Jan 18 2024)",
+          "selected_answer": "B",
+          "replies": [
+            "Sorry this wouldn't allow me to correct this. Please disregard the answer is A"
+          ]
+        },
+        {
+          "content": "Correct answer: A. The name of the CI stays ‘Windows1’.\nReasoning: If multiple data sources are authorized to update the same table in the CMDB based on reconciliation definition, then a lower order data source has higher priority than a higher order data source.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "The answer is A due to the order on the Data Source Precedents.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "the rules run in the order from lowest to highest.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The answer is \"A\", no question about it. Why do they have marked \"B\" as Correct answer ??",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The answer is A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Answer is A",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I agree the answer should be A, this is based on the ranking of 100  for ServiceNow(higher  than 300 for Altrium)",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "The answer is A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Should be A",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Think it should be A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "should be A?",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "2",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/101860-exam-cis-discovery-topic-1-question-2-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "For the Parse Variable pattern operation, what is required to have two different parsing methods to populate variables?",
+      "answers": [
+        "A. Two different Debug Mode sessions.",
+        "B. A tabular and a scalar variable.",
+        "C. Two different steps.",
+        "D. Two different Define Parsing selections on the same step."
+      ],
+      "comments": [
+        {
+          "content": "one step = 1 parsing method, you cant have 2 (try it in discovery pattern)",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "3",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/115059-exam-cis-discovery-topic-1-question-3-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which best describes Discovery schedule of type Configuration Item?",
+      "answers": [
+        "A. Verifies Configuration Item data from the scanned IP ranges against the data in the CMDB.",
+        "B. Creates only a list of discovered IPs in both IPv4 and IPv6 formats.",
+        "C. Collects complete information from the scanned IP ranges and sends it to the CMDB.",
+        "D. Directly populates records in the assets table."
+      ],
+      "comments": [
+        {
+          "content": "Correct Answer C",
+          "selected_answer": "C",
+          "replies": [
+            "not the A because discovery does not validate data in the cmdb, that is the job for identification and reconciliation rules"
+          ]
+        },
+        {
+          "content": "Correct Answer C",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Correct Answer A",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A and C are very close, the only ambiguity is the verification  (Does CMDB do verification accepting CI's )",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "4",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/110988-exam-cis-discovery-topic-1-question-4-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "When installing a MID Server on a Windows platform, which right must be associated when creating a Service Account?",
+      "answers": [
+        "A. Root",
+        "B. Domain Admin",
+        "C. MID Server User Role",
+        "D. Log on as service"
+      ],
+      "comments": [
+        {
+          "content": "1. You can allow read-only in a AD domain without making the account Domain Admin\n\n2. MID has to have log on as a service rights in order to run the MID services on the Windows server.",
+          "selected_answer": "D",
+          "replies": [
+            "Log on as Service is the correct answer"
+          ]
+        },
+        {
+          "content": "The provided service account credentials must meet the following requirements in addition to being a valid account.\nThe user cannot be a local system or an administrator level account (local admin, domain admin, etc.)\nThe service account provided has the log on as service right, which is required for an account to be used as the log on user for a service.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D in my opinion",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D - 100%",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Know this one from setting up multiple MID servers",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "DDDDDDDDDDDDDDDDDDDDDDDDD",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Looks to be D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "It is D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Should be D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Username of the service account that will be used to run the MID Server service. For information on creating service accounts, see Create a Windows service account with \"Log on as Service\" [KB0867669].",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D should be right.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "probably D.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "5",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/99924-exam-cis-discovery-topic-1-question-5-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are needed for Quick Discovery? (Choose two.)",
+      "answers": [
+        "A. MID Server",
+        "B. Discovery Schedule",
+        "C. PID",
+        "D. Target IP"
+      ],
+      "comments": [
+        {
+          "content": "AD correct",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "AD is the right answer",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "6",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100606-exam-cis-discovery-topic-1-question-6-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "In order to use Debug from the Pattern Designer, you must have what?",
+      "answers": [
+        "A. a proxy server",
+        "B. a discoverable CI",
+        "C. the admin role",
+        "D. Service Mapping installed"
+      ],
+      "comments": [
+        {
+          "content": "You have to connect to an actual CI in order to debug it. B is correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "You need admin access. C is correct.",
+          "selected_answer": "C",
+          "replies": [
+            "Yes, admin role is needed"
+          ]
+        },
+        {
+          "content": "It has to be B, bear in mind that a CI has a reasonable number of attributes that a pattern will identify during the discovery process. No Discoverable CI, no point using a pattern, no reason to debug!",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Also, pd_admin is NOT the same as the admin role.",
+          "selected_answer": "B",
+          "replies": [
+            "I did the SAM Exam, and in the exam they called \"sam_admin\" as \"admin\" only, maybe its the case here."
+          ]
+        },
+        {
+          "content": "B is correct. On page 266 of the Discovery Fundamentals Guide Book it says: \"Note: Debug Mode is used to test pattern steps and verify variable values against a CI prior to running discovery\".",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_ActivateDebugMode.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "B is the right answer",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-it-operations-management/page/product/service-mapping/task/t_ActivateDebugMode.html\n\n'Before starting this procedure, verify that the Debug mode is not activated. If the Debug mode is activated, the debug button appears with a green dot: .\n\nRole required: pd_admin\n\nBasic knowledge of programming is desirable.'",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "B Correct",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "7",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100607-exam-cis-discovery-topic-1-question-7-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "A discovery runs against a Windows Server returning the following attribute values for the first time: name = WindowsSN1 serial_number = 12321<br/>A subsequent discovery runs against a different Windows Server returning the following attribute values: name = WindowsSN2 serial_number = 12321<br/>With only base system CI Identifiers configured, which of the following is true?",
+      "answers": [
+        "A. A Windows Server CI is created, then updated with WindowsSN2 as the name.",
+        "B. Two Windows Sewer CIs are created, with WindowsSN1 AND WindowsSN2 for names.",
+        "C. Two Windows Server CIs are created, without serial_number values.",
+        "D. A Windows Server CI is created, then updated with WindowsSN1 as the name."
+      ],
+      "comments": [
+        {
+          "content": "I say A as well.",
+          "selected_answer": "A",
+          "replies": [
+            "Because the serial number is the field used to identify the CI, a new CI wont be created because CMDB aready have a CI with that serial number, the name is updated on the second discovery"
+          ]
+        },
+        {
+          "content": "the question says \"subsequent discovery is run against a different windows server\" this implies that there is a second windows server to consider. In this case, the answer has to be B.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A = serial number match as unique",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I believe A is the correct answer",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "the OOB IRE rule has a higher priority for the serial number (derived from the Hardware Class),  IRE will stop with the first matching condition that delivery a unique identification, therefore it would consider the serialnumber as significant. Thus I opt for A",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I would say the answer is A, it would only NOT update the name if a less authoritative  data source was used.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "looks to be A as unique serial",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "The answer is A.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "B i guess",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "A as the serial number unique.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A is correct.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Probably A.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "NOT sure why 2 new data needs to be created",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "8",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/89546-exam-cis-discovery-topic-1-question-8-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which choice represents the three best ways of extending Discovery?",
+      "answers": [
+        "A. Orchestration, Classifiers, Discovery Patterns",
+        "B. Fingerprinting, Classifiers, Discovery Patterns",
+        "C. Orchestration, Classifiers, Probes & Sensors",
+        "D. Classifiers, Probes & Sensors, Discovery Patterns",
+        "E. Classifiers, Fingerprinting, Probes & Sensors"
+      ],
+      "comments": [
+        {
+          "content": "D - I am sure",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I go with D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I went for D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is the correct answer",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I think D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A is the correct answer",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "9",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100608-exam-cis-discovery-topic-1-question-9-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "SNMP Credentials require which of the following?",
+      "answers": [
+        "A. write community strings",
+        "B. usernames",
+        "C. read community strings",
+        "D. port 135 access"
+      ],
+      "comments": [
+        {
+          "content": "Only read community strings are required. C is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Read C - no need to write",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "10",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/106396-exam-cis-discovery-topic-1-question-10-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which choice will populate the Location field for a discovered CI?",
+      "answers": [
+        "A. Location field for a Discovery Schedule",
+        "B. Location field for a parent CI Type",
+        "C. Location field for a Port Probe",
+        "D. Location report from the Discovery Dashboard"
+      ],
+      "comments": [
+        {
+          "content": "A. Confirmed in PDI",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct. See https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0864114",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "11",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/119742-exam-cis-discovery-topic-1-question-11-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What role is needed by the MID Server's user account to interact with a ServiceNow instance?",
+      "answers": [
+        "A. mid_server",
+        "B. discovery_admin",
+        "C. sm_mid",
+        "D. mid_discovery"
+      ],
+      "comments": [
+        {
+          "content": "Its A....",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A is correct.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "12",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100609-exam-cis-discovery-topic-1-question-12-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which operation is used to change from the default credentials to any other appropriate credentials in a horizontal pattern?",
+      "answers": [
+        "A. Change credentials",
+        "B. Change user",
+        "C. Alternate credentials",
+        "D. Alternate user"
+      ],
+      "comments": [
+        {
+          "content": "Change User \nhttps://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_ChangeUserPatDef.html",
+          "selected_answer": "B",
+          "replies": [
+            "In ServiceNow Discovery, the Change User operation is used to switch from the default credentials to any other appropriate credentials within a horizontal discovery pattern."
+          ]
+        },
+        {
+          "content": "B\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/t_ChangeUserPatDef.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "might be A",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "13",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122164-exam-cis-discovery-topic-1-question-13-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "After navigating to an Automaton Error Messages list from Discovery &gt; Home, how are the options on the right navigation pane categorized? (Choose two.)",
+      "answers": [
+        "A. SELECT ALL",
+        "B. SELECT ONE",
+        "C. ACTION ON SELECTED",
+        "D. ACTION ON ALL"
+      ],
+      "comments": [
+        {
+          "content": "C and D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "CD are correct",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "C and D is the correct answer if discovery home -> errors -> network -> on the RHS you will see \"Action on selected\" Action on All\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "CD\nhttps://servicenow-be-prod.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/image/CIScheduleMgrErrorControls.png?_LANG=enus",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "CD in my opinion is correct.\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/concept/discovery-home-page.html#title_view-ci-discovery-schedule-errors",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "14",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/130541-exam-cis-discovery-topic-1-question-14-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Which of the following can be used in the Debug Identification Section in Debug Mode for an infrastructure pattern? (Choose two.)",
+      "answers": [
+        "A. IP",
+        "B. AWS Endpoint",
+        "C. PID",
+        "D. Host Name"
+      ],
+      "comments": [
+        {
+          "content": "Host Name / IP and PID will be used. So AC or CD would be answers.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "AD is correct. Verified in Instance. Host Name / IP is required field.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "15",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/142439-exam-cis-discovery-topic-1-question-15-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "With multiple CI data sources, which choice is the best for determining which source can update a CI attribute?",
+      "answers": [
+        "A. Business Rules",
+        "B. Data Certification",
+        "C. Transform Maps",
+        "D. Reconciliation Rules"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/configuration-management/reference/r_ReconciliationRulesPrinciples.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "16",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122284-exam-cis-discovery-topic-1-question-16-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "One method for deleting specific CIs not discovered in 30 days is:",
+      "answers": [
+        "A. Scheduled Job",
+        "B. UI Policy",
+        "C. Service Mapping",
+        "D. Data Policy"
+      ],
+      "comments": [
+        {
+          "content": "From the Discovery course\nhow to leverage Scheduled Jobs to automatically delete CIs that are no longer in your environment but still display in the CMDB",
+          "selected_answer": "A",
+          "replies": [
+            "Scheduled Job can be created and configured to delete specific CI not dicovered in 30 days"
+          ]
+        },
+        {
+          "content": "From the Discovery course, using the most recent discovery date as a condition, a Scheduled Job can be set to update the Install Status to Absent for CIs not discovered in 30 days. Where Data Policies are used to enforce data consistency.",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Never mind, my Discovery Admin is telling me it is A",
+          "selected_answer": "",
+          "replies": [
+            "And he's definitely right. It is answered by the last section of the Discovery Fundamentals course"
+          ]
+        },
+        {
+          "content": "Most other sites say D",
+          "selected_answer": "D",
+          "replies": [
+            "how to utilize Data Policies to make data mandatory"
+          ]
+        }
+      ],
+      "question_number": "17",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124718-exam-cis-discovery-topic-1-question-17-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following choices must be installed on a MID Server to run Credential-less Discovery?",
+      "answers": [
+        "A. Credential-less Extension",
+        "B. Nmap",
+        "C. Advanced IP Scanner",
+        "D. Defender"
+      ],
+      "comments": [
+        {
+          "content": "NMAP (B) is the Answer",
+          "selected_answer": "B",
+          "replies": [
+            "The Nmap commands executed during credential-less Discovery can:\nPerform reverse DNS name resolution to identify the host from the IPv4 address.\nReturn the MAC address of the host if that host is on the same subnet as the host executing the Nmap command.\nDetect applications installed on a target host.\nDetect the operating system of a target host and the OS version."
+          ]
+        },
+        {
+          "content": "If the instance fails to identify a configuration item (CI) because of authentication failure, Discovery or Service Mapping can run selected Network Mapper (Nmap) commands with a MID Server to collect some basic information about the CI without using credentials.\n\nFrom: https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/nmap-credential-less-discovery.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/sandiego-it-operations-management/page/product/discovery/reference/credential-less-app-discovery.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B - \nNmap",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "18",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/114843-exam-cis-discovery-topic-1-question-18-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "A network device has both an SSH port and an SNMP port open. Discovery tries the SSH probe first and it fails. This triggers the SNMP probe, which succeeds. Discovery uses SNMP first for subsequent discoveries on that device.<br/>What discovery functionality allows the above to happen?",
+      "answers": [
+        "A. Classification",
+        "B. Credential affinity",
+        "C. MID Server affinity",
+        "D. IP service affinity"
+      ],
+      "comments": [
+        {
+          "content": "D - In order to expedite the discovery process, the system will not check all the credentials, it will start from the credential with the IP affinity record, used previously",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "What IP Service Affinity Does (per the documentation):\n\n\t“The IP service affinity functionality stores a mapping between an IP address, port, and the application service class that Discovery identified on that port.”\n\nSo:\n\t•\tIt remembers what application (e.g., Apache, Oracle, Tomcat) was found running on a specific IP/port combo.\n\t•\tThis helps ServiceNow optimize future discoveries of application services, not infrastructure.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "A system property called glide.discovery.ip_service_affinity allows Discovery to remember the last port of the IP address that was discovered. This property is set to false by default.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Credential affinity has nothing to do with choosing the order of ports/services to probe.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-it-operations-management/page/product/discovery/concept/c_GetStartedWithDiscovery.html#d142973e344",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I believe it is an IP Service Affinity, so I would say D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D IS CORRECT\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/credentials/task/t_CheckIPServiceAffinity.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D is correct.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D seems right",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Probably D.\nhttps://docs.servicenow.com/ja-JP/bundle/tokyo-it-operations-management/page/product/discovery/concept/c_GetStartedWithDiscovery.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "19",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/99925-exam-cis-discovery-topic-1-question-19-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The CMDB contains which of the following record types? (Choose two.)",
+      "answers": [
+        "A. Model",
+        "B. Configuration Item (CI)",
+        "C. Asset",
+        "D. Relation Type"
+      ],
+      "comments": [
+        {
+          "content": "BD as Slowacki said.",
+          "selected_answer": "BD",
+          "replies": []
+        },
+        {
+          "content": "Only B is part of the CMDB. none of the other tables is extending CMDB",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/configuration-management/reference/r_CMDBRecordTypes.html",
+          "selected_answer": "BD",
+          "replies": []
+        }
+      ],
+      "question_number": "20",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124720-exam-cis-discovery-topic-1-question-20-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "When is the Extension section in a horizontal pattern executed?",
+      "answers": [
+        "A. As part of the post sensor processing script",
+        "B. After the Identification sections",
+        "C. As part of the port scan",
+        "D. Before the Identification sections"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c-UsingPatternsForHorizontalDiscovery.html",
+          "selected_answer": "B",
+          "replies": [
+            "In a ServiceNow horizontal discovery pattern, the Extension section is executed after the Identification sections. Once the pattern finishes identifying and defining the Configuration Item (CI), the Extension section runs to collect supplementary or extended data."
+          ]
+        }
+      ],
+      "question_number": "21",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122285-exam-cis-discovery-topic-1-question-21-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "For CMDB Health, relationships can be which of the following choices? (Choose three.)",
+      "answers": [
+        "A. Duplicate",
+        "B. Stale",
+        "C. Orphan",
+        "D. Required",
+        "E. Recommended"
+      ],
+      "comments": [
+        {
+          "content": "Agreed - A,B,C",
+          "selected_answer": "ABC",
+          "replies": []
+        },
+        {
+          "content": "Confirmed, is ABC",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/configuration-management/task/t_ViewRelationshipsHealth.html",
+          "selected_answer": "ABC",
+          "replies": []
+        }
+      ],
+      "question_number": "22",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124721-exam-cis-discovery-topic-1-question-22-discussion/",
+      "most_voted": "ABC",
+      "error": null
+    },
+    {
+      "question": "Which of the choices provides active discovery errors with a help link for each error?",
+      "answers": [
+        "A. Discovery Dashboard",
+        "B. IP Address Failure Report",
+        "C. Discovery Schedule",
+        "D. MID Server Dashboard"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/concept/c_DiscoveryDashboard.html",
+          "selected_answer": "A",
+          "replies": [
+            "A- \"Active Discovery Errors\" report is contained in Discovery Dashboard, and this report has the help field which stores the link"
+          ]
+        }
+      ],
+      "question_number": "23",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124723-exam-cis-discovery-topic-1-question-23-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What related list on a classifier dictates which Horizontal Pattern probe is launched?",
+      "answers": [
+        "A. Discovery Log",
+        "B. Classification Criteria",
+        "C. Pattern probes",
+        "D. Triggers probes"
+      ],
+      "comments": [
+        {
+          "content": "\"Triggers probes\" dictate which probes to launch after the classification",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c-UsingPatternsForHorizontalDiscovery.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "D - TRIGGER PROBES",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D. After the Classification stage completes, Discovery looks at the trigger probes on the classifier to see which probe to launch.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "24",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/108888-exam-cis-discovery-topic-1-question-24-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the following does the ECC Queue provide? (Choose two.)",
+      "answers": [
+        "A. Login credentials for the MID Server host.",
+        "B. The actual XML payload that is sent to or from an instance.",
+        "C. A connected flow of probe and sensor activity.",
+        "D. The process responsible for defining, analyzing, planning, measuring, and improving all aspects of the availability of IT services."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/reference/r_DiscoveryStatusECCQueue.html",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/reference/r_DiscoveryStatusECCQueue.html",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "B and C\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/discovery/reference/r_DiscoveryStatusECCQueue.html#:~:text=The%20ECC%20queue%20contains%20records,the%20instance%2C%20classified%20as%20input.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "25",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117940-exam-cis-discovery-topic-1-question-25-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "Which of the following choices are only used for the Application Pattern Type? (Choose two.)",
+      "answers": [
+        "A. Run Order",
+        "B. Identification Section",
+        "C. CI Type",
+        "D. Operating System"
+      ],
+      "comments": [
+        {
+          "content": "Correct answer: AD",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Confirmed, A and D",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_PatternExamplePatDef.html",
+          "selected_answer": "AD",
+          "replies": []
+        },
+        {
+          "content": "CI type and Operating system",
+          "selected_answer": "",
+          "replies": [
+            "No its A and D.\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_PatternExamplePatDef.html"
+          ]
+        }
+      ],
+      "question_number": "26",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117941-exam-cis-discovery-topic-1-question-26-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "By default, which of the following are automatically available as variables for horizontal discovery patterns? (Choose two.)",
+      "answers": [
+        "A. infrastructure_system",
+        "B. The CI Type on the Discovery Pattern form",
+        "C. windows_cmdb_ci",
+        "D. computer_system"
+      ],
+      "comments": [
+        {
+          "content": "Not sure but B and D should be the correct answers.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Look at global parameters here for 4 options\nhttps://docs.servicenow.com/bundle/tokyo-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "27",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117942-exam-cis-discovery-topic-1-question-27-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are horizontal pattern types? (Choose two.)",
+      "answers": [
+        "A. Hardware",
+        "B. Software",
+        "C. Infrastructure",
+        "D. Application"
+      ],
+      "comments": [
+        {
+          "content": "A pattern is a sequence of commands whose purpose it is to detect attributes of a CI and its outbound connections. Service Mapping and Discovery share a set of preconfigured patterns that cover most of the commonly used devices and applications. Patterns can be of the infrastructure or application type. Infrastructure patterns are used only by Discovery for creating lists of devices. Application patterns serve both Service Mapping and Discovery, which use the same application patterns for their purposes. For example, Discovery runs the horizontal discovery with the Apache Web Server pattern to find and list all Apache Web Servers in your organization. Service Mapping runs the top-down discovery using the same pattern to discover a specific Apache Web Server and place it on an application service map.\n\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/concept/c_MappingPatternsCustomization.html",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "29",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124728-exam-cis-discovery-topic-1-question-29-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "What does the MID Server need to collect vCenter events?",
+      "answers": [
+        "A. vCenter Event Collector extension",
+        "B. MID SNMP Trap Listener extension",
+        "C. Firewall",
+        "D. vCenter probes"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/mid-server/concept/c_VCenterEventProcessorExtension.html",
+          "selected_answer": "A",
+          "replies": [
+            "The vCenter Event Collector is a ServiceNow MID Server extension designed to monitor and intercept vCenter operations. Instead of waiting for a full, resource-heavy discovery scan, it updates the CMDB and triggers automation based on real-time virtualization changes (like VM power states or migrations)."
+          ]
+        },
+        {
+          "content": "Correct ans: A",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "30",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117943-exam-cis-discovery-topic-1-question-30-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "A Discovery Schedule contains a /24 subnet IP Range and a Shazzam batch size of 5000.<br/>How many times will a Shazzam probe be launched during discovery?",
+      "answers": [
+        "A. 1",
+        "B. 2",
+        "C. 5000",
+        "D. 254"
+      ],
+      "comments": [
+        {
+          "content": "A should be the correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A. 1\n\nFor example, a schedule is created to scan 100,000 IP addresses, with 10 MID Servers assigned to do the work. Each MID Server is assigned to scan 10,000 IP addresses. If the Shazzam batch size is set to 5,000 IP addresses per probe, the schedule runs two Shazzam probes per MID Server (10,000 IP addresses/5,000 per batch). These probes are run in sequence and not concurrently.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/task/t_CreateADiscoverySchedule.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A /24 subnet contains 253 usable IPs. And if the Shazzam batch size is configured as 5000. Only one Shazam probe needs to be created to complete the scan.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "31",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/130544-exam-cis-discovery-topic-1-question-31-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which method is used by Discovery to determine if a Host IP is active or alive?",
+      "answers": [
+        "A. Port Scan",
+        "B. Traceroute",
+        "C. Ping",
+        "D. Classification"
+      ],
+      "comments": [
+        {
+          "content": "I think Discovery no longer pings devices, so I think the (most) correct answer here is A",
+          "selected_answer": "A",
+          "replies": [
+            "Discovery uses port scan instead of pinging devices"
+          ]
+        },
+        {
+          "content": "Probably A.\nhttps://docs.servicenow.com/bundle/tokyo-it-operations-management/page/product/discovery/reference/r_DiscoveryPortsAndProtocols.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I believe SNOW dumped ping awhile ago. While it is possible to have a CI that has all listening ports closed, it is highly unlikely to the point of near-impossibility (because any device active on a network will always have at least one port open, even if it's open temporarily to receive return packets).",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "C is the correct answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Port Scan - A",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Port Scan - A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "I would say A - first stage",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "32",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100322-exam-cis-discovery-topic-1-question-32-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Discovery finds and maps dependencies for the following types of storage devices. (Choose three.)",
+      "answers": [
+        "A. Direct-attached storage (DAS)",
+        "B. Network-attached storage (NAS)",
+        "C. Storage area network (SAN)",
+        "D. Multiple area network (MAN)",
+        "E. Redundant Array of Independent Disks (RAID)"
+      ],
+      "comments": [
+        {
+          "content": "Answer: ABC\nhttps://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c_Storage.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "33",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117944-exam-cis-discovery-topic-1-question-33-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which choice allows the following functionality to occur?<br/>If this value is set to 1000 and a discovery must scan 10,000 IP addresses using a single MID Server, it creates 10 Shazzam probes with each probe scanning 1000 IP addresses.",
+      "answers": [
+        "A. MID Server Clusters",
+        "B. MID Server selection method",
+        "C. Shazzam Batch Size",
+        "D. Behaviors"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/task/t_CreateADiscoverySchedule.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "34",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124730-exam-cis-discovery-topic-1-question-34-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which choice best describes how to use a Behavior for discovery?",
+      "answers": [
+        "A. The MID Server selection method on a Discovery Schedule.",
+        "B. The Behavior drop-down menu on a Discovery IP Range.",
+        "C. The Behavior drop-down menu on a Discovery Status.",
+        "D. The Behavior checkbox on a CI."
+      ],
+      "comments": [
+        {
+          "content": "Available options MID Server selection method on the Discovery Schedules: Auto-Select MID Server, Specific MID Cluster, Specific MID Server or Use Behavior.",
+          "selected_answer": "A",
+          "replies": [
+            "In ServiceNow Discovery, a Behavior is used to dictate the protocols and functionalities a MID Server uses to scan a network. The choice that best describes how to use a Behavior is setting it as the MID Server selection method on a Discovery Schedule"
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c_DiscoveryBehaviors.html",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Correct Ans: A",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "35",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/117945-exam-cis-discovery-topic-1-question-35-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following pattern operations query targets? (Choose two.)",
+      "answers": [
+        "A. WMI Query",
+        "B. Merge Table",
+        "C. Get Process",
+        "D. Parse Variable"
+      ],
+      "comments": [
+        {
+          "content": "AB. WMI Query and Merge Table are the one works with table",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Get Process:\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_GetProcessPatDef.html\nWMI Query:\nhttps://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_WMIQueryPatDef.html",
+          "selected_answer": "AC",
+          "replies": [
+            "In ServiceNow Discovery, the two pattern operations used to query targets are:\nWMI Query: Used to query target Windows devices for system data via Windows Management Instrumentation.\nGet Process: Used to query and retrieve active process information from target machines."
+          ]
+        }
+      ],
+      "question_number": "36",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122432-exam-cis-discovery-topic-1-question-36-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "File-based Discovery is triggered during the __________.",
+      "answers": [
+        "A. Classify Phase",
+        "B. Scan Phase",
+        "C. Exploration Phase",
+        "D. Pattern Phase",
+        "E. Identification Phase"
+      ],
+      "comments": [
+        {
+          "content": "C - Exploration phase\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/discovery/concept/file-based-discovery.html#:~:text=File%2Dbased%20Discovery%20is%20triggered,exploration%20phase%20of%20normal%20Discovery.",
+          "selected_answer": "C",
+          "replies": [
+            "Exploration Phase\nPurpose: Gathers granular hardware specs (CPU, memory, storage) and maps the running applications, software versions, and inter-device relationships to ensure an accurate, up-to-date CMDB"
+          ]
+        },
+        {
+          "content": "Exploration phase",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "I believe it is triggered during the Exploration phase",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "c correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Exploration phase",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C - Exploration phase",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "c is correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "Probably C\nhttps://docs.servicenow.com/ja-JP/bundle/tokyo-it-operations-management/page/product/discovery/concept/file-based-discovery.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "37",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/99926-exam-cis-discovery-topic-1-question-37-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Given a custom column named u_custom_column on table cmdb_ci_linux_server, which variable syntax should be used to populate the column in a horizontal discovery pattern using the Set Parameter Value operation?",
+      "answers": [
+        "A. $user_var_custom_column",
+        "B. $cmdb_ci_linux_server.u_custom_column.INSERT",
+        "C. $u_custom_column[1].cmdb_ci_linux_server",
+        "D. $cmdb_ci_linux_server[*].u_custom_column"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/sandiego-it-operations-management/page/product/service-mapping/reference/r_UsefulShortcutsPatDef.html",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "38",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124735-exam-cis-discovery-topic-1-question-38-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What entry point type must a horizontal pattern have to execute from a process classifier?",
+      "answers": [
+        "A. A subnet entry point type.",
+        "B. HTTP(S) entry point type if the pattern is running on a web server application.",
+        "C. TCP entry point type or ALL entry point type.",
+        "D. It does not matter, it is triggered for all entry point types."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c-UsingPatternsForHorizontalDiscovery.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "39",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122434-exam-cis-discovery-topic-1-question-39-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which metrics comprise the Completeness KPI for CMDB Health? (Choose two.)",
+      "answers": [
+        "A. Required",
+        "B. Recommended",
+        "C. Audit",
+        "D. Overall"
+      ],
+      "comments": [
+        {
+          "content": "Completeness: CIs are tested for required and recommended fields that are not populated.",
+          "selected_answer": "AB",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/configuration-management/concept/c_CMDBHealth.html",
+          "selected_answer": "AB",
+          "replies": []
+        }
+      ],
+      "question_number": "40",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122435-exam-cis-discovery-topic-1-question-40-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "Which of the following choices explain differences between Service Mapping and Discovery? (Choose two.)",
+      "answers": [
+        "A. Discovery requires agent installation to find hardware devices, Service Mapping requires agents for software.",
+        "B. Discovery finds applications and devices on your network, Service Mapping monitors those devices.",
+        "C. Discovery utilizes IP address ranges for initial discovery, Service Mapping uses entry points.",
+        "D. Discovery addresses inventory-related use-cases, while Service Mapping allows for the creation of accurate maps of application service topologies."
+      ],
+      "comments": [
+        {
+          "content": "should be C and D, event management is used to monitor",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Service Mapping does not \"monitor\" anything.",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "I would say C and D",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "C and D",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "It is C and D",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "41",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/115078-exam-cis-discovery-topic-1-question-41-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "What are the two main options within a Parse File operation?",
+      "answers": [
+        "A. Discover Now and Quick Discovery",
+        "B. Select Operating System and Method",
+        "C. Select File and Define Parsing",
+        "D. Match and Select File"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_ParseFilePatDef.html#:~:text=You%20can%20use%20the%20Parse%20File%20operation%20to%20extract%20data,the%20XML%20File%20parsing%20strategy.&text=Discovery%20also%20collects%20cloud%20tags,Key%20Value%20%5Bcmdb_key_value%5D%20table.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "42",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122436-exam-cis-discovery-topic-1-question-42-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "<img src=\"https://img.examtopics.com/cis-discovery/image13.png\"/><br/>Based on the following image, which of the following choices is also true about London Linux Servers?",
+      "answers": [
+        "A. It is a CMDB Group with Dashboard Group type.",
+        "B. It is a CMDB Group with Health Group type.",
+        "C. It is a Datacenter Group in London.",
+        "D. It is a CMDB Group with Default Group type."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-servicenow-platform/page/product/configuration-management/concept/cmdb-groups.html",
+          "selected_answer": "B",
+          "replies": [
+            "B. It is a CMDB Group with Health Group type."
+          ]
+        }
+      ],
+      "question_number": "43",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124737-exam-cis-discovery-topic-1-question-43-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "For the Set Parameter Value operation, which of the following is used in the syntax to declare a constant, unchanging Value?",
+      "answers": [
+        "A. Hash tag",
+        "B. Brackets",
+        "C. Quotes",
+        "D. Dollar sign"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/sandiego-it-operations-management/page/product/service-mapping/reference/r_UsefulShortcutsPatDef.html",
+          "selected_answer": "C",
+          "replies": [
+            "C- Quotes (Syntax: Parameter_Name = \"Constant_Value\")"
+          ]
+        }
+      ],
+      "question_number": "44",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/124738-exam-cis-discovery-topic-1-question-44-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "From an SNMP Query pattern operation, which of the choices are valid Variable Types? (Choose two.)",
+      "answers": [
+        "A. Test",
+        "B. Table",
+        "C. Scalar",
+        "D. CI Type"
+      ],
+      "comments": [
+        {
+          "content": "Confirmed, B and C",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_SNMPQueryPatDef.html",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "45",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122437-exam-cis-discovery-topic-1-question-45-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "Which choice best describes what happens when, by default, duplicate CIs are detected during identification and reconciliation?",
+      "answers": [
+        "A. A notification is sent to the CI owner.",
+        "B. An associated identification rule is created automatically.",
+        "C. Each set of duplicate CIs is added to a de-duplication task.",
+        "D. The next discovery is stopped for the CI that is duplicated."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/configuration-management/concept/id-detect-dup-ci.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "46",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122438-exam-cis-discovery-topic-1-question-46-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which choice best describes a horizontal discovery pattern?",
+      "answers": [
+        "A. Steps that execute operations",
+        "B. Credential depot",
+        "C. Port scanning tool",
+        "D. Classifiers that execute probes"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c-UsingPatternsForHorizontalDiscovery.html#:~:text=discovery%20with%20probes-,Horizontal%20discovery%20with%20patterns,probes%20to%20kick%20off%20discovery",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Discovery still uses probes to trigger the Pattern, but I believe that the Pattern itself is a series of steps that execute operations, so I think A is the correct answer",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. is the correct answer",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c-UsingPatternsForHorizontalDiscovery.html#:~:text=discovery%20with%20probes-,Horizontal%20discovery%20with%20patterns,probes%20to%20kick%20off%20discovery.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "47",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122439-exam-cis-discovery-topic-1-question-47-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "A config file for an application has the following three lines:<br/>Line 1: app build 1.2.3.4 version 5.14<br/>Line 2: installation_dir=c:\\opt\\bin<br/>Line 3: build_type=Server.<br/>Which methods below will extract the build and version numbers from these lines using a horizontal discovery pattern? (Choose two.)",
+      "answers": [
+        "A. Get Process operation with correct Port",
+        "B. Find Matching URL operation with Target Variable",
+        "C. Parse File operation with Delimited Text parsing strategy",
+        "D. Parse File operation with Regular Expression parsing strategy"
+      ],
+      "comments": [
+        {
+          "content": "It is C and D. Scanning a Port won't get you the contents of a file.",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "C and D do sound like the correct answer",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "Agree. C and D",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "CD should be correct one",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I think this is C and D actually",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "48",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/113849-exam-cis-discovery-topic-1-question-48-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "The following shows part of the Windows OS - Servers pattern in Pattern Designer:<br/><img src=\"https://img.examtopics.com/cis-discovery/image15.png\"/><br/>Which of the steps above use(s) a shared library?",
+      "answers": [
+        "A. Step 26",
+        "B. Neither step",
+        "C. Step 25",
+        "D. Both steps"
+      ],
+      "comments": [
+        {
+          "content": "It is C because if there were steps as part of the library, it would be 25.1, 25.2, etc.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "49",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/147113-exam-cis-discovery-topic-1-question-49-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which of the following is required for a MID Server to have access to automatically stay up-to-date with instance versions?",
+      "answers": [
+        "A. install.service-now.com",
+        "B. docs.servicenow.com",
+        "C. developer.service-now.com",
+        "D. service-now.com"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/mid-server/concept/c_UpgradeAndTestMIDServer.html",
+          "selected_answer": "A",
+          "replies": [
+            "To ensure a MID Server automatically stays up-to-date with instance versions, the MID Server must have outbound HTTPS access to the instance's hostname or domain (e.g., instancename.service-now.com) over port 443. This network connectivity allows it to download upgrade binaries from the instance\nA - this has a typo, it should be instance.service-now.com"
+          ]
+        }
+      ],
+      "question_number": "50",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122440-exam-cis-discovery-topic-1-question-50-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "When designing steps with operations requiring variables, it is best practice to do what?",
+      "answers": [
+        "A. hard core variables",
+        "B. always use scalar variables",
+        "C. query targets for variables",
+        "D. design for a static environment"
+      ],
+      "comments": [
+        {
+          "content": "C is correct.\n\nB is nonsense bcs. you could also use tabular or vector variables.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I have to say B for one reason: If you query targets, you will get a specific variable that may only work for that target. With a Scalar variable, the variable will work for a wider variation of targets.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "I would also say C",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is correct",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is the correct answer",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C is the correct answer",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "51",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/113793-exam-cis-discovery-topic-1-question-51-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "For what is File Based Discovery used?",
+      "answers": [
+        "A. To discover the checksum of a file and store it to track for changes",
+        "B. To discover the contents of flat files such as configuration files",
+        "C. To discover that file names conform to a defined naming standard",
+        "D. To discover file paths to recognize the signature of installed software"
+      ],
+      "comments": [
+        {
+          "content": "File-based Discovery probes execute a scan searching for specific file extensions or file names in paths that you configure. The resulting file information is returned in the probe payload. The sensor attempts to match the discovered files with installed software, using the file name, size, and version returned by the probe. File-based Discovery uses file signatures to detect software that might not have been registered.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A naming standard does not matter in discovery. However, the fastest way to find out the name of an application is to correlate its config file location to that of typical installations.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I would say D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Has to be D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "d is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D\n\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/discovery/concept/file-based-discovery.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "d is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Probably D.\nhttps://docs.servicenow.com/ja-JP/bundle/tokyo-it-operations-management/page/product/discovery/concept/file-based-discovery.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "52",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100013-exam-cis-discovery-topic-1-question-52-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the following properties define the maximum overall size for the returned payload that comes from patterns?",
+      "answers": [
+        "A. cmdb.properties.payload_max_size",
+        "B. glide.discovery.payload_max",
+        "C. mid.discovery.max_payload_size",
+        "D. mid.discovery.max_pattern_payload_size"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/mid-server/reference/r_MIDServerProperties.html",
+          "selected_answer": "D",
+          "replies": [
+            "The property that defines the maximum overall size for the returned payload that comes from patterns is:\nmid.discovery.max_pattern_payload_size\nThis MID Server property determines the maximum payload limit for pattern execution. If the generated payload exceeds this limit (which is typically set by default), the pattern execution will fail and an error is logged in the ECC queue."
+          ]
+        }
+      ],
+      "question_number": "53",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/122441-exam-cis-discovery-topic-1-question-53-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Based on this image, which of the following choices is true?<br/><img src=\"https://img.examtopics.com/cis-discovery/image18.png\"/>",
+      "answers": [
+        "A. This is from a WMI query operation step.",
+        "B. There is a scalar variable labeled ‘1’.",
+        "C. This Value cannot be used in a pattern step.",
+        "D. There is a tabular variable named ‘name_details’."
+      ],
+      "comments": [
+        {
+          "content": "Probably D.\nhttps://www.servicenow.com/community/itom-forum/which-of-the-following-statements-are-true-for-the-below-value/m-p/953132",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "It is D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Probably D.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "54",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100014-exam-cis-discovery-topic-1-question-54-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Using the SNMP Query operation on a pattern for a custom device query, it is best practice to do what?",
+      "answers": [
+        "A. Modify the default MIB information",
+        "B. Enable SSH as a secondary protocol",
+        "C. Use live devices in production",
+        "D. Use the publish manufacturer’s device MIB"
+      ],
+      "comments": [
+        {
+          "content": "The answer is D.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "55",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134432-exam-cis-discovery-topic-1-question-55-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "After running Discovery and viewing the ECC Queue tab, what are some of the displayed default fields? (Choose three.)",
+      "answers": [
+        "A. Details",
+        "B. Topic",
+        "C. Pattern log link",
+        "D. CMDB CI",
+        "E. Queue",
+        "F. Source",
+        "G. Discovery schedule name"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/utah-servicenow-platform/page/product/mid-server/concept/ecc-queue-mid-server.html",
+          "selected_answer": "BEF",
+          "replies": []
+        },
+        {
+          "content": "BEF\nhttps://docs.servicenow.com/en-US/bundle/utah-servicenow-platform/page/product/mid-server/concept/ecc-queue-mid-server.html",
+          "selected_answer": "BEF",
+          "replies": []
+        }
+      ],
+      "question_number": "56",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/111383-exam-cis-discovery-topic-1-question-56-discussion/",
+      "most_voted": "BEF",
+      "error": null
+    },
+    {
+      "question": "Hardware Models can have a one-to-many relationship with the following:<br/>(Choose three.)",
+      "answers": [
+        "A. Assets",
+        "B. Manufacturer",
+        "C. Configuration Items",
+        "D. Product owner",
+        "E. Model Categories"
+      ],
+      "comments": [
+        {
+          "content": "A, C, E -  \nAssets (alm_asset): A single hardware model (e.g., Apple MacBook Pro 16\") can have many individual asset records tracking each physical unit purchased by an organization.\nConfiguration Items (cmdb_ci): A single hardware model can map to many unique physical or virtual configuration items active in the network.\nModel Categories (cmdb_model_category): A hardware model can be associated with multiple model categories via a related M2M/one-to-many schema setup to define its asset and CI behavior.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "ACE.\nOption B is incorrect because a hardware model has a one-to-one relationship with the manufacturer, as a hardware model is typically associated with a single manufacturer.",
+          "selected_answer": "ACE",
+          "replies": []
+        },
+        {
+          "content": "A,C,E is correct. Manufacturer can have a one-to-many relationship with Models but not the other way around.\n\nhttps://docs.servicenow.com/bundle/xanadu-it-asset-management/page/product/product-catalog/concept/c_ModelCategories.html",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A, C, E is correct.\n\nIf you look on the \"cmdb_hardware_product_model\" form, the manufacturer and owner fields is are reference fields and therefore can't have one-to-many relationships.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-asset-management/page/product/hardware-asset-management/reference/hardware-model-fields.html",
+          "selected_answer": "BCE",
+          "replies": [
+            "Change to B,D,E\nconfirmed in PDI again."
+          ]
+        },
+        {
+          "content": "A, C, E, confirmed on PDI",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "57",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132714-exam-cis-discovery-topic-1-question-57-discussion/",
+      "most_voted": "BCE",
+      "error": null
+    },
+    {
+      "question": "Which choice best represents how to modify the functionality shown in this image?<br/><img src=\"https://img.examtopics.com/cis-discovery/image20.png\"/>",
+      "answers": [
+        "A. From a Classifier",
+        "B. From a Discovery Pattern",
+        "C. From the MID Server",
+        "D. From a Probe"
+      ],
+      "comments": [
+        {
+          "content": "Should be B no?",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Configuration file tracking is available for patterns that discover applications. On the pattern, you can create tracked file definitions that specify the CI type to which the application CI belongs and the path of the configuration file. Specify as many tracked file definitions as needed. You can also specify whether you want to save the contents of configuration files so you can view and compare the contents of different versions.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "It is B",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B should be the correct answer",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "B should be the correct answer",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is the correct answer",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Probably B.\nhttps://docs.servicenow.com/ja-JP/bundle/tokyo-it-operations-management/page/product/discovery/concept/tracked-config-files.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "58",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100015-exam-cis-discovery-topic-1-question-58-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What is the recommended method of consolidating duplicate CIs?",
+      "answers": [
+        "A. Duplicate CI Remediator",
+        "B. Event CI Remediation",
+        "C. Ignore Duplicate CI",
+        "D. Manual CI Remediation"
+      ],
+      "comments": [
+        {
+          "content": "A is correct \nhttps://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/configuration-management/concept/de-duplication-tasks.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "59",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132715-exam-cis-discovery-topic-1-question-59-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "During the Discovery process, what determines if an Asset record is created?",
+      "answers": [
+        "A. CMDB",
+        "B. Model Category",
+        "C. Model Product",
+        "D. ECC Queue",
+        "E. Configuration Item"
+      ],
+      "comments": [
+        {
+          "content": "The Model Category and Model determine if an Asset and CI record will be created and which table they will populate. B is correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Probably B.. not sure\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/c_GetStartedWithDiscovery.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "The answer is B.",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "60",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134433-exam-cis-discovery-topic-1-question-60-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "What pattern operation allows the transfer of a file from the MID Server to a target?",
+      "answers": [
+        "A. Parse file",
+        "B. Create Connection",
+        "C. Put file",
+        "D. Manage Attachments"
+      ],
+      "comments": [
+        {
+          "content": "The pattern operation that allows the transfer of a file from the MID Server to a target system is Put file",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C is the right answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_TransferFilePatDef.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C - Put File",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C - Put File\n\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/service-mapping/task/t_TransferFilePatDef.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "61",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/113846-exam-cis-discovery-topic-1-question-61-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "On the ECC Queue, sensor records have a Queue value of ___________ and probe records have a Queue value of ___________.",
+      "answers": [
+        "A. input, output",
+        "B. started, ready",
+        "C. ready, started",
+        "D. output, input"
+      ],
+      "comments": [
+        {
+          "content": "A. Input, Output\n\nDiscovery Course - Module 5\nTo determine whether a record is for a probe or a sensor, look at the value in the Queue column. Sensor records are in the input queue, and probe records are in the output queue",
+          "selected_answer": "A",
+          "replies": [
+            "Probes: Sent from your ServiceNow instance to the MID Server, these are instructions requesting information and are marked as output.\nSensors: Sent from the MID Server to your ServiceNow instance, these scripts process the results returned by the probe and are marked as input."
+          ]
+        },
+        {
+          "content": "i asked chatgpt-On the ECC Queue, sensor records have a Queue value of **`output`** and probe records have a Queue value of **`input`**.--Yes, I am confident. \n\nIn **ServiceNow**, the **ECC (External Communication Channel) Queue** is used for communication between the ServiceNow instance and external systems or processes. The **`input`** queue is used for incoming messages (like probe results from MID Servers), and the **`output`** queue is used for outgoing messages (like sensor triggers sent to the MID Server). \n\n- **Sensor records** typically have a queue value of **`output`** because they represent commands or triggers sent to the MID Server for further processing.  \n- **Probe records** have a queue value of **`input`** because they are results or responses sent back to the ServiceNow instance for processing. \n\nLet me know if you need further clarification!",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "A. Input, Output",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/c_GetStartedWithDiscovery.html",
+          "selected_answer": "D",
+          "replies": [
+            "A is the answer. The link you just shared shows this:\n\n\"Probes and sensors\nProbes and sensors are scripts that collect and process data on a host and then update the CMDB. More specifically, probes explore or investigate CIs on your network, and sensors parse the data returned from the probes.\"\n\nProbes are the output and sensors are the input."
+          ]
+        }
+      ],
+      "question_number": "62",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137339-exam-cis-discovery-topic-1-question-62-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "In Discovery, what table associates an IP address and a credential?",
+      "answers": [
+        "A. Credential Affinity",
+        "B. Service Affinity",
+        "C. Service CI Association",
+        "D. Tags"
+      ],
+      "comments": [
+        {
+          "content": "correct answer is A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Confirmed by PDI",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A. only A.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1216036",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Agree. The answer is A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "A should be",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I would have said A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Probably A.\nhttps://docs.servicenow.com/ja-JP/bundle/rome-servicenow-platform/page/product/credentials/concept/c_CredentialAffinity.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "63",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100016-exam-cis-discovery-topic-1-question-63-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "In general, Discovery can provide which of the following kinds of application relationships? (Choose two.)",
+      "answers": [
+        "A. tcp to udp",
+        "B. application to application",
+        "C. mid server to target",
+        "D. host to application"
+      ],
+      "comments": [
+        {
+          "content": "B -AND- D\n(the question asks you to choose two.)",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "B & D Choose 2",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "b and d",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "Application to Application Relationships:\nApplication discovery identifies which applications are being used in a given environment. It allows organizations to understand the relationships between different applications. By mapping these relationships, IT teams gain insights into how applications interact with each other, their dependencies, and their respective workloads12.\nHost to Application Relationships:\nApplication discovery also helps establish relationships between hosts (servers) and applications. It provides visibility into which applications are installed on specific hosts. Understanding these relationships is essential for managing and optimizing application performance, security, and resource allocation1.\nTherefore, the correct answers are B. application to application and D. host to application.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "100% B, D",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B and D",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B and D.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "B and D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "B and D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "B and D.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "65",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100017-exam-cis-discovery-topic-1-question-65-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the following must be configured to allow a MID Server to access servers using WinRM? (Choose two.)",
+      "answers": [
+        "A. JEA Properties set to True",
+        "B. MID Servers must be configured as a trusted source with DNS",
+        "C. MID Servers need to be added to the WinRM Group policy on the Servers",
+        "D. MID Server Parameters Add WinRM"
+      ],
+      "comments": [
+        {
+          "content": "CD is correct",
+          "selected_answer": "CD",
+          "replies": [
+            "Add the MID Servers to the WinRM Group policy on the target servers: This configures the target machines to accept WinRM connections and grant access permissions to the MID Server.Add a WinRM MID Server parameter: You must explicitly declare parameters on the MID Server (such as mid.windows.management_protocol set to WinRM) to dictate that it should use WinRM as the communication protocol."
+          ]
+        },
+        {
+          "content": "DNS trust is not a factor since IPs are used and not hostnames. WinRM has to be set up on the MID Server, and Active Directory has to allow WinRM use.",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "There's no C in Servicenow-DOCs.",
+          "selected_answer": "BD",
+          "replies": [
+            "Sorry, Change to C,D"
+          ]
+        },
+        {
+          "content": "B and C.",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "B and C \nhttps://docs.servicenow.com/bundle/utah-servicenow-platform/page/product/mid-server/task/enable-winRM-MID-servers.html\nhttps://docs.servicenow.com/en-US/bundle/utah-it-operations-management/page/product/mid-server/task/t_EnableDeviceClassWinRemoteMgmt.html",
+          "selected_answer": "BC",
+          "replies": [
+            "B is almost correct but DNS is not mentioned in documentation. It seems to be a trap word.\nC & D in my opinion."
+          ]
+        }
+      ],
+      "question_number": "66",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/113871-exam-cis-discovery-topic-1-question-66-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "For a pattern operation, which of the below choices could be a valid replacement for &lt;_&gt;? (Choose three.)<br/>$IfTable&lt;_&gt;.InstanceID",
+      "answers": [
+        "A. [3]",
+        "B. [X]",
+        "C. [&]",
+        "D. [.]",
+        "E. [*]",
+        "F. []"
+      ],
+      "comments": [
+        {
+          "content": "AEF\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/service-mapping/reference/r_UsefulShortcutsPatDef.html",
+          "selected_answer": "AEF",
+          "replies": []
+        },
+        {
+          "content": "AEF for sure",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "A, E and F. Confimed\n\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/service-mapping/reference/r_UsefulShortcutsPatDef.html",
+          "selected_answer": "AEF",
+          "replies": []
+        },
+        {
+          "content": "Should be AEF",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Should be AEF\n\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/service-mapping/reference/r_UsefulShortcutsPatDef.html",
+          "selected_answer": "AEF",
+          "replies": []
+        },
+        {
+          "content": "I believe it is AEF.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "67",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/110822-exam-cis-discovery-topic-1-question-67-discussion/",
+      "most_voted": "AEF",
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are the most probable results of the following image? (Choose three.)<br/><img src=\"https://img.examtopics.com/cis-discovery/image23.png\"/>",
+      "answers": [
+        "A. A tabular variable named ‘WMI Query’.",
+        "B. A scalar variable named ‘MaximumWorkingSetSize’",
+        "C. A scalar variable named ‘PageFaults’.",
+        "D. A scalar variable named ‘PeakVirtualSize’.",
+        "E. A tabular variable named ‘more_process_info’.",
+        "F. A tabular variable named ‘Win32_Process’."
+      ],
+      "comments": [
+        {
+          "content": "B, C, E - Based on the statement \"select Maxim..., PageFa... from Win32_Process ...\" and the target table more_process_info",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Win32_Process is a table and not a tabular variable.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I don't understand is \"Win32_Process\" not a tabular variable? it's in the table column?",
+          "selected_answer": "CEF",
+          "replies": [
+            "It is a tabular variable available for use in the pattern, but we are not going to get it back as a result. We will be getting 2 fields (scalar varaiables) from it as a result along with the $more_process_info as tabular variable.",
+            "its not a variable, its the table name directly, so the sentence is a bit catchy"
+          ]
+        },
+        {
+          "content": "BCE is correct",
+          "selected_answer": "BCE",
+          "replies": []
+        },
+        {
+          "content": "B,C,E.",
+          "selected_answer": "BCE",
+          "replies": []
+        },
+        {
+          "content": "B,C,E imo",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "68",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/133810-exam-cis-discovery-topic-1-question-68-discussion/",
+      "most_voted": "BCE",
+      "error": null
+    },
+    {
+      "question": "What is found on the far-right section of the Pattern Designer for horizontal patterns? (Choose two.)",
+      "answers": [
+        "A. CI Attributes",
+        "B. Operations",
+        "C. Temporary Variables",
+        "D. CMDB Dashboard"
+      ],
+      "comments": [
+        {
+          "content": "A and C",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "A and C for sure.",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "Should be A and C",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Should be A and C",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "Should this be A and C ?",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "69",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/106534-exam-cis-discovery-topic-1-question-69-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "Which of the choices below best represent key capabilities of a ServiceNow ITOM Enterprise solution? (Choose two.)",
+      "answers": [
+        "A. Create an Engaging User Experience",
+        "B. Build New Apps Fast",
+        "C. Manage Hybrid Clouds",
+        "D. Proactively Eliminate Service Outages"
+      ],
+      "comments": [
+        {
+          "content": "C and D",
+          "selected_answer": "CD",
+          "replies": [
+            "Core Capabilities\nDiscovery & Service Mapping: Automatically identifies all infrastructure, applications, and devices, mapping them to the specific business services they support.\nAIOps & Event Management: Uses machine learning to correlate millions of system alerts, filtering out noise and triaging operational issues before they cause outages.\nHealth Tracking: Delivers continuous, real-time health visibility into your entire digital ecosystem.\nCloud Automation & Governance: Provides self-service cloud provisioning and enforces guardrails to prevent resource sprawl and configuration errors."
+          ]
+        },
+        {
+          "content": "Manage Hybrid Clouds: ServiceNow ITOM enables organizations to gain visibility across infrastructure and applications, maintain service health, and optimize cloud delivery and spend1. Managing hybrid clouds is crucial for organizations with a mix of on-premises and cloud-based resources.\nProactively Eliminate Service Outages: ITOM helps analyze IT infrastructure proactively to spot service degradation and reduce outages. By delivering uninterrupted digital services and using real-time log data, it allows organizations to solve problems quickly and minimize service disruptions",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C and D",
+          "selected_answer": "CD",
+          "replies": []
+        },
+        {
+          "content": "itom optimization includes cloud management",
+          "selected_answer": "CD",
+          "replies": []
+        }
+      ],
+      "question_number": "70",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/115187-exam-cis-discovery-topic-1-question-70-discussion/",
+      "most_voted": "CD",
+      "error": null
+    },
+    {
+      "question": "Which choices best describe what is necessary to create a custom horizontal pattern to discover an operating system that is not discovered by the base installation patterns? (Choose two.)",
+      "answers": [
+        "A. Select a CI Type",
+        "B. Define Process Strategy",
+        "C. Select Infrastructure Pattern Type",
+        "D. Select Application Pattern Type"
+      ],
+      "comments": [
+        {
+          "content": "A and C",
+          "selected_answer": "AC",
+          "replies": []
+        },
+        {
+          "content": "An \"operating system\" can only be found in the Application Pattern Type/",
+          "selected_answer": "AD",
+          "replies": [
+            "has nothing to do with the question"
+          ]
+        },
+        {
+          "content": "I think AC",
+          "selected_answer": "AC",
+          "replies": []
+        }
+      ],
+      "question_number": "71",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/133811-exam-cis-discovery-topic-1-question-71-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "Which of the following best describes the relationship between the Tomcat [cmdb_ci_app_server_tomcat] table and the Application Server [cdmb_ci_app_server] table? (Choose two.)",
+      "answers": [
+        "A. Tomcat does not extend the Application Server table",
+        "B. Tomcat table extends the Application Server table",
+        "C. Tomcat table is a child of the Application Server table",
+        "D. Tomcat table is a parent of the Application Server table"
+      ],
+      "comments": [
+        {
+          "content": "B and C",
+          "selected_answer": "BC",
+          "replies": [
+            "B, C - Tomcat is a child class from Application Server class"
+          ]
+        },
+        {
+          "content": "B and C.",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "72",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134435-exam-cis-discovery-topic-1-question-72-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "In a discovery pattern, which types are available with CI Attributes in the Pattern Designer? (Choose two.)",
+      "answers": [
+        "A. Global CI types",
+        "B. Main pattern CI type",
+        "C. Related CI types",
+        "D. All CI types"
+      ],
+      "comments": [
+        {
+          "content": "B and C\n\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html#:~:text=There%20are%20several%20kinds%20of,attribute%20variables%2C%20and%20temporary%20variables.",
+          "selected_answer": "BC",
+          "replies": [
+            "Main Pattern CI type and Related CI types"
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/task/add-related-cis-to-the-main-ci-pattern.html",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "73",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/123020-exam-cis-discovery-topic-1-question-73-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are benefits of Tracked Configuration Files? (Choose two.)",
+      "answers": [
+        "A. Content version comparison",
+        "B. Files tracked as CIs",
+        "C. Unwanted files removed from target",
+        "D. No credentials needed"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-it-operations-management/page/product/discovery/concept/tracked-config-files.html",
+          "selected_answer": "AB",
+          "replies": [
+            "A, B - Content version comparison and Files tracked as CIs"
+          ]
+        }
+      ],
+      "question_number": "74",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137255-exam-cis-discovery-topic-1-question-74-discussion/",
+      "most_voted": "AB",
+      "error": null
+    },
+    {
+      "question": "Which choice best describes a Functionality Definition?",
+      "answers": [
+        "A. Defines what CI identifiers to use.",
+        "B. Defines the IP addresses to discover.",
+        "C. Defines what Behavior to use from a Discovery Schedule.",
+        "D. Defines what protocols to detect from within a Behavior."
+      ],
+      "comments": [
+        {
+          "content": "D- A Functionality Definition specifies the exact protocols (e.g., SSH, SNMP, WMI) that an assigned MID Server should scan for when exploring a network. It is grouped inside a Behavior, which dictates how and what Discovery scans during a specific schedule",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/utah-it-operations-management/page/product/discovery/task/create-disco-behavior.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/task/create-disco-behavior.html\n\nIn the Discovery Functionality related list, click New.\nDiscovery Functionality defines what each MID Server in this behavior must do, specifically which protocols to detect.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/reference/r_DefineTheFunctionalities.html",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "It should be D",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Answer is D\n\"pre-configured functionality that defines the protocol or list of protocols that each MID Server scans.\"",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Probably D.\nhttps://docs.servicenow.com/bundle/utah-it-operations-management/page/product/discovery/task/create-disco-behavior.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "75",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/100019-exam-cis-discovery-topic-1-question-75-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "As a first step in horizontal discovery, which of the following is where the Shazzam probe is placed in a request?",
+      "answers": [
+        "A. Target",
+        "B. Pattern Log",
+        "C. ECC queue",
+        "D. Discovery Log"
+      ],
+      "comments": [
+        {
+          "content": "100% C",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/discovery/concept/c_DiscoProcessFlows.html",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "76",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/123021-exam-cis-discovery-topic-1-question-76-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which of the choices have a higher chance of leading to lost data during CI reclassification? (Choose two.)",
+      "answers": [
+        "A. Switching",
+        "B. Identifying",
+        "C. Downgrading",
+        "D. Upgrading"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/configuration-management/task/t_ManuallyReclassifyCI.html",
+          "selected_answer": "AC",
+          "replies": [
+            "A, C - Switching class and Downgrading class"
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/configuration-management/task/t_ManuallyReclassifyCI.html",
+          "selected_answer": "AC",
+          "replies": []
+        }
+      ],
+      "question_number": "77",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/123022-exam-cis-discovery-topic-1-question-77-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are kinds of variables used in discovery patterns? (Choose three.)",
+      "answers": [
+        "A. CI attributes",
+        "B. Prefix",
+        "C. Temporary",
+        "D. Fixed",
+        "E. Global"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/en-US/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html#:~:text=There%20are%20several%20kinds%20of,attribute%20variables%2C%20and%20temporary%20variables.",
+          "selected_answer": "ACE",
+          "replies": []
+        }
+      ],
+      "question_number": "78",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/123024-exam-cis-discovery-topic-1-question-78-discussion/",
+      "most_voted": "ACE",
+      "error": null
+    },
+    {
+      "question": "Which of the following choices may be global variables for steps in horizontal discovery patterns? (Choose two.)",
+      "answers": [
+        "A. system",
+        "B. computer_system",
+        "C. process",
+        "D. baseline"
+      ],
+      "comments": [
+        {
+          "content": "As stated in the docs, 'computer_system' and 'process' should be the right choices here : https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html#:~:text=There%20are%20several%20kinds%20of,attribute%20variables%2C%20and%20temporary%20variables.",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "Confirmed on PDI",
+          "selected_answer": "BC",
+          "replies": []
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html#:~:text=There%20are%20several%20kinds%20of,attribute%20variables%2C%20and%20temporary%20variables.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "B and C",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "79",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/125918-exam-cis-discovery-topic-1-question-79-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "Which ECC Queue message contains the XML payload returned from the MID Server?",
+      "answers": [
+        "A. Ready",
+        "B. Output",
+        "C. Pending",
+        "D. Input"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/mid-server/concept/ecc-queue-mid-server.html",
+          "selected_answer": "D",
+          "replies": [
+            "D - Input is the correct answer"
+          ]
+        }
+      ],
+      "question_number": "80",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137256-exam-cis-discovery-topic-1-question-80-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "Which of the following executes the osquery commands on agents to gather attribute details from a CI?",
+      "answers": [
+        "A. Agent Collector",
+        "B. Agent listener",
+        "C. ACC for Discovery",
+        "D. Check Definitions",
+        "E. Policies"
+      ],
+      "comments": [
+        {
+          "content": "This guide says it is D.\nhttps://www.servicenow.com/community/itom-articles/build-your-own-acc-v-inventory-module-check-definition/ta-p/2368617",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Once the Check Type is defines you need a check definition that define the way of querying the end-device.  This could be done with scripts, commands or with the build in OSQuery (https://osquery.io/). ACC-V uses OSQuery for other data detection, and is maintained by the Agent. \n\nThe good thing is that there is a predefined Check Definition to run OSQuery (util.osquery.agent) that you can take inspiration from.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "The Disco training has a slide which states: Check Definitions executes the osquery command on agents.  verbatim..  I'm suggesting D.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "I wanted to make a correction. I found the answer in Module 7 of the lab. If you watch that module at the portion where it talks about Check Definitions, it says word for word \"executes the osquery command on agents.\" and \"osquery commands are used to gather specific attribute details...\"\nThat being said the correct answer is actually D. Check Definitions",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "I also believe it is C",
+          "selected_answer": "C",
+          "replies": [
+            "The answer is D not C."
+          ]
+        },
+        {
+          "content": "Could be C\n\nCheck site number 2 in the link\nhttps://www.servicenow.com/content/dam/servicenow-assets/public/en-us/doc-type/resource-center/data-sheet/ds-itom-acc.pdf",
+          "selected_answer": "C",
+          "replies": [
+            "ACC also supports\nOSQuery, allowing you to query hosts and run remediation commands on\ndemand or from ServiceNow workflows using the Automation Engine spoke\navailable on the ServiceNow Store."
+          ]
+        }
+      ],
+      "question_number": "81",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/125919-exam-cis-discovery-topic-1-question-81-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What is the advantage of Discovery Range Sets?",
+      "answers": [
+        "A. Range Sets are the only way to have more than one IP Range defined within a Discovery Schedule.",
+        "B. Range Sets show the number of IPs in a subnet.",
+        "C. All the necessary Range Sets are installed in the base installation of Discovery.",
+        "D. Range Sets provide flexibility in management and identification of known networks for simplicity of administration."
+      ],
+      "comments": [
+        {
+          "content": "D is the correct option, Range Sets provide flexibility in management and identification of known networks for simplicity of administration",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "https://www.servicenow.com/community/itom-blog/best-practices-for-setting-up-discovery-schedules/ba-p/2270853",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "82",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134114-exam-cis-discovery-topic-1-question-82-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "From Pattern Designer, which horizontal pattern type is the image below showing?<br/><br/><img src=\"https://img.examtopics.com/cis-discovery/image25.png\"/>",
+      "answers": [
+        "A. Application",
+        "B. Computer System",
+        "C. Infrastructure",
+        "D. Service Mapping"
+      ],
+      "comments": [
+        {
+          "content": "C - Infrastructure/OS Patterns: Scan and map core operating systems (e.g., Windows, Linux, UNIX) and physical or virtual hardware specs.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "For Infrastructure\ncomputer_system is the only Temporary Variable\n\nFor Application\ncomputer_system & process this 2 are mandatory Temporary variable\n\nSo Correct Answer is - Infrastructure",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "I am just looking at the variable on my PDI right now after running the discovery pattern for the iTunes application. Therefore i would go with A.",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "83",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/148615-exam-cis-discovery-topic-1-question-83-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the following fields are editable from a Merge Table pattern operation? (Choose three.)",
+      "answers": [
+        "A. Target Table",
+        "B. Second Table",
+        "C. Primary Table",
+        "D. First Table"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/t_MergeTablePatDef.html",
+          "selected_answer": "ABD",
+          "replies": [
+            "First, Second and Target"
+          ]
+        },
+        {
+          "content": "A, B, D, confirmed on PDI",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "84",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132745-exam-cis-discovery-topic-1-question-84-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "While discovering a new SNMP network device, which choice could cause the error “Active, couldn’t classify” to occur on a Discovery Status?",
+      "answers": [
+        "A. A firewall blocking the communication between the MID Server and the target device.",
+        "B. SNMP credentials are incorrect.",
+        "C. SNMP only behavior is not configured.",
+        "D. An SNMP Classification must be updated or created for the new device."
+      ],
+      "comments": [
+        {
+          "content": "D. An SNMP Classification must be updated or created for the new device.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "The error message refers to a classification error.\nIf the SNMP credentials are incorrect (option B), the discovery attempt would fail completely when connecting to the device, but a classification error would not specifically occur.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "From the self-paced learning troubleshooting module on Classification, it says that the classifier for SNMP is missing if you encounter this error",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "Based on the troubleshooting module of the self-paced training, the example they gave stated that this is the result of a classifier not existing for the specific CI.",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "B I guess.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "I would say B based on this:\nhttps://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0535236",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "From this community thread D is correct, but documentation would be better to be completely sure.\nhttps://www.servicenow.com/community/itom-forum/unable-to-discover-snmp-devices-active-could-t-classify/m-p/931929/page/3",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "85",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134116-exam-cis-discovery-topic-1-question-85-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "The deletion strategy is set to ‘Mark as absent’ for related Disk CIs discovered via the Linux Server pattern. If a related Disk CI is discovered during the Linux Server discovery and then the same related Disk CI is not found the next time the Linux Server is discovered, the following will happen:",
+      "answers": [
+        "A. The Disk Status CI (install_status) is set to Absent.",
+        "B. The Disk CI Operational Status (operational_status) is set to Non-Operational.",
+        "C. The Linux Server CI Operational Status (operational_status) is set to Non-Operational.",
+        "D. The Linux Server CI Status (install_status) is set to Absent."
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/deletion-strategy.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "86",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134439-exam-cis-discovery-topic-1-question-86-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What would you see in the Discovery pattern log that you would not see in the ECC Queue?",
+      "answers": [
+        "A. Success or failure of the individual pattern steps",
+        "B. Payload of CI attributes and relationships",
+        "C. Shazzam probe payload",
+        "D. Relationships created"
+      ],
+      "comments": [
+        {
+          "content": "A is correct",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "Probably A",
+          "selected_answer": "A",
+          "replies": []
+        },
+        {
+          "content": "The correct answer is A.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "87",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/127489-exam-cis-discovery-topic-1-question-87-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "What do most Discovery properties start with?",
+      "answers": [
+        "A. discovery.prop",
+        "B. disco.release",
+        "C. glide.itom",
+        "D. glide.discovery"
+      ],
+      "comments": [
+        {
+          "content": "D.\nIn sys_properties.list filter by name glide.disco and you will get the number",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "88",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134117-exam-cis-discovery-topic-1-question-88-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "What is the default thread count for a MID Server?",
+      "answers": [
+        "A. 5",
+        "B. 1",
+        "C. 50",
+        "D. 25"
+      ],
+      "comments": [
+        {
+          "content": "The MID Server default setting for max.threads is 25. If you have made no changes to this setting, your MID Servers will have this value\nhttps://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0997594",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "25 is correct",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "25 is Correct",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D - 25 is correct. - 500 (25*Threads)\n\nhttps://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0743566",
+          "selected_answer": "D",
+          "replies": []
+        },
+        {
+          "content": "25 is correct.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "89",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/125506-exam-cis-discovery-topic-1-question-89-discussion/",
+      "most_voted": "D",
+      "error": null
+    },
+    {
+      "question": "What is the recommended method for excluding specific software from discovery on Windows and Unix Servers?",
+      "answers": [
+        "A. Pattern Modification",
+        "B. Probe Modification",
+        "C. Configuration Console",
+        "D. Discovery Properties"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/c_DiscoveryConfigurationConsole.html",
+          "selected_answer": "C",
+          "replies": [
+            "This allows administrators to filter out specific software installations before the data updates the Configuration Management Database (CMDB)."
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/discovery/concept/c_DiscoveryConfigurationConsole.html\nYou can filter the discovery of software packages based on the keywords they contain for Windows and UNIX computers.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "91",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134128-exam-cis-discovery-topic-1-question-91-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which of the choices best describes a tabular variable in a discovery pattern?",
+      "answers": [
+        "A. A single column",
+        "B. A single string",
+        "C. Each cell is a CI attribute",
+        "D. Each cell is a scalar variable"
+      ],
+      "comments": [
+        {
+          "content": "D is correct \nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_PatternVariables.html\n\nA variable can be:\nScalar: A single string\nTabular: A table, where each cell is a scalar variable.\nVector: A single, unnamed column with as many rows as needed",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "92",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132746-exam-cis-discovery-topic-1-question-92-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "When configuring the MID Server Service Settings, which of the following is not a valid MID Server name?",
+      "answers": [
+        "A. my_mid_server1",
+        "B. mid_server1",
+        "C. mid.server1",
+        "D. midserver1"
+      ],
+      "comments": [
+        {
+          "content": "C is correct\nhttps://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0744416\n\nMID Server naming\nThe MID server name cannot start with \"mid.server\"\n\nIf it does, the the problem with inserting ECC records in the ECC queue fails to insert properly.\n\nThis is because the agent field in the ECC queue will append \"mid.server\" to the beginning of the MID server name. This causes the records in the ecc queue to be incorrect and fails to send commands to the MID server.",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "93",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132747-exam-cis-discovery-topic-1-question-93-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which one of the following is not used in a horizontal discovery pattern?",
+      "answers": [
+        "A. Variables",
+        "B. Connectivity section",
+        "C. Operations",
+        "D. Identification section"
+      ],
+      "comments": [
+        {
+          "content": "I want to again correct my first answer. I think the correct answer is actually conectivity section. When you go to the pattern and select Infrastructure as the type, it shows two sections the \"Identification section\" and the \"extension section\". When you select application, it show both of those as well as a \"Connection Section\" not \"Connectivity\" I think this is a trick question.",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct. \nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/task/t_DefineConnecSectionPatDef.html\n\nProcedure\n\nNavigate to All > Pattern Designer > Discovery Patterns and open the required pattern from the pattern list.\nThe pattern must be of the Application type.\n\nIn the Connectivity Section, click New.\nNote: The Connectivity Section is greyed out if the pattern cannot be edited for Service Mapping.",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "D is the answer",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "Should be D.",
+          "selected_answer": "D",
+          "replies": []
+        }
+      ],
+      "question_number": "94",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/125621-exam-cis-discovery-topic-1-question-94-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "During the Port Scan phase what could the Warning level error “No results returned from probe.” mean?",
+      "answers": [
+        "A. Process Classifier incorrectly configured",
+        "B. Logical or physical firewall preventing connectivity",
+        "C. Wrong credentials",
+        "D. Incorrect Datasource Precedence"
+      ],
+      "comments": [
+        {
+          "content": "https://www.servicenow.com/community/itom-forum/discovery-error-no-results-returned-from-probe/m-p/1027008",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "95",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137311-exam-cis-discovery-topic-1-question-95-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which of the choices are types of temporary variables in a discovery pattern? (Choose two.)",
+      "answers": [
+        "A. SQL statement",
+        "B. Tabular/Table",
+        "C. Command",
+        "D. Scalar/List"
+      ],
+      "comments": [
+        {
+          "content": "B and D is correct",
+          "selected_answer": "BD",
+          "replies": []
+        }
+      ],
+      "question_number": "96",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132790-exam-cis-discovery-topic-1-question-96-discussion/",
+      "most_voted": "BD",
+      "error": null
+    },
+    {
+      "question": "What operation is shown in this image?<br/><br/><img src=\"https://img.examtopics.com/cis-discovery/image26.png\"/>",
+      "answers": [
+        "A. Put File",
+        "B. Parse Variable",
+        "C. Transform Table",
+        "D. Union Table"
+      ],
+      "comments": [
+        {
+          "content": "C is correct, checked on PDI",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "97",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132792-exam-cis-discovery-topic-1-question-97-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which of the following describes the recommended permission level for credentials to discover Windows Servers?",
+      "answers": [
+        "A. A standard domain user with read access",
+        "B. A domain user with local administrator access",
+        "C. A user with root access across the domain",
+        "D. A domain administrator with sudo access"
+      ],
+      "comments": [
+        {
+          "content": "Credentials required for discovery of hosts running on Windows servers\nTo provide sufficient permissions, configure one of the following Windows credentials:\n\nA domain user with local administrator access on the target Windows hosts.\nA domain administrator.\nNote: You may need domain administrator credentials only in some cases. For example, when discovering domain controllers.\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_Credentials4HostDiscovery.html",
+          "selected_answer": "B",
+          "replies": []
+        },
+        {
+          "content": "B is correct\n\nhttps://docs.servicenow.com/bundle/vancouver-it-operations-management/page/product/service-mapping/reference/r_Credentials4HostDiscovery.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "98",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132793-exam-cis-discovery-topic-1-question-98-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which of the following are contained in an extension section of a discovery pattern?",
+      "answers": [
+        "A. Shared libraries",
+        "B. Connection sections",
+        "C. Identification sections",
+        "D. Network libraries"
+      ],
+      "comments": [
+        {
+          "content": "https://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/modify-pattern-using-extensions.html",
+          "selected_answer": "A",
+          "replies": []
+        }
+      ],
+      "question_number": "101",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137315-exam-cis-discovery-topic-1-question-101-discussion/",
+      "most_voted": "A",
+      "error": null
+    },
+    {
+      "question": "Which of the below choices are possible options under ACTION ON ALL in the Recommended Actions pane for an Automated Error Messages list within Discovery &gt; Home? (Choose two.)",
+      "answers": [
+        "A. Ping IP Addresses",
+        "B. Retry Discovery",
+        "C. View instructions",
+        "D. Make Ranges"
+      ],
+      "comments": [
+        {
+          "content": "BC\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/discovery/concept/discovery-home-page.html",
+          "selected_answer": "",
+          "replies": [
+            "From the error list pane, administrators can perform targeted maintenance or mass updates. Common automated remediation and administrative tasks include:\nRetry Discovery: Re-initiates the Discovery scan on the selected target IP addresses or devices.\nView Instructions: Opens the system’s guidance or diagnostic recommendations on how to resolve the specific error category.\nIgnore: Hides the specific error and its corresponding IP address from the active error log."
+          ]
+        },
+        {
+          "content": "Confirmed in PDI\nMark as assigned, Create a task, Retry Discovery, View instructions",
+          "selected_answer": "BC",
+          "replies": []
+        }
+      ],
+      "question_number": "102",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137316-exam-cis-discovery-topic-1-question-102-discussion/",
+      "most_voted": "BC",
+      "error": null
+    },
+    {
+      "question": "For a Parse Variable operation, when using the Delimited Text parsing strategy, which options are available in a step? (Choose two.)",
+      "answers": [
+        "A. Positions",
+        "B. Use SNMP Browser",
+        "C. Delimiters",
+        "D. Merge Criteria"
+      ],
+      "comments": [
+        {
+          "content": "confirmed in PDI\n\nVariables, Line Separator, Delimiters, Positions",
+          "selected_answer": "AC",
+          "replies": []
+        }
+      ],
+      "question_number": "105",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/137318-exam-cis-discovery-topic-1-question-105-discussion/",
+      "most_voted": "AC",
+      "error": null
+    },
+    {
+      "question": "How do you create relationships between CIs in a horizontal pattern?",
+      "answers": [
+        "A. Relationships are created automatically for each successful connection section.",
+        "B. By using the Create Connections operation.",
+        "C. By using the Create Relation/Reference operation.",
+        "D. Relationships cannot be created via patterns."
+      ],
+      "comments": [
+        {
+          "content": "As part of creating or modifying a discovery pattern, you can use the Relation and/or Reference condition to create relationships and references between CIs and their related items. This operation is relevant for both infrastructure and application patterns that Discovery uses for horizontal discovery.\nhttps://docs.servicenow.com/bundle/washingtondc-it-operations-management/page/product/service-mapping/task/t_CreateARelationshipAndReference.html",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "106",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/134143-exam-cis-discovery-topic-1-question-106-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "CI identifiers can be viewed under which of the following?",
+      "answers": [
+        "A. Discovery Dashboard",
+        "B. CI Class Manager",
+        "C. Process Handlers",
+        "D. Processes and Classification",
+        "E. CI record"
+      ],
+      "comments": [
+        {
+          "content": "B. is correct.\n\nhttps://docs.servicenow.com/en-US/bundle/vancouver-servicenow-platform/page/product/configuration-management/task/t_CreateCIIdentificationRule.html",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "107",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/125622-exam-cis-discovery-topic-1-question-107-discussion/",
+      "most_voted": "B",
+      "error": null
+    },
+    {
+      "question": "Which of the following best describes what may also be required when increasing the max number of threads for a MID Server?",
+      "answers": [
+        "A. updating the acl rules for the CMDB tables in ServiceNow",
+        "B. increase the amount of disk space on the MID Server host",
+        "C. increasing the memory allocated to the MID Server app.",
+        "D. increase the MID Server max payload size"
+      ],
+      "comments": [
+        {
+          "content": "C is correct.",
+          "selected_answer": "C",
+          "replies": [
+            "More threads require more memory"
+          ]
+        },
+        {
+          "content": "https://docs.servicenow.com/bundle/vancouver-servicenow-platform/page/product/mid-server/task/t_SetMIDServerThreadUse.html",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C as otherwise you may get an out of memory error from the extra processing",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "To increase the number of threads, you might have to increase the amount of memory that Java uses. If you configure insufficient memory, an Out of memory error appears in the MID Server log.   I'm going with C",
+          "selected_answer": "",
+          "replies": []
+        }
+      ],
+      "question_number": "109",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/132307-exam-cis-discovery-topic-1-question-109-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "Which part of Agent Client Collector must be configured to run osquery commands on a CI?",
+      "answers": [
+        "A. ACC Websocket Endpoint",
+        "B. Credential-less Discovery",
+        "C. Check",
+        "D. Infrastructure Patterns",
+        "E. Policies"
+      ],
+      "comments": [
+        {
+          "content": "kind of still both right.. a policy holds a check, the check itself executes the osquery, so i guess take the highest parent?",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "I selected Policies because the question asks \"on a CI.\"\n\"Check\" defines the queries or osquery commands that are executed.\n\"Policies\" control when and on which CIs those queries are executed.\nWhile the Check defines the specific queries, it is the Policy that triggers and executes them on the corresponding devices. In other words, Check Definitions do not execute on their own, and they must be associated with a Policy to be executed, and therefore I believe the correct answer is Policies.",
+          "selected_answer": "E",
+          "replies": []
+        },
+        {
+          "content": "C.\nExample:\nCheck: A check is created to run the osquery command SELECT * FROM processes; to gather a list of running processes on the CI.\nPolicy: A policy is set up to run this check on all Windows servers every 24 hours.\nSummary:\nChecks specify the osquery commands to be run.\nPolicies determine when and on which CIs those checks are executed.",
+          "selected_answer": "C",
+          "replies": []
+        }
+      ],
+      "question_number": "110",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/148636-exam-cis-discovery-topic-1-question-110-discussion/",
+      "most_voted": null,
+      "error": null
+    },
+    {
+      "question": "Which selections are necessary to trigger a custom pattern? (Choose two.)",
+      "answers": [
+        "A. CI Type",
+        "B. Asset Record",
+        "C. CI Classification",
+        "D. CI Entry Point",
+        "E. CI Class Process Handler"
+      ],
+      "comments": [
+        {
+          "content": "A, D - When creating a custom pattern, some of the mandatory fields are \"CI type\" and \"Entry Point types\"",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "AD\n- CI Classification helps identify the type of CI but does not itself trigger a pattern.",
+          "selected_answer": "AD",
+          "replies": []
+        }
+      ],
+      "question_number": "112",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/155732-exam-cis-discovery-topic-1-question-112-discussion/",
+      "most_voted": "AD",
+      "error": null
+    },
+    {
+      "question": "What are three ways of extending Discovery?",
+      "answers": [
+        "A. Classifiers, Fingerprinting, Probes & Sensors",
+        "B. Flow Designer, Classifiers, Probes & Sensors",
+        "C. Classifiers, Probes & Sensors, Discovery Patterns",
+        "D. Fingerprinting, Classifiers, Discovery Pattern"
+      ],
+      "comments": [
+        {
+          "content": "C is correct (Classifiers, Probes / Sensors and Discovery Patterns)",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "C is correct Answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is correct Answer",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "C is the correct answer*",
+          "selected_answer": "C",
+          "replies": []
+        },
+        {
+          "content": "D is the correct answer",
+          "selected_answer": "D",
+          "replies": [
+            "I cant delete my own comment '-'"
+          ]
+        }
+      ],
+      "question_number": "113",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/146371-exam-cis-discovery-topic-1-question-113-discussion/",
+      "most_voted": "C",
+      "error": null
+    },
+    {
+      "question": "What are the main KPIs for CMDB Health scorecard? (Choose three.)",
+      "answers": [
+        "A. Completeness",
+        "B. Compliance",
+        "C. Duplicates",
+        "D. Correctness",
+        "E. Staleness"
+      ],
+      "comments": [
+        {
+          "content": "ABD are the correct ones (Completeness, Compliance and Correctness)",
+          "selected_answer": "",
+          "replies": []
+        },
+        {
+          "content": "ABD - https://www.servicenow.com/docs/bundle/zurich-servicenow-platform/page/product/configuration-management/concept/c_MonitorCMDBHealth.html",
+          "selected_answer": "ABD",
+          "replies": []
+        }
+      ],
+      "question_number": "118",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/313733-exam-cis-discovery-topic-1-question-118-discussion/",
+      "most_voted": "ABD",
+      "error": null
+    },
+    {
+      "question": "As a first step in horizontal discovery, where is the Shazzam probe input placed in a request?",
+      "answers": [
+        "A. IP services",
+        "B. ECC queue",
+        "C. Target IP address",
+        "D. Port probes"
+      ],
+      "comments": [
+        {
+          "content": "B - https://www.servicenow.com/community/s/cgfwn76974/attachments/cgfwn76974/impact-forum/5061/1/ServiceNow%20Discovery%20Fundamentals%20.pdf",
+          "selected_answer": "B",
+          "replies": []
+        }
+      ],
+      "question_number": "122",
+      "link": "https://www.examtopics.com/discussions/servicenow/view/313735-exam-cis-discovery-topic-1-question-122-discussion/",
+      "most_voted": "B",
+      "error": null
+    }
+  ],
+  "scraped_at": "2026-07-02T11:35:41",
+  "version": 2
+}
